@@ -1,6 +1,7 @@
 package com.generatecatanboard.catangeneratorservice.controller;
 
-import com.generatecatanboard.catangeneratorservice.client.domain.GetEntriesResponse;
+import com.generatecatanboard.catangeneratorservice.client.domain.Fields;
+import com.generatecatanboard.catangeneratorservice.exceptions.PropertiesNotFoundException;
 import com.generatecatanboard.catangeneratorservice.service.GeneratorService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,8 +16,8 @@ public class GeneratorController {
         this.generatorService = generatorService;
     }
 
-    @GetMapping(value = "/scenario/{scenario}", produces = "application/json")
-    public GetEntriesResponse test(@PathVariable("scenario") String scenario) {
-        return generatorService.getContentType(scenario);
+    @GetMapping(value = "/scenarioProps/{scenario}", produces = "application/json")
+    public Fields getScenarioProps(@PathVariable("scenario") String scenario) throws PropertiesNotFoundException {
+        return generatorService.getScenarioProperties(scenario);
     }
 }
