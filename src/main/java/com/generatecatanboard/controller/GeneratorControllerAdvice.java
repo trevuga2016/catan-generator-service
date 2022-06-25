@@ -1,6 +1,6 @@
-package com.generatecatanboard.catangeneratorservice.controller;
+package com.generatecatanboard.controller;
 
-import com.generatecatanboard.catangeneratorservice.exceptions.PropertiesNotFoundException;
+import com.generatecatanboard.exceptions.PropertiesNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;

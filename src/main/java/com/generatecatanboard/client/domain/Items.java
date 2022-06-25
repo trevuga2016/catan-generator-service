@@ -1,4 +1,4 @@
-package com.generatecatanboard.catangeneratorservice.client.domain;
+package com.generatecatanboard.client.domain;
 
 import lombok.Getter;
 import lombok.Setter;

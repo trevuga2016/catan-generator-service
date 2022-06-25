@@ -1,10 +1,10 @@
-package com.generatecatanboard.catangeneratorservice.service;
+package com.generatecatanboard.service;
 
-import com.generatecatanboard.catangeneratorservice.client.ContentfulClient;
-import com.generatecatanboard.catangeneratorservice.client.domain.Fields;
-import com.generatecatanboard.catangeneratorservice.client.domain.GetEntriesResponse;
-import com.generatecatanboard.catangeneratorservice.client.domain.Items;
-import com.generatecatanboard.catangeneratorservice.exceptions.PropertiesNotFoundException;
+import com.generatecatanboard.client.ContentfulClient;
+import com.generatecatanboard.client.domain.Fields;
+import com.generatecatanboard.client.domain.GetEntriesResponse;
+import com.generatecatanboard.client.domain.Items;
+import com.generatecatanboard.exceptions.PropertiesNotFoundException;
 import feign.FeignException;
 import org.springframework.stereotype.Service;
 

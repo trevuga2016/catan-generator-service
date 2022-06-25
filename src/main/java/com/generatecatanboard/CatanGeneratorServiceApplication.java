@@ -1,4 +1,4 @@
-package com.generatecatanboard.catangeneratorservice;
+package com.generatecatanboard;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

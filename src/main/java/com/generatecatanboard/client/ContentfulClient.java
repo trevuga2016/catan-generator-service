@@ -1,6 +1,6 @@
-package com.generatecatanboard.catangeneratorservice.client;
+package com.generatecatanboard.client;
 
-import com.generatecatanboard.catangeneratorservice.client.domain.GetEntriesResponse;
+import com.generatecatanboard.client.domain.GetEntriesResponse;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

@@ -1,8 +1,8 @@
-package com.generatecatanboard.catangeneratorservice.controller;
+package com.generatecatanboard.controller;
 
-import com.generatecatanboard.catangeneratorservice.client.domain.Fields;
-import com.generatecatanboard.catangeneratorservice.exceptions.PropertiesNotFoundException;
-import com.generatecatanboard.catangeneratorservice.service.GeneratorService;
+import com.generatecatanboard.client.domain.Fields;
+import com.generatecatanboard.exceptions.PropertiesNotFoundException;
+import com.generatecatanboard.service.GeneratorService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;

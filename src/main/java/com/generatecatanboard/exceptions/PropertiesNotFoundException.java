@@ -1,4 +1,4 @@
-package com.generatecatanboard.catangeneratorservice.exceptions;
+package com.generatecatanboard.exceptions;
 
 public class PropertiesNotFoundException extends Exception {
 
