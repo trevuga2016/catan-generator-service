@@ -1,0 +1,16 @@
+{
+  "priority": 1,
+  "request": {
+    "url": "/spaces/testSpace/environments/master/content_types?sys.id=backgroundProps",
+    "method": "GET",
+    "headers": {
+      "Authorization": {
+        "equalTo": "Bearer testAccessToken"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "bodyFileName": "contentful_getBackgroundPropsResponse.json"
+  }
+}

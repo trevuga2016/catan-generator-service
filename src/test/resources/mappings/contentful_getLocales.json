@@ -1,0 +1,15 @@
+{
+  "request": {
+    "urlPath": "/spaces/testSpace/environments/master/locales",
+    "method": "GET",
+    "headers": {
+      "Authorization": {
+        "equalTo": "Bearer testAccessToken"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "bodyFileName": "contentful_getLocalesResponse.json"
+  }
+}

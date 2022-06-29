@@ -1,39 +1,52 @@
 package com.generatecatanboard.service;
 
-import com.generatecatanboard.client.ContentfulClient;
-import com.generatecatanboard.client.domain.Fields;
-import com.generatecatanboard.client.domain.GetEntriesResponse;
-import com.generatecatanboard.client.domain.Items;
+import com.contentful.java.cda.CDAAsset;
+import com.contentful.java.cda.CDAClient;
+import com.contentful.java.cda.CDAEntry;
+import com.generatecatanboard.domain.BoardData;
+import com.generatecatanboard.domain.ScenarioProperties;
+import com.generatecatanboard.exceptions.InvalidBoardConfigurationException;
 import com.generatecatanboard.exceptions.PropertiesNotFoundException;
-import feign.FeignException;
+import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.util.Collection;
 
 @Service
 public class GeneratorService {
 
-    private final ContentfulClient contentfulClient;
+    private final CDAClient cdaClient;
+    private final ApplicationContext applicationContext;
 
-    public GeneratorService(ContentfulClient contentfulClient) {
-        this.contentfulClient = contentfulClient;
+    public GeneratorService(CDAClient cdaClient, ApplicationContext applicationContext) {
+        this.cdaClient = cdaClient;
+        this.applicationContext = applicationContext;
     }
 
-    public Fields getScenarioProperties(String scenario) throws PropertiesNotFoundException {
-        try {
-            GetEntriesResponse getEntriesResponse = contentfulClient.getEntries("scenario");
-            List<Items> items = getEntriesResponse.getItems();
-            Items foundItem = items.stream()
-                    .filter(item -> scenario.equals(item.getFields().getScenarioUrl()))
-                    .findAny()
-                    .orElse(null);
-            if (foundItem != null) {
-                return foundItem.getFields();
-            } else {
-                throw new PropertiesNotFoundException("No scenario properties were returned from scenario '".concat(scenario).concat("'"));
-            }
-        } catch (FeignException.FeignClientException fe) {
-            throw new PropertiesNotFoundException("A ".concat(String.valueOf(fe.status())).concat(" exception occurred while calling Contentful"), fe.getCause());
+    public ScenarioProperties getScenarioProperties(String scenario) throws PropertiesNotFoundException {
+        Collection<ScenarioProperties> propertiesCollection = cdaClient.observeAndTransform(ScenarioProperties.class).all().blockingFirst();
+        ScenarioProperties scenarioProperties = propertiesCollection.stream()
+                .filter(item -> scenario.equals(item.getScenarioUrl()))
+                .findAny()
+                .orElse(null);
+        if (scenarioProperties == null) {
+            throw new PropertiesNotFoundException("No scenario properties were returned from scenario '".concat(scenario).concat("'"));
         }
+        return addBackgroundProps(scenarioProperties);
+    }
+
+    public ScenarioProperties addBackgroundProps(ScenarioProperties scenarioProperties) {
+        CDAEntry entry = cdaClient.fetch(CDAEntry.class).one(scenarioProperties.getContentfulId());
+        CDAEntry backgroundProps = entry.getField("backgroundProps");
+        CDAAsset backgroundImage = backgroundProps.getField("backgroundImage");
+        String backgroundColor = backgroundProps.getField("backgroundColor");
+        scenarioProperties.setBackgroundImage("https:".concat(backgroundImage.fileField("url")).concat("?fm=webp"));
+        scenarioProperties.setBackgroundColor(backgroundColor);
+        return scenarioProperties;
+    }
+
+    public BoardData generateRandomBoard(String scenario, String harbors) throws PropertiesNotFoundException, InvalidBoardConfigurationException {
+        Generator generator = applicationContext.getBean(harbors, Generator.class);
+        return generator.generateRandomBoard(scenario);
     }
 }

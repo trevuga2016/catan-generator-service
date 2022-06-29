@@ -1,0 +1,23 @@
+{
+  "request": {
+    "urlPath": "/spaces/testSpace/environments/master/entries",
+    "method": "GET",
+    "headers": {
+      "Authorization": {
+        "equalTo": "Bearer testAccessToken"
+      }
+    },
+    "queryParameters": {
+      "content_type": {
+        "equalTo": "scenario"
+      },
+      "select": {
+        "equalTo": "sys,fields.title,fields.scenarioUrl,fields.numbersFrequency,fields.resourcesFrequency,fields.rowConfig,fields.portConfig"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "bodyFileName": "contentful_getContentWithFieldsQueryResponse.json"
+  }
+}

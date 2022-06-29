@@ -1,0 +1,133 @@
+{
+  "title": "Test Scenario",
+  "scenarioUrl": "testScenario",
+  "numbersFrequency": {
+    "2": 1.0,
+    "3": 2.0,
+    "4": 2.0,
+    "5": 2.0,
+    "6": 2.0,
+    "8": 2.0,
+    "9": 2.0,
+    "10": 2.0,
+    "11": 2.0,
+    "12": 1.0
+  },
+  "resourcesFrequency": {
+    "Ore": 3.0,
+    "Wool": 4.0,
+    "Brick": 3.0,
+    "Grain": 4.0,
+    "Desert": 1.0,
+    "Lumber": 4.0
+  },
+  "rowConfig": [
+    3.0,
+    4.0,
+    5.0,
+    4.0,
+    3.0
+  ],
+  "portConfig": {
+    "top": [
+      {
+        "type": "",
+        "rotation": ""
+      },
+      {
+        "type": "3for1",
+        "rotation": "br"
+      },
+      {
+        "type": "",
+        "rotation": ""
+      },
+      {
+        "type": "3for1",
+        "rotation": "bl"
+      }
+    ],
+    "ends": [
+      [
+        {
+          "type": "2for1_wool",
+          "position": 1.0,
+          "rotation": "br"
+        },
+        {
+          "type": "",
+          "position": 2.0,
+          "rotation": ""
+        }
+      ],
+      [
+        {
+          "type": "",
+          "position": 1.0,
+          "rotation": ""
+        },
+        {
+          "type": "2for1_brick",
+          "position": 2.0,
+          "rotation": "l"
+        }
+      ],
+      [
+        {
+          "type": "3for1",
+          "position": 1.0,
+          "rotation": "r"
+        },
+        {
+          "type": "",
+          "position": 2.0,
+          "rotation": ""
+        }
+      ],
+      [
+        {
+          "type": "",
+          "position": 1.0,
+          "rotation": ""
+        },
+        {
+          "type": "2for1_lumber",
+          "position": 2.0,
+          "rotation": "l"
+        }
+      ],
+      [
+        {
+          "type": "2for1_ore",
+          "position": 1.0,
+          "rotation": "tr"
+        },
+        {
+          "type": "",
+          "position": 2.0,
+          "rotation": ""
+        }
+      ]
+    ],
+    "bottom": [
+      {
+        "type": "",
+        "rotation": ""
+      },
+      {
+        "type": "2for1_grain",
+        "rotation": "tr"
+      },
+      {
+        "type": "",
+        "rotation": ""
+      },
+      {
+        "type": "3for1",
+        "rotation": "tl"
+      }
+    ]
+  },
+  "backgroundImage": "testImage",
+  "backgroundColor": "ffef68"
+}

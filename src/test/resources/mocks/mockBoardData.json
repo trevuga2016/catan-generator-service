@@ -1,0 +1,232 @@
+{
+  "gameBoard": [
+    {
+      "row": [
+        {
+          "resource": "Lumber",
+          "terrain": "Forests",
+          "token": {
+            "number": "4",
+            "probability": {
+              "text": "•••",
+              "value": "8.33"
+            }
+          }
+        },
+        {
+          "resource": "Wool",
+          "terrain": "Pastures",
+          "token": {
+            "number": "3",
+            "probability": {
+              "text": "••",
+              "value": "5.56"
+            }
+          }
+        },
+        {
+          "resource": "Grain",
+          "terrain": "Fields",
+          "token": {
+            "number": "2",
+            "probability": {
+              "text": "•",
+              "value": "2.78"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "row": [
+        {
+          "resource": "Ore",
+          "terrain": "Mountains",
+          "token": {
+            "number": "6",
+            "probability": {
+              "text": "•••••",
+              "value": "13.89"
+            }
+          }
+        },
+        {
+          "resource": "Lumber",
+          "terrain": "Forests",
+          "token": {
+            "number": "9",
+            "probability": {
+              "text": "••••",
+              "value": "11.11"
+            }
+          }
+        },
+        {
+          "resource": "Ore",
+          "terrain": "Mountains",
+          "token": {
+            "number": "5",
+            "probability": {
+              "text": "••••",
+              "value": "11.11"
+            }
+          }
+        },
+        {
+          "resource": "Lumber",
+          "terrain": "Forests",
+          "token": {
+            "number": "10",
+            "probability": {
+              "text": "•••",
+              "value": "8.33"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "row": [
+        {
+          "resource": "Lumber",
+          "terrain": "Forests",
+          "token": {
+            "number": "3",
+            "probability": {
+              "text": "••",
+              "value": "5.56"
+            }
+          }
+        },
+        {
+          "resource": "Brick",
+          "terrain": "Hills",
+          "token": {
+            "number": "5",
+            "probability": {
+              "text": "••••",
+              "value": "11.11"
+            }
+          }
+        },
+        {
+          "resource": "Brick",
+          "terrain": "Hills",
+          "token": {
+            "number": "4",
+            "probability": {
+              "text": "•••",
+              "value": "8.33"
+            }
+          }
+        },
+        {
+          "resource": "Ore",
+          "terrain": "Mountains",
+          "token": {
+            "number": "10",
+            "probability": {
+              "text": "•••",
+              "value": "8.33"
+            }
+          }
+        },
+        {
+          "resource": "Grain",
+          "terrain": "Fields",
+          "token": {
+            "number": "8",
+            "probability": {
+              "text": "•••••",
+              "value": "13.89"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "row": [
+        {
+          "resource": "Grain",
+          "terrain": "Fields",
+          "token": {
+            "number": "6",
+            "probability": {
+              "text": "•••••",
+              "value": "13.89"
+            }
+          }
+        },
+        {
+          "resource": "Wool",
+          "terrain": "Pastures",
+          "token": {
+            "number": "9",
+            "probability": {
+              "text": "••••",
+              "value": "11.11"
+            }
+          }
+        },
+        {
+          "resource": "Brick",
+          "terrain": "Hills",
+          "token": {
+            "number": "11",
+            "probability": {
+              "text": "••",
+              "value": "5.56"
+            }
+          }
+        },
+        {
+          "resource": "Wool",
+          "terrain": "Pastures",
+          "token": {
+            "number": "8",
+            "probability": {
+              "text": "•••••",
+              "value": "13.89"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "row": [
+        {
+          "resource": "Grain",
+          "terrain": "Fields",
+          "token": {
+            "number": "12",
+            "probability": {
+              "text": "•",
+              "value": "2.78"
+            }
+          }
+        },
+        {
+          "resource": "Desert",
+          "terrain": "Desert",
+          "token": {
+            "probability": {
+              "text": "",
+              "value": "16.67"
+            }
+          }
+        },
+        {
+          "resource": "Wool",
+          "terrain": "Pastures",
+          "token": {
+            "number": "11",
+            "probability": {
+              "text": "••",
+              "value": "5.56"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

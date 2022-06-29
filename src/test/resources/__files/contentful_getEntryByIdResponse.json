@@ -1,0 +1,619 @@
+{
+  "sys": {
+    "type": "Array"
+  },
+  "total": 1,
+  "skip": 0,
+  "limit": 100,
+  "items": [
+    {
+      "metadata": {
+        "tags": []
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "lemvlfz5icux"
+          }
+        },
+        "id": "abcdefg",
+        "type": "Entry",
+        "createdAt": "2022-05-10T01:12:38.529Z",
+        "updatedAt": "2022-06-23T20:44:37.603Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "revision": 19,
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "scenario"
+          }
+        },
+        "locale": "en-US"
+      },
+      "fields": {
+        "order": 1,
+        "title": "The Settlers of Catan",
+        "subtitle": "The game that started it all! Generate a random board setup for the original island of Catan",
+        "players": "3 - 4",
+        "scenarioUrl": "catan",
+        "image": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Asset",
+            "id": "BBeHKtWxYs8lnhKJO9Ph7"
+          }
+        },
+        "backgroundProps": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Entry",
+            "id": "6yiPWpaJXarPrMxIZmntdZ"
+          }
+        },
+        "numbersFrequency": {
+          "2": 1,
+          "3": 2,
+          "4": 2,
+          "5": 2,
+          "6": 2,
+          "8": 2,
+          "9": 2,
+          "10": 2,
+          "11": 2,
+          "12": 1
+        },
+        "resourcesFrequency": {
+          "Ore": 3,
+          "Wool": 4,
+          "Brick": 3,
+          "Grain": 4,
+          "Desert": 1,
+          "Lumber": 4
+        },
+        "rowConfig": [
+          3,
+          4,
+          5,
+          4,
+          3
+        ],
+        "portConfig": {
+          "top": [
+            {
+              "type": "",
+              "rotation": ""
+            },
+            {
+              "type": "3for1",
+              "rotation": "br"
+            },
+            {
+              "type": "",
+              "rotation": ""
+            },
+            {
+              "type": "3for1",
+              "rotation": "bl"
+            }
+          ],
+          "ends": [
+            [
+              {
+                "type": "2for1_wool",
+                "position": 1,
+                "rotation": "br"
+              },
+              {
+                "type": "",
+                "position": 2,
+                "rotation": ""
+              }
+            ],
+            [
+              {
+                "type": "",
+                "position": 1,
+                "rotation": ""
+              },
+              {
+                "type": "2for1_brick",
+                "position": 2,
+                "rotation": "l"
+              }
+            ],
+            [
+              {
+                "type": "3for1",
+                "position": 1,
+                "rotation": "r"
+              },
+              {
+                "type": "",
+                "position": 2,
+                "rotation": ""
+              }
+            ],
+            [
+              {
+                "type": "",
+                "position": 1,
+                "rotation": ""
+              },
+              {
+                "type": "2for1_lumber",
+                "position": 2,
+                "rotation": "l"
+              }
+            ],
+            [
+              {
+                "type": "2for1_ore",
+                "position": 1,
+                "rotation": "tr"
+              },
+              {
+                "type": "",
+                "position": 2,
+                "rotation": ""
+              }
+            ]
+          ],
+          "bottom": [
+            {
+              "type": "",
+              "rotation": ""
+            },
+            {
+              "type": "2for1_grain",
+              "rotation": "tr"
+            },
+            {
+              "type": "",
+              "rotation": ""
+            },
+            {
+              "type": "3for1",
+              "rotation": "tl"
+            }
+          ]
+        },
+        "buildingCosts": [
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "28A4J8MRB1FdyvBMs8YmtN"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "76Wpt805BAgDPEiqQ4wFx3"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "2IYhXj8KbnXDqtu376fClX"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "2Y0LMZkMRYd8hKkpHmjAFa"
+            }
+          }
+        ],
+        "isExtension": false,
+        "isExpansion": false
+      }
+    }
+  ],
+  "includes": {
+    "Entry": [
+      {
+        "metadata": {
+          "tags": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "lemvlfz5icux"
+            }
+          },
+          "id": "28A4J8MRB1FdyvBMs8YmtN",
+          "type": "Entry",
+          "createdAt": "2022-06-12T04:17:27.216Z",
+          "updatedAt": "2022-06-23T20:44:36.883Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 3,
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "buildingCosts"
+            }
+          },
+          "locale": "en-US"
+        },
+        "fields": {
+          "buildType": "Road",
+          "resources": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "4zoD9xA3M8eGZE0kbpIW5W"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "5GvnCQXNxB1Wflb9Z4dYyS"
+              }
+            }
+          ],
+          "victoryPoints": "0"
+        }
+      },
+      {
+        "metadata": {
+          "tags": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "lemvlfz5icux"
+            }
+          },
+          "id": "2IYhXj8KbnXDqtu376fClX",
+          "type": "Entry",
+          "createdAt": "2022-06-12T04:18:56.126Z",
+          "updatedAt": "2022-06-23T20:44:36.408Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 3,
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "buildingCosts"
+            }
+          },
+          "locale": "en-US"
+        },
+        "fields": {
+          "buildType": "City",
+          "resources": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "UlGC0FxKxmQGwKg4sUGn5"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "UlGC0FxKxmQGwKg4sUGn5"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "01FL6ssKhJEEjWZ5cVBzMx"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "01FL6ssKhJEEjWZ5cVBzMx"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "01FL6ssKhJEEjWZ5cVBzMx"
+              }
+            }
+          ],
+          "victoryPoints": "2"
+        }
+      },
+      {
+        "metadata": {
+          "tags": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "lemvlfz5icux"
+            }
+          },
+          "id": "2Y0LMZkMRYd8hKkpHmjAFa",
+          "type": "Entry",
+          "createdAt": "2022-06-12T04:19:38.758Z",
+          "updatedAt": "2022-06-23T20:44:36.195Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 3,
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "buildingCosts"
+            }
+          },
+          "locale": "en-US"
+        },
+        "fields": {
+          "buildType": "Development Card",
+          "resources": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "3zuqFkfkvcJ327j2UG3h2O"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "UlGC0FxKxmQGwKg4sUGn5"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "01FL6ssKhJEEjWZ5cVBzMx"
+              }
+            }
+          ],
+          "victoryPoints": "?"
+        }
+      },
+      {
+        "metadata": {
+          "tags": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "lemvlfz5icux"
+            }
+          },
+          "id": "6yiPWpaJXarPrMxIZmntdZ",
+          "type": "Entry",
+          "createdAt": "2022-06-13T03:47:33.516Z",
+          "updatedAt": "2022-06-23T20:44:20.401Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 2,
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "backgroundProps"
+            }
+          },
+          "locale": "en-US"
+        },
+        "fields": {
+          "scenario": "The Settlers of Catan",
+          "backgroundImage": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "2JsBeiy2CdnHGVbbFQn73H"
+            }
+          },
+          "backgroundColor": "c21f26"
+        }
+      },
+      {
+        "metadata": {
+          "tags": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "lemvlfz5icux"
+            }
+          },
+          "id": "76Wpt805BAgDPEiqQ4wFx3",
+          "type": "Entry",
+          "createdAt": "2022-06-12T04:18:08.443Z",
+          "updatedAt": "2022-06-23T20:44:36.660Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 3,
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "buildingCosts"
+            }
+          },
+          "locale": "en-US"
+        },
+        "fields": {
+          "buildType": "Settlement",
+          "resources": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "4zoD9xA3M8eGZE0kbpIW5W"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "5GvnCQXNxB1Wflb9Z4dYyS"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "UlGC0FxKxmQGwKg4sUGn5"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "3zuqFkfkvcJ327j2UG3h2O"
+              }
+            }
+          ],
+          "victoryPoints": "1"
+        }
+      }
+    ],
+    "Asset": [
+      {
+        "metadata": {
+          "tags": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "lemvlfz5icux"
+            }
+          },
+          "id": "2JsBeiy2CdnHGVbbFQn73H",
+          "type": "Asset",
+          "createdAt": "2022-06-08T16:10:39.585Z",
+          "updatedAt": "2022-06-23T20:43:53.367Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 2,
+          "locale": "en-US"
+        },
+        "fields": {
+          "title": "catan_background",
+          "description": "",
+          "file": {
+            "url": "//images.ctfassets.net/lemvlfz5icux/2JsBeiy2CdnHGVbbFQn73H/ddacfffaf63bc6b5895c2250ec877639/catan_backdrop.webp",
+            "details": {
+              "size": 32088,
+              "image": {
+                "width": 960,
+                "height": 540
+              }
+            },
+            "fileName": "catan_backdrop.webp",
+            "contentType": "image/webp"
+          }
+        }
+      },
+      {
+        "metadata": {
+          "tags": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "lemvlfz5icux"
+            }
+          },
+          "id": "BBeHKtWxYs8lnhKJO9Ph7",
+          "type": "Asset",
+          "createdAt": "2022-05-07T03:16:52.655Z",
+          "updatedAt": "2022-06-23T20:43:52.486Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 3,
+          "locale": "en-US"
+        },
+        "fields": {
+          "title": "Catan Desc Image",
+          "description": "",
+          "file": {
+            "url": "//images.ctfassets.net/lemvlfz5icux/BBeHKtWxYs8lnhKJO9Ph7/9b2a7a202fffec2d522806cab29f7698/select-catan-sm.png",
+            "details": {
+              "size": 235750,
+              "image": {
+                "width": 462,
+                "height": 275
+              }
+            },
+            "fileName": "select-catan-sm.png",
+            "contentType": "image/png"
+          }
+        }
+      }
+    ]
+  }
+}

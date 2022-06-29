@@ -1,10 +1,10 @@
 package com.generatecatanboard.exceptions;
 
-public class PropertiesNotFoundException extends Exception {
+public class InvalidBoardConfigurationException extends Exception {
 
     private final String message;
 
-    public PropertiesNotFoundException(String message) {
+    public InvalidBoardConfigurationException(String message) {
         super(message);
         this.message = message;
     }
