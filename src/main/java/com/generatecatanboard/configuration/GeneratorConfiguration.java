@@ -32,7 +32,7 @@ public class GeneratorConfiguration {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-        http.csrf().disable().authorizeRequests().anyRequest().authenticated().and().httpBasic();
+        http.cors().and().csrf().disable().authorizeRequests().anyRequest().authenticated().and().httpBasic();
         return http.build();
     }
 
