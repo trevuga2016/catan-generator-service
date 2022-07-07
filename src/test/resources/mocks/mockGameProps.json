@@ -28,106 +28,136 @@
     4.0,
     3.0
   ],
-  "portConfig": {
-    "top": [
+  "backgroundImage": "testImage",
+  "backgroundColor": "ffef68",
+  "gameHarborConfig": {
+    "harborConfig": [
       {
-        "type": "",
-        "rotation": ""
+        "harborType": {
+          "id": "sea",
+          "terrain": "Sea"
+        },
+        "rotation": null
       },
       {
-        "type": "3for1",
+        "harborType": {
+          "id": "3for1",
+          "terrain": "Harbor"
+        },
         "rotation": "br"
       },
       {
-        "type": "",
-        "rotation": ""
+        "harborType": {
+          "id": "sea",
+          "terrain": "Sea"
+        },
+        "rotation": null
       },
       {
-        "type": "3for1",
+        "harborType": {
+          "id": "3for1",
+          "terrain": "Harbor"
+        },
         "rotation": "bl"
-      }
-    ],
-    "ends": [
-      [
-        {
-          "type": "2for1_wool",
-          "position": 1.0,
-          "rotation": "br"
-        },
-        {
-          "type": "",
-          "position": 2.0,
-          "rotation": ""
-        }
-      ],
-      [
-        {
-          "type": "",
-          "position": 1.0,
-          "rotation": ""
-        },
-        {
-          "type": "2for1_brick",
-          "position": 2.0,
-          "rotation": "l"
-        }
-      ],
-      [
-        {
-          "type": "3for1",
-          "position": 1.0,
-          "rotation": "r"
-        },
-        {
-          "type": "",
-          "position": 2.0,
-          "rotation": ""
-        }
-      ],
-      [
-        {
-          "type": "",
-          "position": 1.0,
-          "rotation": ""
-        },
-        {
-          "type": "2for1_lumber",
-          "position": 2.0,
-          "rotation": "l"
-        }
-      ],
-      [
-        {
-          "type": "2for1_ore",
-          "position": 1.0,
-          "rotation": "tr"
-        },
-        {
-          "type": "",
-          "position": 2.0,
-          "rotation": ""
-        }
-      ]
-    ],
-    "bottom": [
-      {
-        "type": "",
-        "rotation": ""
       },
       {
-        "type": "2for1_grain",
+        "harborType": {
+          "id": "2for1_wool",
+          "terrain": "Harbor"
+        },
+        "rotation": "br"
+      },
+      {
+        "harborType": {
+          "id": "sea",
+          "terrain": "Sea"
+        },
+        "rotation": null
+      },
+      {
+        "harborType": {
+          "id": "sea",
+          "terrain": "Sea"
+        },
+        "rotation": null
+      },
+      {
+        "harborType": {
+          "id": "2for1_brick",
+          "terrain": "Harbor"
+        },
+        "rotation": "l"
+      },
+      {
+        "harborType": {
+          "id": "3for1",
+          "terrain": "Harbor"
+        },
+        "rotation": "r"
+      },
+      {
+        "harborType": {
+          "id": "sea",
+          "terrain": "Sea"
+        },
+        "rotation": null
+      },
+      {
+        "harborType": {
+          "id": "sea",
+          "terrain": "Sea"
+        },
+        "rotation": null
+      },
+      {
+        "harborType": {
+          "id": "2for1_lumber",
+          "terrain": "Harbor"
+        },
+        "rotation": "l"
+      },
+      {
+        "harborType": {
+          "id": "2for1_ore",
+          "terrain": "Harbor"
+        },
         "rotation": "tr"
       },
       {
-        "type": "",
-        "rotation": ""
+        "harborType": {
+          "id": "sea",
+          "terrain": "Sea"
+        },
+        "rotation": null
       },
       {
-        "type": "3for1",
+        "harborType": {
+          "id": "sea",
+          "terrain": "Sea"
+        },
+        "rotation": null
+      },
+      {
+        "harborType": {
+          "id": "2for1_grain",
+          "terrain": "Harbor"
+        },
+        "rotation": "tr"
+      },
+      {
+        "harborType": {
+          "id": "sea",
+          "terrain": "Sea"
+        },
+        "rotation": null
+      },
+      {
+        "harborType": {
+          "id": "3for1",
+          "terrain": "Harbor"
+        },
         "rotation": "tl"
       }
     ]
-  },
-  "backgroundImage": "testImage",
-  "backgroundColor": "ffef68"
+  }
 }

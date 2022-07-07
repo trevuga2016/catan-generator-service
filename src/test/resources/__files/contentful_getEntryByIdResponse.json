@@ -106,66 +106,56 @@
             }
           ],
           "ends": [
-            [
-              {
-                "type": "2for1_wool",
-                "position": 1,
-                "rotation": "br"
-              },
-              {
-                "type": "",
-                "position": 2,
-                "rotation": ""
-              }
-            ],
-            [
-              {
-                "type": "",
-                "position": 1,
-                "rotation": ""
-              },
-              {
-                "type": "2for1_brick",
-                "position": 2,
-                "rotation": "l"
-              }
-            ],
-            [
-              {
-                "type": "3for1",
-                "position": 1,
-                "rotation": "r"
-              },
-              {
-                "type": "",
-                "position": 2,
-                "rotation": ""
-              }
-            ],
-            [
-              {
-                "type": "",
-                "position": 1,
-                "rotation": ""
-              },
-              {
-                "type": "2for1_lumber",
-                "position": 2,
-                "rotation": "l"
-              }
-            ],
-            [
-              {
-                "type": "2for1_ore",
-                "position": 1,
-                "rotation": "tr"
-              },
-              {
-                "type": "",
-                "position": 2,
-                "rotation": ""
-              }
-            ]
+            {
+              "type": "2for1_wool",
+              "position": 1,
+              "rotation": "br"
+            },
+            {
+              "type": "",
+              "position": 2,
+              "rotation": ""
+            },
+            {
+              "type": "",
+              "position": 1,
+              "rotation": ""
+            },
+            {
+              "type": "2for1_brick",
+              "position": 2,
+              "rotation": "l"
+            },
+            {
+              "type": "3for1",
+              "position": 1,
+              "rotation": "r"
+            },
+            {
+              "type": "",
+              "position": 2,
+              "rotation": ""
+            },
+            {
+              "type": "",
+              "position": 1,
+              "rotation": ""
+            },
+            {
+              "type": "2for1_lumber",
+              "position": 2,
+              "rotation": "l"
+            },
+            {
+              "type": "2for1_ore",
+              "position": 1,
+              "rotation": "tr"
+            },
+            {
+              "type": "",
+              "position": 2,
+              "rotation": ""
+            }
           ],
           "bottom": [
             {

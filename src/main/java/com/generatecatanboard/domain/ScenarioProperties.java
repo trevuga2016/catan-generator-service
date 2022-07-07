@@ -2,7 +2,6 @@ package com.generatecatanboard.domain;
 
 import com.contentful.java.cda.TransformQuery;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.google.gson.internal.LinkedTreeMap;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -30,8 +29,8 @@ public class ScenarioProperties {
     private Map<String, Double> resourcesFrequency;
     @TransformQuery.ContentfulField
     private List<Double> rowConfig;
-    @TransformQuery.ContentfulField
-    private LinkedTreeMap<String, ?> portConfig;
     private String backgroundImage;
     private String backgroundColor;
+    @TransformQuery.ContentfulField
+    private GameHarborConfig gameHarborConfig;
 }

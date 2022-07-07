@@ -8,11 +8,14 @@
       }
     },
     "queryParameters": {
+      "include": {
+        "equalTo": "10"
+      },
       "content_type": {
         "equalTo": "scenario"
       },
       "select": {
-        "equalTo": "sys,fields.title,fields.scenarioUrl,fields.numbersFrequency,fields.resourcesFrequency,fields.rowConfig,fields.portConfig"
+        "equalTo": "sys,fields.title,fields.scenarioUrl,fields.numbersFrequency,fields.resourcesFrequency,fields.rowConfig,fields.gameHarborConfig"
       }
     }
   },

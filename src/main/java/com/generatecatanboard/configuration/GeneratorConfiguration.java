@@ -22,6 +22,8 @@ public class GeneratorConfiguration {
 
     @Value("${contentful.space}")
     private String contentfulSpace;
+    @Value("${contentful.environment:master}")
+    private String contentfulEnvironment;
     @Value("${contentful.accessToken}")
     private String contentfulAccessToken;
     @Value("${app.username}")
@@ -65,6 +67,7 @@ public class GeneratorConfiguration {
         return CDAClient.builder()
                 .setSpace(contentfulSpace)
                 .setToken(contentfulAccessToken)
+                .setEnvironment(contentfulEnvironment)
                 .build();
     }
 }

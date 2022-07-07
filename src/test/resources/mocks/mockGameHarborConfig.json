@@ -1,0 +1,130 @@
+{
+  "harborConfig": [
+    {
+      "harborType": {
+        "id": "sea",
+        "terrain": "Sea"
+      },
+      "rotation": null
+    },
+    {
+      "harborType": {
+        "id": "3for1",
+        "terrain": "Harbor"
+      },
+      "rotation": "br"
+    },
+    {
+      "harborType": {
+        "id": "sea",
+        "terrain": "Sea"
+      },
+      "rotation": null
+    },
+    {
+      "harborType": {
+        "id": "3for1",
+        "terrain": "Harbor"
+      },
+      "rotation": "bl"
+    },
+    {
+      "harborType": {
+        "id": "2for1_wool",
+        "terrain": "Harbor"
+      },
+      "rotation": "br"
+    },
+    {
+      "harborType": {
+        "id": "sea",
+        "terrain": "Sea"
+      },
+      "rotation": null
+    },
+    {
+      "harborType": {
+        "id": "sea",
+        "terrain": "Sea"
+      },
+      "rotation": null
+    },
+    {
+      "harborType": {
+        "id": "2for1_brick",
+        "terrain": "Harbor"
+      },
+      "rotation": "l"
+    },
+    {
+      "harborType": {
+        "id": "3for1",
+        "terrain": "Harbor"
+      },
+      "rotation": "r"
+    },
+    {
+      "harborType": {
+        "id": "sea",
+        "terrain": "Sea"
+      },
+      "rotation": null
+    },
+    {
+      "harborType": {
+        "id": "sea",
+        "terrain": "Sea"
+      },
+      "rotation": null
+    },
+    {
+      "harborType": {
+        "id": "2for1_lumber",
+        "terrain": "Harbor"
+      },
+      "rotation": "l"
+    },
+    {
+      "harborType": {
+        "id": "2for1_ore",
+        "terrain": "Harbor"
+      },
+      "rotation": "tr"
+    },
+    {
+      "harborType": {
+        "id": "sea",
+        "terrain": "Sea"
+      },
+      "rotation": null
+    },
+    {
+      "harborType": {
+        "id": "sea",
+        "terrain": "Sea"
+      },
+      "rotation": null
+    },
+    {
+      "harborType": {
+        "id": "2for1_grain",
+        "terrain": "Harbor"
+      },
+      "rotation": "tr"
+    },
+    {
+      "harborType": {
+        "id": "sea",
+        "terrain": "Sea"
+      },
+      "rotation": null
+    },
+    {
+      "harborType": {
+        "id": "3for1",
+        "terrain": "Harbor"
+      },
+      "rotation": "tl"
+    }
+  ]
+}
