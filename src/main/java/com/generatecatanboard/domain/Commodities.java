@@ -1,6 +1,8 @@
 package com.generatecatanboard.domain;
 
+import com.contentful.java.cda.CDAAsset;
 import com.contentful.java.cda.TransformQuery;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -12,10 +14,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@TransformQuery.ContentfulEntryModel("harbors")
-public class Harbors {
+@TransformQuery.ContentfulEntryModel("commodities")
+public class Commodities {
     @TransformQuery.ContentfulField
-    private String id;
-    @TransformQuery.ContentfulField
-    private String terrain;
+    private String commodity;
+    @JsonIgnore
+    @TransformQuery.ContentfulField(value = "icon")
+    private CDAAsset iconAsset;
+    private String icon;
 }

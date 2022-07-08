@@ -12,10 +12,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@TransformQuery.ContentfulEntryModel("harbors")
-public class Harbors {
+@TransformQuery.ContentfulEntryModel("resourcesFrequency")
+public class ResourcesFrequency {
     @TransformQuery.ContentfulField
-    private String id;
+    private Resources resource;
     @TransformQuery.ContentfulField
-    private String terrain;
+    private Double frequency;
 }

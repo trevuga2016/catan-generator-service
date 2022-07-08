@@ -2,6 +2,7 @@ package com.generatecatanboard.domain;
 
 import com.contentful.java.cda.TransformQuery;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -14,6 +15,7 @@ import java.util.Map;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@JsonInclude(JsonInclude.Include.NON_NULL)
 @TransformQuery.ContentfulEntryModel("scenario")
 public class ScenarioProperties {
     @TransformQuery.ContentfulSystemField("id")
@@ -26,11 +28,11 @@ public class ScenarioProperties {
     @TransformQuery.ContentfulField
     private Map<String, Double> numbersFrequency;
     @TransformQuery.ContentfulField
-    private Map<String, Double> resourcesFrequency;
-    @TransformQuery.ContentfulField
     private List<Double> rowConfig;
     private String backgroundImage;
     private String backgroundColor;
     @TransformQuery.ContentfulField
     private GameHarborConfig gameHarborConfig;
+    @TransformQuery.ContentfulField
+    private GameResourcesConfig gameResourcesConfig;
 }

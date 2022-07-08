@@ -7,15 +7,15 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Builder
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@TransformQuery.ContentfulEntryModel("harbors")
-public class Harbors {
+@TransformQuery.ContentfulEntryModel("gameResourcesConfig")
+public class GameResourcesConfig {
     @TransformQuery.ContentfulField
-    private String id;
-    @TransformQuery.ContentfulField
-    private String terrain;
+    private List<ResourcesFrequency> resourcesFrequency;
 }

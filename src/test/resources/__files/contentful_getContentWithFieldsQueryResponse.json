@@ -8,6 +8,158 @@
   "items": [
     {
       "fields": {
+        "title": "Cities & Knights",
+        "scenarioUrl": "ck",
+        "numbersFrequency": {
+          "2": 1,
+          "3": 2,
+          "4": 2,
+          "5": 2,
+          "6": 2,
+          "8": 2,
+          "9": 2,
+          "10": 2,
+          "11": 2,
+          "12": 1
+        },
+        "resourcesFrequency": {
+          "Ore": 3,
+          "Wool": 4,
+          "Brick": 3,
+          "Grain": 4,
+          "Desert": 1,
+          "Lumber": 4
+        },
+        "rowConfig": [
+          3,
+          4,
+          5,
+          4,
+          3
+        ],
+        "gameHarborConfig": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Entry",
+            "id": "1NEswAreTEyZycrlFMDLrp"
+          }
+        },
+        "gameResourcesConfig": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Entry",
+            "id": "62RVd2eC8iyQ6j8EAJhMsU"
+          }
+        }
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "lemvlfz5icux"
+          }
+        },
+        "id": "CykFp1NoYatgSDmE4ypOA",
+        "type": "Entry",
+        "createdAt": "2022-06-15T01:47:28.390Z",
+        "updatedAt": "2022-07-08T00:16:45.462Z",
+        "environment": {
+          "sys": {
+            "id": "staging",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "revision": 7,
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "scenario"
+          }
+        },
+        "locale": "en-US"
+      }
+    },
+    {
+      "fields": {
+        "title": "The Settlers of Catan",
+        "scenarioUrl": "test",
+        "numbersFrequency": {
+          "2": 1,
+          "3": 2,
+          "4": 2,
+          "5": 2,
+          "6": 2,
+          "8": 2,
+          "9": 2,
+          "10": 2,
+          "11": 2,
+          "12": 1
+        },
+        "resourcesFrequency": {
+          "Ore": 3,
+          "Wool": 4,
+          "Brick": 3,
+          "Grain": 4,
+          "Desert": 1,
+          "Lumber": 4
+        },
+        "rowConfig": [
+          3,
+          4,
+          5,
+          4,
+          3
+        ],
+        "gameHarborConfig": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Entry",
+            "id": "1NEswAreTEyZycrlFMDLrp"
+          }
+        },
+        "gameResourcesConfig": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Entry",
+            "id": "62RVd2eC8iyQ6j8EAJhMsU"
+          }
+        }
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "lemvlfz5icux"
+          }
+        },
+        "id": "abcdefg",
+        "type": "Entry",
+        "createdAt": "2022-05-10T01:12:38.529Z",
+        "updatedAt": "2022-07-08T00:16:33.418Z",
+        "environment": {
+          "sys": {
+            "id": "staging",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "revision": 22,
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "scenario"
+          }
+        },
+        "locale": "en-US"
+      }
+    },
+    {
+      "fields": {
         "title": "Cities & Knights - 5 & 6 Player",
         "scenarioUrl": "ck5_6ext",
         "numbersFrequency": {
@@ -147,148 +299,76 @@
         },
         "locale": "en-US"
       }
-    },
-    {
-      "fields": {
-        "title": "Cities & Knights",
-        "scenarioUrl": "ck",
-        "numbersFrequency": {
-          "2": 1,
-          "3": 2,
-          "4": 2,
-          "5": 2,
-          "6": 2,
-          "8": 2,
-          "9": 2,
-          "10": 2,
-          "11": 2,
-          "12": 1
-        },
-        "resourcesFrequency": {
-          "Ore": 3,
-          "Wool": 4,
-          "Brick": 3,
-          "Grain": 4,
-          "Desert": 1,
-          "Lumber": 4
-        },
-        "rowConfig": [
-          3,
-          4,
-          5,
-          4,
-          3
-        ],
-        "gameHarborConfig": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Entry",
-            "id": "1NEswAreTEyZycrlFMDLrp"
-          }
-        }
-      },
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": "lemvlfz5icux"
-          }
-        },
-        "id": "CykFp1NoYatgSDmE4ypOA",
-        "type": "Entry",
-        "createdAt": "2022-06-15T01:47:28.390Z",
-        "updatedAt": "2022-07-07T20:11:39.661Z",
-        "environment": {
-          "sys": {
-            "id": "staging",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "revision": 6,
-        "contentType": {
-          "sys": {
-            "type": "Link",
-            "linkType": "ContentType",
-            "id": "scenario"
-          }
-        },
-        "locale": "en-US"
-      }
-    },
-    {
-      "fields": {
-        "title": "The Test of Testan",
-        "scenarioUrl": "test",
-        "numbersFrequency": {
-          "2": 1,
-          "3": 2,
-          "4": 2,
-          "5": 2,
-          "6": 2,
-          "8": 2,
-          "9": 2,
-          "10": 2,
-          "11": 2,
-          "12": 1
-        },
-        "resourcesFrequency": {
-          "Ore": 3,
-          "Wool": 4,
-          "Brick": 3,
-          "Grain": 4,
-          "Desert": 1,
-          "Lumber": 4
-        },
-        "rowConfig": [
-          3,
-          4,
-          5,
-          4,
-          3
-        ],
-        "gameHarborConfig": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Entry",
-            "id": "1NEswAreTEyZycrlFMDLrp"
-          }
-        }
-      },
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": "lemvlfz5icux"
-          }
-        },
-        "id": "abcdefg",
-        "type": "Entry",
-        "createdAt": "2022-05-10T01:12:38.529Z",
-        "updatedAt": "2022-07-07T15:06:55.673Z",
-        "environment": {
-          "sys": {
-            "id": "staging",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "revision": 21,
-        "contentType": {
-          "sys": {
-            "type": "Link",
-            "linkType": "ContentType",
-            "id": "scenario"
-          }
-        },
-        "locale": "en-US"
-      }
     }
   ],
   "includes": {
     "Entry": [
+      {
+        "metadata": {
+          "tags": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "lemvlfz5icux"
+            }
+          },
+          "id": "01FL6ssKhJEEjWZ5cVBzMx",
+          "type": "Entry",
+          "createdAt": "2022-06-13T19:45:53.760Z",
+          "updatedAt": "2022-06-24T02:07:07.185Z",
+          "environment": {
+            "sys": {
+              "id": "staging",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 4,
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "resources"
+            }
+          },
+          "locale": "en-US"
+        },
+        "fields": {
+          "resource": "Ore",
+          "terrain": "Mountains",
+          "icon": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "3uC1Q5NwNzk6brSaITotO3"
+            }
+          },
+          "hexImage": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "1xgyTRcfY3RFd9wJbLpizY"
+            }
+          },
+          "cardImage": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "1LVhRIf3N09OITS8uU2NUv"
+            }
+          },
+          "commodity": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "5lCO4ltq6Xzo6eBHZ9VbAH"
+            }
+          }
+        }
+      },
       {
         "metadata": {
           "tags": []
@@ -542,6 +622,103 @@
               }
             }
           ]
+        }
+      },
+      {
+        "metadata": {
+          "tags": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "lemvlfz5icux"
+            }
+          },
+          "id": "1YyAwLhwaA82mkQ5daXzTH",
+          "type": "Entry",
+          "createdAt": "2022-06-23T21:02:38.953Z",
+          "updatedAt": "2022-06-24T02:08:02.796Z",
+          "environment": {
+            "sys": {
+              "id": "staging",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 2,
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "resources"
+            }
+          },
+          "locale": "en-US"
+        },
+        "fields": {
+          "resource": "Desert",
+          "terrain": "Desert",
+          "hexImage": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "2cwLLCBJGGk6WDkVbv2UGg"
+            }
+          },
+          "cardImage": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "3Bgp5PYNAwgIjFEFKZQOgs"
+            }
+          }
+        }
+      },
+      {
+        "metadata": {
+          "tags": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "lemvlfz5icux"
+            }
+          },
+          "id": "1cabykBxf5EiOioYhWVFzQ",
+          "type": "Entry",
+          "createdAt": "2022-07-08T00:12:54.919Z",
+          "updatedAt": "2022-07-08T00:12:54.919Z",
+          "environment": {
+            "sys": {
+              "id": "staging",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 1,
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "resourcesFrequency"
+            }
+          },
+          "locale": "en-US"
+        },
+        "fields": {
+          "title": "Lumber - 4",
+          "resource": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "4zoD9xA3M8eGZE0kbpIW5W"
+            }
+          },
+          "frequency": 4
         }
       },
       {
@@ -963,6 +1140,51 @@
               "id": "lemvlfz5icux"
             }
           },
+          "id": "3U9FhLt087VIIqtrFUZtp5",
+          "type": "Entry",
+          "createdAt": "2022-07-08T00:12:06.160Z",
+          "updatedAt": "2022-07-08T00:12:06.160Z",
+          "environment": {
+            "sys": {
+              "id": "staging",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 1,
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "resourcesFrequency"
+            }
+          },
+          "locale": "en-US"
+        },
+        "fields": {
+          "title": "Brick - 3",
+          "resource": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "5GvnCQXNxB1Wflb9Z4dYyS"
+            }
+          },
+          "frequency": 3
+        }
+      },
+      {
+        "metadata": {
+          "tags": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "lemvlfz5icux"
+            }
+          },
           "id": "3VTBNF7kdwkSiSNpBgiEEJ",
           "type": "Entry",
           "createdAt": "2022-07-07T20:23:04.072Z",
@@ -994,6 +1216,123 @@
             }
           },
           "rotation": "r"
+        }
+      },
+      {
+        "metadata": {
+          "tags": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "lemvlfz5icux"
+            }
+          },
+          "id": "3zuqFkfkvcJ327j2UG3h2O",
+          "type": "Entry",
+          "createdAt": "2022-06-13T19:46:49.172Z",
+          "updatedAt": "2022-06-24T02:09:01.910Z",
+          "environment": {
+            "sys": {
+              "id": "staging",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 5,
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "resources"
+            }
+          },
+          "locale": "en-US"
+        },
+        "fields": {
+          "resource": "Wool",
+          "terrain": "Pastures",
+          "icon": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "1uBkbbdwt1NdIYwUyzl6qn"
+            }
+          },
+          "hexImage": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "6q1h9lKk8Vc9MohPWofl3Y"
+            }
+          },
+          "cardImage": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "CIEoClBA1qT1PHQKd1wDP"
+            }
+          },
+          "commodity": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "6hX7hzKXDJxozd9y1RncVt"
+            }
+          }
+        }
+      },
+      {
+        "metadata": {
+          "tags": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "lemvlfz5icux"
+            }
+          },
+          "id": "4QdxWQ7anEPdbX4WUYfoec",
+          "type": "Entry",
+          "createdAt": "2022-06-20T19:02:47.396Z",
+          "updatedAt": "2022-06-24T01:17:25.575Z",
+          "environment": {
+            "sys": {
+              "id": "staging",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 3,
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "commodities"
+            }
+          },
+          "locale": "en-US"
+        },
+        "fields": {
+          "commodity": "Paper",
+          "icon": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "16MLgG3fSrA6BDslp9wATV"
+            }
+          },
+          "cardImage": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "1y6VAf7tzyqwvBAhxDYLwk"
+            }
+          }
         }
       },
       {
@@ -1336,6 +1675,72 @@
               "id": "lemvlfz5icux"
             }
           },
+          "id": "4zoD9xA3M8eGZE0kbpIW5W",
+          "type": "Entry",
+          "createdAt": "2022-06-13T19:44:54.922Z",
+          "updatedAt": "2022-06-24T02:07:20.548Z",
+          "environment": {
+            "sys": {
+              "id": "staging",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 4,
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "resources"
+            }
+          },
+          "locale": "en-US"
+        },
+        "fields": {
+          "resource": "Lumber",
+          "terrain": "Forests",
+          "icon": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "6OGltTvq7ZcJPPhDWBG9tI"
+            }
+          },
+          "hexImage": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "3Qui1G7hEmlAUydG83zmT2"
+            }
+          },
+          "cardImage": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "4gPrlYD9mtB8NkhOMFw6Uk"
+            }
+          },
+          "commodity": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "4QdxWQ7anEPdbX4WUYfoec"
+            }
+          }
+        }
+      },
+      {
+        "metadata": {
+          "tags": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "lemvlfz5icux"
+            }
+          },
           "id": "5FtktDXAj2OSgGSNRBTRo1",
           "type": "Entry",
           "createdAt": "2022-06-23T21:05:37.374Z",
@@ -1427,6 +1832,65 @@
               "id": "lemvlfz5icux"
             }
           },
+          "id": "5GvnCQXNxB1Wflb9Z4dYyS",
+          "type": "Entry",
+          "createdAt": "2022-06-13T19:42:57.850Z",
+          "updatedAt": "2022-06-24T02:06:46.861Z",
+          "environment": {
+            "sys": {
+              "id": "staging",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 3,
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "resources"
+            }
+          },
+          "locale": "en-US"
+        },
+        "fields": {
+          "resource": "Brick",
+          "terrain": "Hills",
+          "icon": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "2p68nM2R7dIHnkzDGdo6pX"
+            }
+          },
+          "hexImage": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "2ekieNLjvjTxVYghXHLKwX"
+            }
+          },
+          "cardImage": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "2x2mFr745hq0NZRbABQwwJ"
+            }
+          }
+        }
+      },
+      {
+        "metadata": {
+          "tags": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "lemvlfz5icux"
+            }
+          },
           "id": "5Xsi9U0UWxgfzUfj18qhMZ",
           "type": "Entry",
           "createdAt": "2022-07-07T20:28:15.804Z",
@@ -1472,6 +1936,57 @@
               "id": "lemvlfz5icux"
             }
           },
+          "id": "5lCO4ltq6Xzo6eBHZ9VbAH",
+          "type": "Entry",
+          "createdAt": "2022-06-20T19:03:01.093Z",
+          "updatedAt": "2022-06-24T01:17:07.066Z",
+          "environment": {
+            "sys": {
+              "id": "staging",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 3,
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "commodities"
+            }
+          },
+          "locale": "en-US"
+        },
+        "fields": {
+          "commodity": "Coin",
+          "icon": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "49PMTRULHMVTrzMNIfgsqK"
+            }
+          },
+          "cardImage": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "2tx2KVQ6GDaxm4tbMqFtwq"
+            }
+          }
+        }
+      },
+      {
+        "metadata": {
+          "tags": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "lemvlfz5icux"
+            }
+          },
           "id": "5mnWtPtDrkiWg9F0z5ARQO",
           "type": "Entry",
           "createdAt": "2022-07-07T14:49:25.505Z",
@@ -1502,6 +2017,51 @@
               "id": "5tedkLR1UfDURXvAnylKA9"
             }
           }
+        }
+      },
+      {
+        "metadata": {
+          "tags": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "lemvlfz5icux"
+            }
+          },
+          "id": "5pzZNS2dR8waiEfjdz0uYh",
+          "type": "Entry",
+          "createdAt": "2022-07-08T00:13:13.986Z",
+          "updatedAt": "2022-07-08T00:13:13.986Z",
+          "environment": {
+            "sys": {
+              "id": "staging",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 1,
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "resourcesFrequency"
+            }
+          },
+          "locale": "en-US"
+        },
+        "fields": {
+          "title": "Desert - 1",
+          "resource": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "1YyAwLhwaA82mkQ5daXzTH"
+            }
+          },
+          "frequency": 1
         }
       },
       {
@@ -1616,6 +2176,87 @@
               "id": "lemvlfz5icux"
             }
           },
+          "id": "62RVd2eC8iyQ6j8EAJhMsU",
+          "type": "Entry",
+          "createdAt": "2022-07-08T00:15:19.081Z",
+          "updatedAt": "2022-07-08T00:15:19.081Z",
+          "environment": {
+            "sys": {
+              "id": "staging",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 1,
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "gameResourcesConfig"
+            }
+          },
+          "locale": "en-US"
+        },
+        "fields": {
+          "title": "Catan/CK",
+          "resourcesFrequency": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "5pzZNS2dR8waiEfjdz0uYh"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "1cabykBxf5EiOioYhWVFzQ"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "9vPzJQpMyPAThNR0FEGg4"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "3U9FhLt087VIIqtrFUZtp5"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "7pRDuN4zCsLCEMGt90FG0q"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "7DVY1zEBL560g4LjgVYcAd"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "metadata": {
+          "tags": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "lemvlfz5icux"
+            }
+          },
           "id": "6HInD2Nm2NgRiqc4ZaLMbL",
           "type": "Entry",
           "createdAt": "2022-06-23T21:04:23.620Z",
@@ -1693,6 +2334,57 @@
           },
           "terrain": "Harbor",
           "description": "Trade 2 wool for 1 of any other resource"
+        }
+      },
+      {
+        "metadata": {
+          "tags": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "lemvlfz5icux"
+            }
+          },
+          "id": "6hX7hzKXDJxozd9y1RncVt",
+          "type": "Entry",
+          "createdAt": "2022-06-20T19:02:34.075Z",
+          "updatedAt": "2022-06-24T01:17:52.150Z",
+          "environment": {
+            "sys": {
+              "id": "staging",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 3,
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "commodities"
+            }
+          },
+          "locale": "en-US"
+        },
+        "fields": {
+          "commodity": "Cloth",
+          "icon": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "1jl7zwCIqiN7UCOq8JL40M"
+            }
+          },
+          "cardImage": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "kZxvVJOXCcW7v0jUkl5MC"
+            }
+          }
         }
       },
       {
@@ -1933,6 +2625,96 @@
               "id": "lemvlfz5icux"
             }
           },
+          "id": "7DVY1zEBL560g4LjgVYcAd",
+          "type": "Entry",
+          "createdAt": "2022-06-28T03:51:39.118Z",
+          "updatedAt": "2022-07-08T00:10:27.132Z",
+          "environment": {
+            "sys": {
+              "id": "staging",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 3,
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "resourcesFrequency"
+            }
+          },
+          "locale": "en-US"
+        },
+        "fields": {
+          "title": "Ore - 3",
+          "resource": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "01FL6ssKhJEEjWZ5cVBzMx"
+            }
+          },
+          "frequency": 3
+        }
+      },
+      {
+        "metadata": {
+          "tags": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "lemvlfz5icux"
+            }
+          },
+          "id": "7pRDuN4zCsLCEMGt90FG0q",
+          "type": "Entry",
+          "createdAt": "2022-07-08T00:11:30.259Z",
+          "updatedAt": "2022-07-08T00:11:30.259Z",
+          "environment": {
+            "sys": {
+              "id": "staging",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 1,
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "resourcesFrequency"
+            }
+          },
+          "locale": "en-US"
+        },
+        "fields": {
+          "title": "Wool - 4",
+          "resource": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "3zuqFkfkvcJ327j2UG3h2O"
+            }
+          },
+          "frequency": 4
+        }
+      },
+      {
+        "metadata": {
+          "tags": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "lemvlfz5icux"
+            }
+          },
           "id": "7raMCBsqqql8laQXiM52K6",
           "type": "Entry",
           "createdAt": "2022-06-23T21:06:37.833Z",
@@ -2056,6 +2838,110 @@
           },
           "rotation": "br"
         }
+      },
+      {
+        "metadata": {
+          "tags": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "lemvlfz5icux"
+            }
+          },
+          "id": "9vPzJQpMyPAThNR0FEGg4",
+          "type": "Entry",
+          "createdAt": "2022-07-08T00:12:32.740Z",
+          "updatedAt": "2022-07-08T00:12:32.740Z",
+          "environment": {
+            "sys": {
+              "id": "staging",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 1,
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "resourcesFrequency"
+            }
+          },
+          "locale": "en-US"
+        },
+        "fields": {
+          "title": "Grain - 4",
+          "resource": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "UlGC0FxKxmQGwKg4sUGn5"
+            }
+          },
+          "frequency": 4
+        }
+      },
+      {
+        "metadata": {
+          "tags": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "lemvlfz5icux"
+            }
+          },
+          "id": "UlGC0FxKxmQGwKg4sUGn5",
+          "type": "Entry",
+          "createdAt": "2022-06-13T19:44:03.622Z",
+          "updatedAt": "2022-06-24T02:06:57.714Z",
+          "environment": {
+            "sys": {
+              "id": "staging",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 3,
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "resources"
+            }
+          },
+          "locale": "en-US"
+        },
+        "fields": {
+          "resource": "Grain",
+          "terrain": "Fields",
+          "icon": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "4Ym6aFr9OvgAQqhUV0BIjF"
+            }
+          },
+          "hexImage": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "2IPjHvm6vZ2LsaHwSD9ZHH"
+            }
+          },
+          "cardImage": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "ugSI3GT4sWE96Pgq7omjW"
+            }
+          }
+        }
       }
     ],
     "Asset": [
@@ -2097,6 +2983,48 @@
               }
             },
             "fileName": "2for1_brick_r.png",
+            "contentType": "image/png"
+          }
+        }
+      },
+      {
+        "metadata": {
+          "tags": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "lemvlfz5icux"
+            }
+          },
+          "id": "16MLgG3fSrA6BDslp9wATV",
+          "type": "Asset",
+          "createdAt": "2022-06-20T18:57:41.283Z",
+          "updatedAt": "2022-06-23T20:44:04.177Z",
+          "environment": {
+            "sys": {
+              "id": "staging",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 2,
+          "locale": "en-US"
+        },
+        "fields": {
+          "title": "paper_icon",
+          "file": {
+            "url": "//images.ctfassets.net/lemvlfz5icux/16MLgG3fSrA6BDslp9wATV/e87f012dfcde569201819c0073e7a41c/paper_icon.png",
+            "details": {
+              "size": 105847,
+              "image": {
+                "width": 220,
+                "height": 220
+              }
+            },
+            "fileName": "paper_icon.png",
             "contentType": "image/png"
           }
         }
@@ -2239,6 +3167,49 @@
               "id": "lemvlfz5icux"
             }
           },
+          "id": "1LVhRIf3N09OITS8uU2NUv",
+          "type": "Asset",
+          "createdAt": "2022-06-23T20:44:06.666Z",
+          "updatedAt": "2022-06-23T20:44:06.666Z",
+          "environment": {
+            "sys": {
+              "id": "staging",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 1,
+          "locale": "en-US"
+        },
+        "fields": {
+          "title": "ore_card",
+          "description": "",
+          "file": {
+            "url": "//images.ctfassets.net/lemvlfz5icux/1LVhRIf3N09OITS8uU2NUv/78ade030c8cab771c5f0ffe6d88f4e14/card.jpg",
+            "details": {
+              "size": 72377,
+              "image": {
+                "width": 320,
+                "height": 450
+              }
+            },
+            "fileName": "card.jpg",
+            "contentType": "image/jpeg"
+          }
+        }
+      },
+      {
+        "metadata": {
+          "tags": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "lemvlfz5icux"
+            }
+          },
           "id": "1U10ZEmctKdhUYcTLuSw85",
           "type": "Asset",
           "createdAt": "2022-06-24T16:33:07.736Z",
@@ -2324,6 +3295,48 @@
               "id": "lemvlfz5icux"
             }
           },
+          "id": "1jl7zwCIqiN7UCOq8JL40M",
+          "type": "Asset",
+          "createdAt": "2022-06-20T18:54:58.806Z",
+          "updatedAt": "2022-06-23T20:44:03.946Z",
+          "environment": {
+            "sys": {
+              "id": "staging",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 2,
+          "locale": "en-US"
+        },
+        "fields": {
+          "title": "cloth_icon",
+          "file": {
+            "url": "//images.ctfassets.net/lemvlfz5icux/1jl7zwCIqiN7UCOq8JL40M/394863470702c471a541c41880983997/cloth_icon.png",
+            "details": {
+              "size": 90408,
+              "image": {
+                "width": 220,
+                "height": 220
+              }
+            },
+            "fileName": "cloth_icon.png",
+            "contentType": "image/png"
+          }
+        }
+      },
+      {
+        "metadata": {
+          "tags": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "lemvlfz5icux"
+            }
+          },
           "id": "1nIph4h4hHglaZhkZ1Aw3U",
           "type": "Asset",
           "createdAt": "2022-06-24T17:27:19.791Z",
@@ -2350,6 +3363,133 @@
               }
             },
             "fileName": "2for1_wool_bl.png",
+            "contentType": "image/png"
+          }
+        }
+      },
+      {
+        "metadata": {
+          "tags": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "lemvlfz5icux"
+            }
+          },
+          "id": "1uBkbbdwt1NdIYwUyzl6qn",
+          "type": "Asset",
+          "createdAt": "2022-06-13T19:46:43.362Z",
+          "updatedAt": "2022-06-23T20:43:55.214Z",
+          "environment": {
+            "sys": {
+              "id": "staging",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 2,
+          "locale": "en-US"
+        },
+        "fields": {
+          "title": "wool_icon",
+          "description": "",
+          "file": {
+            "url": "//images.ctfassets.net/lemvlfz5icux/1uBkbbdwt1NdIYwUyzl6qn/d1dad83c4a22e2cf6fe33c6cff119aab/icon.jpg",
+            "details": {
+              "size": 29772,
+              "image": {
+                "width": 220,
+                "height": 220
+              }
+            },
+            "fileName": "icon.jpg",
+            "contentType": "image/jpeg"
+          }
+        }
+      },
+      {
+        "metadata": {
+          "tags": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "lemvlfz5icux"
+            }
+          },
+          "id": "1xgyTRcfY3RFd9wJbLpizY",
+          "type": "Asset",
+          "createdAt": "2022-06-24T02:04:18.932Z",
+          "updatedAt": "2022-06-24T02:04:18.932Z",
+          "environment": {
+            "sys": {
+              "id": "staging",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 1,
+          "locale": "en-US"
+        },
+        "fields": {
+          "title": "ore_hex",
+          "file": {
+            "url": "//images.ctfassets.net/lemvlfz5icux/1xgyTRcfY3RFd9wJbLpizY/1269d91ad4b24f3f243b0bf42e3e66ce/hex.png",
+            "details": {
+              "size": 49952,
+              "image": {
+                "width": 500,
+                "height": 575
+              }
+            },
+            "fileName": "hex.png",
+            "contentType": "image/jpeg"
+          }
+        }
+      },
+      {
+        "metadata": {
+          "tags": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "lemvlfz5icux"
+            }
+          },
+          "id": "1y6VAf7tzyqwvBAhxDYLwk",
+          "type": "Asset",
+          "createdAt": "2022-06-24T01:09:12.239Z",
+          "updatedAt": "2022-06-24T01:09:12.239Z",
+          "environment": {
+            "sys": {
+              "id": "staging",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 1,
+          "locale": "en-US"
+        },
+        "fields": {
+          "title": "ck_paperlumber",
+          "file": {
+            "url": "//images.ctfassets.net/lemvlfz5icux/1y6VAf7tzyqwvBAhxDYLwk/617c013288006e49219839b3cd0c300b/ck_paperlumber.png",
+            "details": {
+              "size": 278698,
+              "image": {
+                "width": 320,
+                "height": 450
+              }
+            },
+            "fileName": "ck_paperlumber.png",
             "contentType": "image/png"
           }
         }
@@ -2393,6 +3533,48 @@
             },
             "fileName": "2for1_lumber_tr.png",
             "contentType": "image/png"
+          }
+        }
+      },
+      {
+        "metadata": {
+          "tags": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "lemvlfz5icux"
+            }
+          },
+          "id": "2IPjHvm6vZ2LsaHwSD9ZHH",
+          "type": "Asset",
+          "createdAt": "2022-06-24T02:02:53.612Z",
+          "updatedAt": "2022-06-24T02:02:53.612Z",
+          "environment": {
+            "sys": {
+              "id": "staging",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 1,
+          "locale": "en-US"
+        },
+        "fields": {
+          "title": "grain_hex",
+          "file": {
+            "url": "//images.ctfassets.net/lemvlfz5icux/2IPjHvm6vZ2LsaHwSD9ZHH/67005f825167b46fa8fb035bd3c87983/hex.png",
+            "details": {
+              "size": 43707,
+              "image": {
+                "width": 500,
+                "height": 575
+              }
+            },
+            "fileName": "hex.png",
+            "contentType": "image/jpeg"
           }
         }
       },
@@ -2477,6 +3659,91 @@
             },
             "fileName": "2for1_ore_tl.png",
             "contentType": "image/png"
+          }
+        }
+      },
+      {
+        "metadata": {
+          "tags": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "lemvlfz5icux"
+            }
+          },
+          "id": "2cwLLCBJGGk6WDkVbv2UGg",
+          "type": "Asset",
+          "createdAt": "2022-06-24T02:07:57.833Z",
+          "updatedAt": "2022-06-24T02:07:57.833Z",
+          "environment": {
+            "sys": {
+              "id": "staging",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 1,
+          "locale": "en-US"
+        },
+        "fields": {
+          "title": "desert_hex",
+          "description": "",
+          "file": {
+            "url": "//images.ctfassets.net/lemvlfz5icux/2cwLLCBJGGk6WDkVbv2UGg/66fd42019a92bfeea19d401452e83e66/hex.png",
+            "details": {
+              "size": 135687,
+              "image": {
+                "width": 277,
+                "height": 322
+              }
+            },
+            "fileName": "hex.png",
+            "contentType": "image/png"
+          }
+        }
+      },
+      {
+        "metadata": {
+          "tags": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "lemvlfz5icux"
+            }
+          },
+          "id": "2ekieNLjvjTxVYghXHLKwX",
+          "type": "Asset",
+          "createdAt": "2022-06-24T02:02:08.338Z",
+          "updatedAt": "2022-06-24T02:02:08.338Z",
+          "environment": {
+            "sys": {
+              "id": "staging",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 1,
+          "locale": "en-US"
+        },
+        "fields": {
+          "title": "brick_hex",
+          "file": {
+            "url": "//images.ctfassets.net/lemvlfz5icux/2ekieNLjvjTxVYghXHLKwX/0bf259e3a17b28646cee14eda6d341c8/hex.png",
+            "details": {
+              "size": 40731,
+              "image": {
+                "width": 500,
+                "height": 575
+              }
+            },
+            "fileName": "hex.png",
+            "contentType": "image/jpeg"
           }
         }
       },
@@ -2577,6 +3844,134 @@
               "id": "lemvlfz5icux"
             }
           },
+          "id": "2p68nM2R7dIHnkzDGdo6pX",
+          "type": "Asset",
+          "createdAt": "2022-06-13T19:42:53.047Z",
+          "updatedAt": "2022-06-23T20:43:54.253Z",
+          "environment": {
+            "sys": {
+              "id": "staging",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 2,
+          "locale": "en-US"
+        },
+        "fields": {
+          "title": "brick_icon",
+          "description": "",
+          "file": {
+            "url": "//images.ctfassets.net/lemvlfz5icux/2p68nM2R7dIHnkzDGdo6pX/ee32f62dcaf734b41b86659b7a2d8717/icon.jpg",
+            "details": {
+              "size": 32785,
+              "image": {
+                "width": 220,
+                "height": 220
+              }
+            },
+            "fileName": "icon.jpg",
+            "contentType": "image/jpeg"
+          }
+        }
+      },
+      {
+        "metadata": {
+          "tags": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "lemvlfz5icux"
+            }
+          },
+          "id": "2tx2KVQ6GDaxm4tbMqFtwq",
+          "type": "Asset",
+          "createdAt": "2022-06-24T01:16:51.868Z",
+          "updatedAt": "2022-06-24T01:16:51.868Z",
+          "environment": {
+            "sys": {
+              "id": "staging",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 1,
+          "locale": "en-US"
+        },
+        "fields": {
+          "title": "ck_coinore",
+          "file": {
+            "url": "//images.ctfassets.net/lemvlfz5icux/2tx2KVQ6GDaxm4tbMqFtwq/a44f459f96ac2450a8bc9c4127e1fe8b/ck_coinore.png",
+            "details": {
+              "size": 272095,
+              "image": {
+                "width": 320,
+                "height": 450
+              }
+            },
+            "fileName": "ck_coinore.png",
+            "contentType": "image/png"
+          }
+        }
+      },
+      {
+        "metadata": {
+          "tags": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "lemvlfz5icux"
+            }
+          },
+          "id": "2x2mFr745hq0NZRbABQwwJ",
+          "type": "Asset",
+          "createdAt": "2022-06-23T20:44:05.622Z",
+          "updatedAt": "2022-06-23T20:44:05.622Z",
+          "environment": {
+            "sys": {
+              "id": "staging",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 1,
+          "locale": "en-US"
+        },
+        "fields": {
+          "title": "brick_card",
+          "description": "",
+          "file": {
+            "url": "//images.ctfassets.net/lemvlfz5icux/2x2mFr745hq0NZRbABQwwJ/541ca49b83ed47c9374184eac78ddd85/card.jpg",
+            "details": {
+              "size": 70925,
+              "image": {
+                "width": 320,
+                "height": 450
+              }
+            },
+            "fileName": "card.jpg",
+            "contentType": "image/jpeg"
+          }
+        }
+      },
+      {
+        "metadata": {
+          "tags": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "lemvlfz5icux"
+            }
+          },
           "id": "2zgmpdg8JqykD0sn59lzwA",
           "type": "Asset",
           "createdAt": "2022-06-24T17:55:40.678Z",
@@ -2619,6 +4014,49 @@
               "id": "lemvlfz5icux"
             }
           },
+          "id": "3Bgp5PYNAwgIjFEFKZQOgs",
+          "type": "Asset",
+          "createdAt": "2022-06-23T20:44:07.412Z",
+          "updatedAt": "2022-06-23T20:44:07.412Z",
+          "environment": {
+            "sys": {
+              "id": "staging",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 1,
+          "locale": "en-US"
+        },
+        "fields": {
+          "title": "desert_card",
+          "description": "",
+          "file": {
+            "url": "//images.ctfassets.net/lemvlfz5icux/3Bgp5PYNAwgIjFEFKZQOgs/046d672f5993bf0a84d4ac7f1a37dff2/card.jpg",
+            "details": {
+              "size": 40342,
+              "image": {
+                "width": 320,
+                "height": 450
+              }
+            },
+            "fileName": "card.jpg",
+            "contentType": "image/jpeg"
+          }
+        }
+      },
+      {
+        "metadata": {
+          "tags": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "lemvlfz5icux"
+            }
+          },
           "id": "3JZda1Sq0jFvUkYJTIWreb",
           "type": "Asset",
           "createdAt": "2022-06-23T20:44:09.503Z",
@@ -2646,6 +4084,48 @@
               }
             },
             "fileName": "card.jpg",
+            "contentType": "image/jpeg"
+          }
+        }
+      },
+      {
+        "metadata": {
+          "tags": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "lemvlfz5icux"
+            }
+          },
+          "id": "3Qui1G7hEmlAUydG83zmT2",
+          "type": "Asset",
+          "createdAt": "2022-06-24T02:02:33.069Z",
+          "updatedAt": "2022-06-24T02:02:33.069Z",
+          "environment": {
+            "sys": {
+              "id": "staging",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 1,
+          "locale": "en-US"
+        },
+        "fields": {
+          "title": "lumber_hex",
+          "file": {
+            "url": "//images.ctfassets.net/lemvlfz5icux/3Qui1G7hEmlAUydG83zmT2/af27f5ff9b308a099f2ab8a49dd4c1e5/hex.png",
+            "details": {
+              "size": 49628,
+              "image": {
+                "width": 500,
+                "height": 575
+              }
+            },
+            "fileName": "hex.png",
             "contentType": "image/jpeg"
           }
         }
@@ -2731,6 +4211,49 @@
             },
             "fileName": "2for1_brick_l.png",
             "contentType": "image/png"
+          }
+        }
+      },
+      {
+        "metadata": {
+          "tags": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "lemvlfz5icux"
+            }
+          },
+          "id": "3uC1Q5NwNzk6brSaITotO3",
+          "type": "Asset",
+          "createdAt": "2022-06-13T19:45:24.834Z",
+          "updatedAt": "2022-06-23T20:43:54.996Z",
+          "environment": {
+            "sys": {
+              "id": "staging",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 2,
+          "locale": "en-US"
+        },
+        "fields": {
+          "title": "ore_icon",
+          "description": "",
+          "file": {
+            "url": "//images.ctfassets.net/lemvlfz5icux/3uC1Q5NwNzk6brSaITotO3/49795e086079ba42e0f9ae24d0ede8b4/icon.jpg",
+            "details": {
+              "size": 36312,
+              "image": {
+                "width": 220,
+                "height": 220
+              }
+            },
+            "fileName": "icon.jpg",
+            "contentType": "image/jpeg"
           }
         }
       },
@@ -2873,6 +4396,48 @@
               "id": "lemvlfz5icux"
             }
           },
+          "id": "49PMTRULHMVTrzMNIfgsqK",
+          "type": "Asset",
+          "createdAt": "2022-06-20T18:58:04.937Z",
+          "updatedAt": "2022-06-23T20:44:04.416Z",
+          "environment": {
+            "sys": {
+              "id": "staging",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 2,
+          "locale": "en-US"
+        },
+        "fields": {
+          "title": "coin_icon",
+          "file": {
+            "url": "//images.ctfassets.net/lemvlfz5icux/49PMTRULHMVTrzMNIfgsqK/7d1b20f600f7447286e56ca3137c7df8/coin_icon.png",
+            "details": {
+              "size": 108147,
+              "image": {
+                "width": 220,
+                "height": 220
+              }
+            },
+            "fileName": "coin_icon.png",
+            "contentType": "image/png"
+          }
+        }
+      },
+      {
+        "metadata": {
+          "tags": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "lemvlfz5icux"
+            }
+          },
           "id": "4K8ugoZCNnVggNCTGjMBv4",
           "type": "Asset",
           "createdAt": "2022-06-24T16:33:07.728Z",
@@ -2957,6 +4522,49 @@
               "id": "lemvlfz5icux"
             }
           },
+          "id": "4Ym6aFr9OvgAQqhUV0BIjF",
+          "type": "Asset",
+          "createdAt": "2022-06-13T19:43:57.681Z",
+          "updatedAt": "2022-06-23T20:43:54.492Z",
+          "environment": {
+            "sys": {
+              "id": "staging",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 2,
+          "locale": "en-US"
+        },
+        "fields": {
+          "title": "grain_icon",
+          "description": "",
+          "file": {
+            "url": "//images.ctfassets.net/lemvlfz5icux/4Ym6aFr9OvgAQqhUV0BIjF/c51bfbe9593e4d153cdd543a7eda70a0/icon.jpg",
+            "details": {
+              "size": 36552,
+              "image": {
+                "width": 220,
+                "height": 220
+              }
+            },
+            "fileName": "icon.jpg",
+            "contentType": "image/jpeg"
+          }
+        }
+      },
+      {
+        "metadata": {
+          "tags": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "lemvlfz5icux"
+            }
+          },
           "id": "4dAn9R5VoRfsPePkbf2gf8",
           "type": "Asset",
           "createdAt": "2022-06-24T17:34:15.329Z",
@@ -2984,6 +4592,49 @@
             },
             "fileName": "2for1_ore_tr.png",
             "contentType": "image/png"
+          }
+        }
+      },
+      {
+        "metadata": {
+          "tags": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "lemvlfz5icux"
+            }
+          },
+          "id": "4gPrlYD9mtB8NkhOMFw6Uk",
+          "type": "Asset",
+          "createdAt": "2022-06-23T20:44:06.898Z",
+          "updatedAt": "2022-06-23T20:44:06.898Z",
+          "environment": {
+            "sys": {
+              "id": "staging",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 1,
+          "locale": "en-US"
+        },
+        "fields": {
+          "title": "lumber_card",
+          "description": "",
+          "file": {
+            "url": "//images.ctfassets.net/lemvlfz5icux/4gPrlYD9mtB8NkhOMFw6Uk/0b97d3a85584b515b6647bb3ca07cab7/card.jpg",
+            "details": {
+              "size": 77274,
+              "image": {
+                "width": 320,
+                "height": 450
+              }
+            },
+            "fileName": "card.jpg",
+            "contentType": "image/jpeg"
           }
         }
       },
@@ -3506,6 +5157,91 @@
               "id": "lemvlfz5icux"
             }
           },
+          "id": "6OGltTvq7ZcJPPhDWBG9tI",
+          "type": "Asset",
+          "createdAt": "2022-06-13T19:44:50.258Z",
+          "updatedAt": "2022-06-23T20:43:54.720Z",
+          "environment": {
+            "sys": {
+              "id": "staging",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 2,
+          "locale": "en-US"
+        },
+        "fields": {
+          "title": "lumber_icon",
+          "description": "",
+          "file": {
+            "url": "//images.ctfassets.net/lemvlfz5icux/6OGltTvq7ZcJPPhDWBG9tI/65f60bf872a14f7a2568f865e0dffffe/icon.jpg",
+            "details": {
+              "size": 36256,
+              "image": {
+                "width": 220,
+                "height": 220
+              }
+            },
+            "fileName": "icon.jpg",
+            "contentType": "image/jpeg"
+          }
+        }
+      },
+      {
+        "metadata": {
+          "tags": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "lemvlfz5icux"
+            }
+          },
+          "id": "6q1h9lKk8Vc9MohPWofl3Y",
+          "type": "Asset",
+          "createdAt": "2022-06-24T02:03:58.001Z",
+          "updatedAt": "2022-06-24T02:03:58.001Z",
+          "environment": {
+            "sys": {
+              "id": "staging",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 1,
+          "locale": "en-US"
+        },
+        "fields": {
+          "title": "wool_hex",
+          "file": {
+            "url": "//images.ctfassets.net/lemvlfz5icux/6q1h9lKk8Vc9MohPWofl3Y/522e03caefe3a5e107b4e8d1feb12e7e/hex.png",
+            "details": {
+              "size": 32237,
+              "image": {
+                "width": 500,
+                "height": 575
+              }
+            },
+            "fileName": "hex.png",
+            "contentType": "image/jpeg"
+          }
+        }
+      },
+      {
+        "metadata": {
+          "tags": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "lemvlfz5icux"
+            }
+          },
           "id": "6tItW3qjs7USPVQy88IF4w",
           "type": "Asset",
           "createdAt": "2022-06-24T17:27:19.770Z",
@@ -3843,6 +5579,49 @@
               "id": "lemvlfz5icux"
             }
           },
+          "id": "CIEoClBA1qT1PHQKd1wDP",
+          "type": "Asset",
+          "createdAt": "2022-06-23T20:44:06.170Z",
+          "updatedAt": "2022-06-23T20:44:06.170Z",
+          "environment": {
+            "sys": {
+              "id": "staging",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 1,
+          "locale": "en-US"
+        },
+        "fields": {
+          "title": "wool_card",
+          "description": "",
+          "file": {
+            "url": "//images.ctfassets.net/lemvlfz5icux/CIEoClBA1qT1PHQKd1wDP/28f990c4dc7b3afe33a8c67879e3be1e/card.jpg",
+            "details": {
+              "size": 63402,
+              "image": {
+                "width": 320,
+                "height": 450
+              }
+            },
+            "fileName": "card.jpg",
+            "contentType": "image/jpeg"
+          }
+        }
+      },
+      {
+        "metadata": {
+          "tags": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "lemvlfz5icux"
+            }
+          },
           "id": "Sd6xFFqVjqcD7la1en1gL",
           "type": "Asset",
           "createdAt": "2022-06-24T17:55:40.704Z",
@@ -3869,6 +5648,48 @@
               }
             },
             "fileName": "2for1_lumber_l.png",
+            "contentType": "image/png"
+          }
+        }
+      },
+      {
+        "metadata": {
+          "tags": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "lemvlfz5icux"
+            }
+          },
+          "id": "kZxvVJOXCcW7v0jUkl5MC",
+          "type": "Asset",
+          "createdAt": "2022-06-24T00:58:08.430Z",
+          "updatedAt": "2022-06-24T00:58:08.430Z",
+          "environment": {
+            "sys": {
+              "id": "staging",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 1,
+          "locale": "en-US"
+        },
+        "fields": {
+          "title": "ck_clothwool",
+          "file": {
+            "url": "//images.ctfassets.net/lemvlfz5icux/kZxvVJOXCcW7v0jUkl5MC/96dde9fc1eb885b9dcf63df84a1d3381/ck_clothwool.png",
+            "details": {
+              "size": 245999,
+              "image": {
+                "width": 320,
+                "height": 450
+              }
+            },
+            "fileName": "ck_clothwool.png",
             "contentType": "image/png"
           }
         }
@@ -3912,6 +5733,49 @@
             },
             "fileName": "3for1_r.png",
             "contentType": "image/png"
+          }
+        }
+      },
+      {
+        "metadata": {
+          "tags": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "lemvlfz5icux"
+            }
+          },
+          "id": "ugSI3GT4sWE96Pgq7omjW",
+          "type": "Asset",
+          "createdAt": "2022-06-23T20:44:05.889Z",
+          "updatedAt": "2022-06-23T20:44:05.889Z",
+          "environment": {
+            "sys": {
+              "id": "staging",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 1,
+          "locale": "en-US"
+        },
+        "fields": {
+          "title": "grain_card",
+          "description": "",
+          "file": {
+            "url": "//images.ctfassets.net/lemvlfz5icux/ugSI3GT4sWE96Pgq7omjW/848a026500b70715ee9a4cf8c8b2ac14/card.jpg",
+            "details": {
+              "size": 71995,
+              "image": {
+                "width": 320,
+                "height": 450
+              }
+            },
+            "fileName": "card.jpg",
+            "contentType": "image/jpeg"
           }
         }
       }

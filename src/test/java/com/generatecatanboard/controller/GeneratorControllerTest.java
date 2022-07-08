@@ -75,7 +75,7 @@ class GeneratorControllerTest {
 
     private ScenarioProperties getMockScenarioProperties() throws Exception {
         ObjectMapper om = new ObjectMapper();
-        return om.readValue(this.getClass().getClassLoader().getResourceAsStream("mocks/mockGameProps.json"), ScenarioProperties.class);
+        return om.readValue(this.getClass().getClassLoader().getResourceAsStream("mocks/mockScenarioProps.json"), ScenarioProperties.class);
     }
 
     private BoardData getMockBoardData() throws Exception {

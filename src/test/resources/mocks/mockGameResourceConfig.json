@@ -1,0 +1,40 @@
+{
+  "resourcesFrequency": [
+    {
+      "resource": {
+        "resource": "Desert"
+      },
+      "frequency": 1.0
+    },
+    {
+      "resource": {
+        "resource": "Lumber"
+      },
+      "frequency": 4.0
+    },
+    {
+      "resource": {
+        "resource": "Grain"
+      },
+      "frequency": 4.0
+    },
+    {
+      "resource": {
+        "resource": "Brick"
+      },
+      "frequency": 3.0
+    },
+    {
+      "resource": {
+        "resource": "Wool"
+      },
+      "frequency": 4.0
+    },
+    {
+      "resource": {
+        "resource": "Ore"
+      },
+      "frequency": 3.0
+    }
+  ]
+}

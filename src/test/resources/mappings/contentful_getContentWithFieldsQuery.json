@@ -15,7 +15,7 @@
         "equalTo": "scenario"
       },
       "select": {
-        "equalTo": "sys,fields.title,fields.scenarioUrl,fields.numbersFrequency,fields.resourcesFrequency,fields.rowConfig,fields.gameHarborConfig"
+        "equalTo": "sys,fields.title,fields.scenarioUrl,fields.numbersFrequency,fields.rowConfig,fields.gameHarborConfig,fields.gameResourcesConfig"
       }
     }
   },

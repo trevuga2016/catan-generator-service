@@ -1,0 +1,203 @@
+{
+  "title": "The Settlers of Catan",
+  "scenarioUrl": "catan",
+  "numbersFrequency": {
+    "2": 1.0,
+    "3": 2.0,
+    "4": 2.0,
+    "5": 2.0,
+    "6": 2.0,
+    "8": 2.0,
+    "9": 2.0,
+    "10": 2.0,
+    "11": 2.0,
+    "12": 1.0
+  },
+  "rowConfig": [
+    3.0,
+    4.0,
+    5.0,
+    4.0,
+    3.0
+  ],
+  "backgroundImage": "https://images.ctfassets.net/lemvlfz5icux/2JsBeiy2CdnHGVbbFQn73H/ddacfffaf63bc6b5895c2250ec877639/catan_backdrop.webp?fm=webp",
+  "backgroundColor": "c21f26",
+  "gameHarborConfig": {
+    "harborConfig": [
+      {
+        "harborType": {
+          "id": "sea",
+          "terrain": "Sea"
+        }
+      },
+      {
+        "harborType": {
+          "id": "3for1",
+          "terrain": "Harbor"
+        },
+        "rotation": "br"
+      },
+      {
+        "harborType": {
+          "id": "sea",
+          "terrain": "Sea"
+        }
+      },
+      {
+        "harborType": {
+          "id": "3for1",
+          "terrain": "Harbor"
+        },
+        "rotation": "bl"
+      },
+      {
+        "harborType": {
+          "id": "2for1_wool",
+          "terrain": "Harbor"
+        },
+        "rotation": "br"
+      },
+      {
+        "harborType": {
+          "id": "sea",
+          "terrain": "Sea"
+        }
+      },
+      {
+        "harborType": {
+          "id": "sea",
+          "terrain": "Sea"
+        }
+      },
+      {
+        "harborType": {
+          "id": "2for1_brick",
+          "terrain": "Harbor"
+        },
+        "rotation": "l"
+      },
+      {
+        "harborType": {
+          "id": "3for1",
+          "terrain": "Harbor"
+        },
+        "rotation": "r"
+      },
+      {
+        "harborType": {
+          "id": "sea",
+          "terrain": "Sea"
+        }
+      },
+      {
+        "harborType": {
+          "id": "sea",
+          "terrain": "Sea"
+        }
+      },
+      {
+        "harborType": {
+          "id": "2for1_lumber",
+          "terrain": "Harbor"
+        },
+        "rotation": "l"
+      },
+      {
+        "harborType": {
+          "id": "2for1_ore",
+          "terrain": "Harbor"
+        },
+        "rotation": "tr"
+      },
+      {
+        "harborType": {
+          "id": "sea",
+          "terrain": "Sea"
+        }
+      },
+      {
+        "harborType": {
+          "id": "sea",
+          "terrain": "Sea"
+        }
+      },
+      {
+        "harborType": {
+          "id": "2for1_grain",
+          "terrain": "Harbor"
+        },
+        "rotation": "tr"
+      },
+      {
+        "harborType": {
+          "id": "sea",
+          "terrain": "Sea"
+        }
+      },
+      {
+        "harborType": {
+          "id": "3for1",
+          "terrain": "Harbor"
+        },
+        "rotation": "tl"
+      }
+    ]
+  },
+  "gameResourcesConfig": {
+    "resourcesFrequency": [
+      {
+        "resource": {
+          "resource": "Desert"
+        },
+        "frequency": 1.0
+      },
+      {
+        "resource": {
+          "resource": "Lumber",
+          "icon": "https://images.ctfassets.net/lemvlfz5icux/6OGltTvq7ZcJPPhDWBG9tI/65f60bf872a14f7a2568f865e0dffffe/icon.jpg?fm=webp",
+          "commodity": {
+            "commodity": "Paper",
+            "icon": "https://images.ctfassets.net/lemvlfz5icux/16MLgG3fSrA6BDslp9wATV/e87f012dfcde569201819c0073e7a41c/paper_icon.png?fm=webp"
+          }
+        },
+        "frequency": 4.0
+      },
+      {
+        "resource": {
+          "resource": "Grain",
+          "icon": "https://images.ctfassets.net/lemvlfz5icux/4Ym6aFr9OvgAQqhUV0BIjF/c51bfbe9593e4d153cdd543a7eda70a0/icon.jpg?fm=webp"
+        },
+        "frequency": 4.0
+      },
+      {
+        "resource": {
+          "resource": "Brick",
+          "icon": "https://images.ctfassets.net/lemvlfz5icux/2p68nM2R7dIHnkzDGdo6pX/ee32f62dcaf734b41b86659b7a2d8717/icon.jpg?fm=webp"
+        },
+        "frequency": 3.0
+      },
+      {
+        "resource": {
+          "resource": "Wool",
+          "icon": "https://images.ctfassets.net/lemvlfz5icux/1uBkbbdwt1NdIYwUyzl6qn/d1dad83c4a22e2cf6fe33c6cff119aab/icon.jpg?fm=webp",
+          "commodity": {
+            "commodity": "Cloth",
+            "icon": "https://images.ctfassets.net/lemvlfz5icux/1jl7zwCIqiN7UCOq8JL40M/394863470702c471a541c41880983997/cloth_icon.png?fm=webp"
+          }
+        },
+        "frequency": 4.0
+      },
+      {
+        "resource": {
+          "resource": "Ore",
+          "icon": "https://images.ctfassets.net/lemvlfz5icux/3uC1Q5NwNzk6brSaITotO3/49795e086079ba42e0f9ae24d0ede8b4/icon.jpg?fm=webp",
+          "commodity": {
+            "commodity": "Coin",
+            "icon": "https://images.ctfassets.net/lemvlfz5icux/49PMTRULHMVTrzMNIfgsqK/7d1b20f600f7447286e56ca3137c7df8/coin_icon.png?fm=webp"
+          }
+        },
+        "frequency": 3.0
+      }
+    ]
+  }
+}

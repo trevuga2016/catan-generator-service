@@ -6,6 +6,8 @@ import com.generatecatanboard.domain.GameHarborConfig;
 import com.generatecatanboard.domain.HarborConfig;
 import com.generatecatanboard.domain.Hex;
 import com.generatecatanboard.domain.Rows;
+import com.generatecatanboard.domain.ScenarioProperties;
+import com.generatecatanboard.domain.Statistics;
 import com.generatecatanboard.exceptions.InvalidBoardConfigurationException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Service;
@@ -22,15 +24,24 @@ public class RandomizeHarborsGenerator extends GeneratorService implements Gener
     }
 
     @Override
-    public BoardData generateRandomBoard(List<Double> rowConfig, List<String> resourcesList, List<String> numbersList, GameHarborConfig gameHarborConfig) throws InvalidBoardConfigurationException {
+    public BoardData generateRandomBoard(ScenarioProperties scenarioProperties) throws InvalidBoardConfigurationException {
+        // Get configs
+        List<Double> rowConfig = scenarioProperties.getRowConfig();
+        List<String> resourcesList = getListOfResources(scenarioProperties.getGameResourcesConfig());
+        List<String> numbersList = getListOfNumberedItems(scenarioProperties.getNumbersFrequency());
+        validateConfiguration(resourcesList, rowConfig);
+        GameHarborConfig gameHarborConfig = scenarioProperties.getGameHarborConfig();
         validateHarborConfiguration(rowConfig, gameHarborConfig);
         List<HarborConfig> harborConfigs = gameHarborConfig.getHarborConfig();
         List<String> listOfAvailableHarbors = createListOfAvailableHarbors(harborConfigs);
+        // Get hexes
         List<Rows> rowsOfHexes = new ArrayList<>();
         rowsOfHexes.add(createRowOfRandomHarbors(harborConfigs, listOfAvailableHarbors, getSizeOfFirstRow(rowConfig) + 1));
         rowsOfHexes.addAll(createRowsOfHexesWithRandomHarbors(rowConfig, resourcesList, numbersList, harborConfigs, listOfAvailableHarbors));
         rowsOfHexes.add(createRowOfRandomHarbors(harborConfigs, listOfAvailableHarbors, getSizeOfLastRow(rowConfig) + 1));
-        return BoardData.builder().gameBoard(rowsOfHexes).build();
+        // Get statistics
+        List<Statistics> statistics = calculateBoardStatistics(rowsOfHexes, scenarioProperties);
+        return BoardData.builder().gameBoard(rowsOfHexes).gameStatistics(statistics).build();
     }
 
     public List<String> createListOfAvailableHarbors(List<HarborConfig> harborConfigs) {

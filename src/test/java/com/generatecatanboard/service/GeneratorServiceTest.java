@@ -5,6 +5,7 @@ import com.generatecatanboard.domain.BoardData;
 import com.generatecatanboard.domain.GameHarborConfig;
 import com.generatecatanboard.domain.Probability;
 import com.generatecatanboard.domain.ScenarioProperties;
+import com.generatecatanboard.domain.Statistics;
 import com.generatecatanboard.exceptions.InvalidBoardConfigurationException;
 import com.generatecatanboard.exceptions.PropertiesNotFoundException;
 import org.junit.jupiter.api.Test;
@@ -16,6 +17,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.cloud.contract.wiremock.AutoConfigureWireMock;
 import org.springframework.context.annotation.Bean;
+import wiremock.org.apache.commons.lang3.StringUtils;
 
 import java.util.List;
 
@@ -54,7 +56,7 @@ class GeneratorServiceTest extends ServiceTestBaseClass {
     void shouldGetScenarioProperties() throws Exception {
         ScenarioProperties scenarioProperties = generatorService.getScenarioProperties("test");
         assertNotNull(scenarioProperties);
-        assertEquals("The Test of Testan", scenarioProperties.getTitle());
+        assertEquals("The Settlers of Catan", scenarioProperties.getTitle());
         assertEquals("test", scenarioProperties.getScenarioUrl());
         assertEquals("abcdefg", scenarioProperties.getContentfulId());
         assertEquals("https://images.ctfassets.net/lemvlfz5icux/2JsBeiy2CdnHGVbbFQn73H/ddacfffaf63bc6b5895c2250ec877639/catan_backdrop.webp?fm=webp", scenarioProperties.getBackgroundImage());
@@ -101,8 +103,8 @@ class GeneratorServiceTest extends ServiceTestBaseClass {
     }
 
     @Test
-    void shouldGetResourcesList() {
-        List<String> resourcesList = generatorService.getListOfNumberedItems(mockResourcesFrequency());
+    void shouldGetResourcesList() throws Exception {
+        List<String> resourcesList = generatorService.getListOfResources(getMockGameResourcesConfig());
         assertNotNull(resourcesList);
         assertEquals(19,  resourcesList.size());
     }
@@ -118,13 +120,13 @@ class GeneratorServiceTest extends ServiceTestBaseClass {
 
     @Test
     void shouldValidateConfiguration() throws Exception {
-        List<String> resourcesList = generatorService.getListOfNumberedItems(mockResourcesFrequency());
+        List<String> resourcesList = generatorService.getListOfResources(getMockGameResourcesConfig());
         generatorService.validateConfiguration(resourcesList, List.of(3.0, 4.0, 5.0, 4.0, 3.0));
     }
 
     @Test
-    void shouldCatchInvalidConfiguration() {
-        List<String> resourcesList = generatorService.getListOfNumberedItems(mockResourcesFrequency());
+    void shouldCatchInvalidConfiguration() throws Exception {
+        List<String> resourcesList = generatorService.getListOfResources(getMockGameResourcesConfig());
         resourcesList.remove(0);
         Exception exception = assertThrows(InvalidBoardConfigurationException.class, () -> {
             generatorService.validateConfiguration(resourcesList, List.of(3.0, 4.0, 5.0, 4.0, 3.0));
@@ -171,10 +173,31 @@ class GeneratorServiceTest extends ServiceTestBaseClass {
         assertEquals("The expected number of harbor configs for this scenario (19) does not equal the provided number of harbor configs (18)", exception.getMessage());
     }
 
+    @Test
+    void shouldCalculateBoardStatistics() throws Exception {
+        BoardData mockBoardData = getMockBoardData();
+        List<Statistics> statistics = generatorService.calculateBoardStatistics(mockBoardData.getGameBoard(), getMockCitiesAndKnightsProps());
+        assertNotNull(statistics);
+        assertEquals(5, statistics.size());
+        statistics.forEach(stat -> {
+            if ("Lumber".equals(stat.getResource())) {
+                assertEquals("Paper", stat.getCommodity());
+                assertTrue(StringUtils.startsWith(stat.getCommodityIcon(), "https://"));
+            } else if ("Wool".equals(stat.getResource())) {
+                assertEquals("Cloth", stat.getCommodity());
+                assertTrue(StringUtils.startsWith(stat.getCommodityIcon(), "https://"));
+            } else if ("Ore".equals(stat.getResource())) {
+                assertEquals("Coin", stat.getCommodity());
+                assertTrue(StringUtils.startsWith(stat.getCommodityIcon(), "https://"));
+            }
+        });
+    }
+
     @ParameterizedTest
     @ValueSource(strings = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"})
     void shouldGetProbabilityValue(String number) {
-        String value = generatorService.getProbabilityValue(number);
+        double dValue = generatorService.getProbabilityValue(number);
+        String value = String.format("%.2f", dValue * 100);
         if ("2".equals(number) || "12".equals(number)) {
             assertEquals("2.78", value);
         } else if ("3".equals(number) || "11".equals(number)) {
@@ -233,7 +256,7 @@ class GeneratorServiceTest extends ServiceTestBaseClass {
             assertEquals("16.67", probability.getValue());
         } else {
             assertEquals("", probability.getText());
-            assertEquals("", probability.getValue());
+            assertEquals("0.00", probability.getValue());
         }
     }
 

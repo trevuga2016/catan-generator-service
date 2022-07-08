@@ -2,7 +2,7 @@
   "sys": {
     "type": "Array"
   },
-  "total": 18,
+  "total": 19,
   "skip": 0,
   "limit": 100,
   "items": [
@@ -18,7 +18,7 @@
         "id": "scenario",
         "type": "ContentType",
         "createdAt": "2022-05-10T01:06:32.278Z",
-        "updatedAt": "2022-07-07T15:06:33.669Z",
+        "updatedAt": "2022-07-08T00:16:13.010Z",
         "environment": {
           "sys": {
             "id": "staging",
@@ -26,7 +26,7 @@
             "linkType": "Environment"
           }
         },
-        "revision": 40
+        "revision": 45
       },
       "displayField": "title",
       "name": "Scenario",
@@ -132,13 +132,38 @@
           "omitted": false
         },
         {
-          "id": "portConfig",
-          "name": "portConfig",
-          "type": "Object",
+          "id": "gameResourcesConfig",
+          "name": "gameResourcesConfig",
+          "type": "Link",
           "localized": false,
           "required": false,
           "disabled": false,
-          "omitted": false
+          "omitted": false,
+          "linkType": "Entry",
+          "validations": [
+            {
+              "linkContentType": [
+                "gameResourcesConfig"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "gameHarborConfig",
+          "name": "gameHarborConfig",
+          "type": "Link",
+          "localized": false,
+          "required": false,
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Entry",
+          "validations": [
+            {
+              "linkContentType": [
+                "gameHarborConfig"
+              ]
+            }
+          ]
         },
         {
           "id": "disabled",
@@ -186,10 +211,104 @@
           "required": false,
           "disabled": false,
           "omitted": false
+        }
+      ]
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "lemvlfz5icux"
+          }
+        },
+        "id": "gameResourcesConfig",
+        "type": "ContentType",
+        "createdAt": "2022-07-08T00:14:45.838Z",
+        "updatedAt": "2022-07-08T00:14:45.838Z",
+        "environment": {
+          "sys": {
+            "id": "staging",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "revision": 1
+      },
+      "displayField": "title",
+      "name": "Game Resources Config",
+      "description": "",
+      "fields": [
+        {
+          "id": "title",
+          "name": "title",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "disabled": false,
+          "omitted": false
         },
         {
-          "id": "gameHarborConfig",
-          "name": "gameHarborConfig",
+          "id": "resourcesFrequency",
+          "name": "resources frequency",
+          "type": "Array",
+          "localized": false,
+          "required": false,
+          "disabled": false,
+          "omitted": false,
+          "items": {
+            "type": "Link",
+            "validations": [
+              {
+                "linkContentType": [
+                  "resourcesFrequency"
+                ]
+              }
+            ],
+            "linkType": "Entry"
+          }
+        }
+      ]
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "lemvlfz5icux"
+          }
+        },
+        "id": "resourcesFrequency",
+        "type": "ContentType",
+        "createdAt": "2022-06-28T03:50:59.437Z",
+        "updatedAt": "2022-07-07T23:59:18.555Z",
+        "environment": {
+          "sys": {
+            "id": "staging",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "revision": 2
+      },
+      "displayField": "title",
+      "name": "Resources Frequency",
+      "description": "",
+      "fields": [
+        {
+          "id": "title",
+          "name": "title",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "resource",
+          "name": "resource",
           "type": "Link",
           "localized": false,
           "required": false,
@@ -199,10 +318,19 @@
           "validations": [
             {
               "linkContentType": [
-                "gameHarborConfig"
+                "resources"
               ]
             }
           ]
+        },
+        {
+          "id": "frequency",
+          "name": "frequency",
+          "type": "Integer",
+          "localized": false,
+          "required": false,
+          "disabled": false,
+          "omitted": false
         }
       ]
     },
@@ -319,60 +447,6 @@
           "id": "rotation",
           "name": "rotation",
           "type": "Symbol",
-          "localized": false,
-          "required": false,
-          "disabled": false,
-          "omitted": false
-        }
-      ]
-    },
-    {
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": "lemvlfz5icux"
-          }
-        },
-        "id": "resourcesFrequency",
-        "type": "ContentType",
-        "createdAt": "2022-06-28T03:50:59.437Z",
-        "updatedAt": "2022-06-28T03:50:59.437Z",
-        "environment": {
-          "sys": {
-            "id": "staging",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "revision": 1
-      },
-      "displayField": null,
-      "name": "Resources Frequency",
-      "description": "",
-      "fields": [
-        {
-          "id": "resource",
-          "name": "resource",
-          "type": "Link",
-          "localized": false,
-          "required": false,
-          "disabled": false,
-          "omitted": false,
-          "linkType": "Entry",
-          "validations": [
-            {
-              "linkContentType": [
-                "resources"
-              ]
-            }
-          ]
-        },
-        {
-          "id": "frequency",
-          "name": "frequency",
-          "type": "Integer",
           "localized": false,
           "required": false,
           "disabled": false,

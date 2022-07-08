@@ -1,5 +1,6 @@
 package com.generatecatanboard.domain;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -11,6 +12,8 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class BoardData {
     private List<Rows> gameBoard;
+    private List<Statistics> gameStatistics;
 }

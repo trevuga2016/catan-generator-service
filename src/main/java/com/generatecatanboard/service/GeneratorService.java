@@ -4,13 +4,20 @@ import com.contentful.java.cda.CDAAsset;
 import com.contentful.java.cda.CDAClient;
 import com.contentful.java.cda.CDAEntry;
 import com.generatecatanboard.domain.BoardData;
+import com.generatecatanboard.domain.Commodities;
 import com.generatecatanboard.domain.GameHarborConfig;
+import com.generatecatanboard.domain.GameResourcesConfig;
 import com.generatecatanboard.domain.Hex;
 import com.generatecatanboard.domain.Probability;
+import com.generatecatanboard.domain.Resources;
+import com.generatecatanboard.domain.ResourcesFrequency;
+import com.generatecatanboard.domain.Rows;
 import com.generatecatanboard.domain.ScenarioProperties;
+import com.generatecatanboard.domain.Statistics;
 import com.generatecatanboard.domain.Token;
 import com.generatecatanboard.exceptions.InvalidBoardConfigurationException;
 import com.generatecatanboard.exceptions.PropertiesNotFoundException;
+import com.google.common.util.concurrent.AtomicDouble;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Service;
 
@@ -18,10 +25,12 @@ import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.stream.Collectors;
 
 @Service
 public class GeneratorService {
@@ -30,6 +39,8 @@ public class GeneratorService {
     private final ApplicationContext applicationContext;
     public final Random random;
     private static final String DESERT = "Desert";
+    private static final String CDA_PREFIX = "https:";
+    private static final String CDA_WEBP_SUFFIX = "?fm=webp";
 
     public GeneratorService(CDAClient cdaClient, ApplicationContext applicationContext) throws NoSuchAlgorithmException {
         this.cdaClient = cdaClient;
@@ -37,7 +48,7 @@ public class GeneratorService {
         this.random = SecureRandom.getInstanceStrong();
     }
 
-    public ScenarioProperties getScenarioProperties(String scenario) throws PropertiesNotFoundException {
+    public ScenarioProperties getScenarioProperties(String scenario) throws PropertiesNotFoundException, InvalidBoardConfigurationException {
         Collection<ScenarioProperties> propertiesCollection = cdaClient.observeAndTransform(ScenarioProperties.class).include(10).all().blockingFirst();
         ScenarioProperties scenarioProperties = propertiesCollection.stream()
                 .filter(item -> scenario.equals(item.getScenarioUrl()))
@@ -46,6 +57,8 @@ public class GeneratorService {
         if (scenarioProperties == null) {
             throw new PropertiesNotFoundException("No scenario properties were returned from scenario '".concat(scenario).concat("'"));
         }
+        setResourceIconUrls(scenarioProperties);
+        setCommodityIconUrls(scenarioProperties);
         return addBackgroundProps(scenarioProperties);
     }
 
@@ -54,20 +67,46 @@ public class GeneratorService {
         CDAEntry backgroundProps = entry.getField("backgroundProps");
         CDAAsset backgroundImage = backgroundProps.getField("backgroundImage");
         String backgroundColor = backgroundProps.getField("backgroundColor");
-        scenarioProperties.setBackgroundImage("https:".concat(backgroundImage.fileField("url")).concat("?fm=webp"));
+        scenarioProperties.setBackgroundImage(CDA_PREFIX.concat(backgroundImage.fileField("url")).concat(CDA_WEBP_SUFFIX));
         scenarioProperties.setBackgroundColor(backgroundColor);
         return scenarioProperties;
+    }
+
+    public void setResourceIconUrls(ScenarioProperties scenarioProperties) throws InvalidBoardConfigurationException {
+        assertNotNull(scenarioProperties.getGameResourcesConfig());
+        assertNotNull(scenarioProperties.getGameResourcesConfig().getResourcesFrequency());
+        List<ResourcesFrequency> resourcesFrequencies = scenarioProperties.getGameResourcesConfig().getResourcesFrequency();
+        for (ResourcesFrequency frequency: resourcesFrequencies) {
+            assertNotNull(frequency);
+            Resources resources = frequency.getResource();
+            assertNotNull(resources);
+            if (!DESERT.equals(resources.getResource())) {
+                CDAAsset iconAsset = resources.getIconAsset();
+                resources.setIcon(CDA_PREFIX.concat(iconAsset.fileField("url")).concat(CDA_WEBP_SUFFIX));
+            }
+        }
+    }
+
+    public void setCommodityIconUrls(ScenarioProperties scenarioProperties) throws InvalidBoardConfigurationException {
+        assertNotNull(scenarioProperties.getGameResourcesConfig());
+        assertNotNull(scenarioProperties.getGameResourcesConfig().getResourcesFrequency());
+        List<ResourcesFrequency> resourcesFrequencies = scenarioProperties.getGameResourcesConfig().getResourcesFrequency();
+        for (ResourcesFrequency frequency: resourcesFrequencies) {
+            assertNotNull(frequency);
+            Resources resources = frequency.getResource();
+            assertNotNull(resources);
+            if (resources.getCommodity() != null) {
+                Commodities commodity = resources.getCommodity();
+                CDAAsset iconAsset = commodity.getIconAsset();
+                commodity.setIcon(CDA_PREFIX.concat(iconAsset.fileField("url")).concat(CDA_WEBP_SUFFIX));
+            }
+        }
     }
 
     public BoardData generateRandomBoard(String scenario, String harbors) throws PropertiesNotFoundException, InvalidBoardConfigurationException {
         Generator generator = applicationContext.getBean(harbors, Generator.class);
         ScenarioProperties scenarioProperties = getScenarioProperties(scenario);
-        List<String> numbersList = getListOfNumberedItems(scenarioProperties.getNumbersFrequency());
-        List<String> resourcesList = getListOfNumberedItems(scenarioProperties.getResourcesFrequency());
-        List<Double> rowConfig = scenarioProperties.getRowConfig();
-        GameHarborConfig gameHarborConfig = scenarioProperties.getGameHarborConfig();
-        validateConfiguration(resourcesList, rowConfig);
-        return generator.generateRandomBoard(rowConfig, resourcesList, numbersList, gameHarborConfig);
+        return generator.generateRandomBoard(scenarioProperties);
     }
 
     public List<CDAEntry> getBuildingCosts(String scenario) throws PropertiesNotFoundException {
@@ -82,6 +121,17 @@ public class GeneratorService {
             }
         });
         return numbersList;
+    }
+
+    public List<String> getListOfResources(GameResourcesConfig gameResourcesConfig) {
+        List<String> listOfResources = new ArrayList<>();
+        List<ResourcesFrequency> resourcesFrequency = gameResourcesConfig.getResourcesFrequency();
+        resourcesFrequency.forEach(frequency -> {
+            for (int i = 0; i < frequency.getFrequency(); i++) {
+                listOfResources.add(frequency.getResource().getResource());
+            }
+        });
+        return listOfResources;
     }
 
     public void validateConfiguration(List<String> resourcesList, List<Double> rowConfig) throws InvalidBoardConfigurationException {
@@ -115,6 +165,50 @@ public class GeneratorService {
         return hexes;
     }
 
+    public List<Statistics> calculateBoardStatistics(List<Rows> rows, ScenarioProperties scenarioProperties) throws InvalidBoardConfigurationException {
+        List<Statistics> statistics = new ArrayList<>();
+        assertNotNull(scenarioProperties.getGameResourcesConfig());
+        assertNotNull(scenarioProperties.getGameResourcesConfig().getResourcesFrequency());
+        List<ResourcesFrequency> resourcesFrequencies = scenarioProperties.getGameResourcesConfig().getResourcesFrequency();
+        for (ResourcesFrequency frequency : resourcesFrequencies) {
+            assertNotNull(frequency);
+            assertNotNull(frequency.getResource());
+            if (!DESERT.equals(frequency.getResource().getResource())) {
+                String resource = frequency.getResource().getResource();
+                List<String> numbers = new ArrayList<>();
+                AtomicDouble probability = new AtomicDouble(0);
+                rows.forEach(row ->
+                    row.getRow().forEach(hex -> {
+                        if (hex.getResource().equals(resource) && hex.getToken() != null) {
+                            numbers.add(hex.getToken().getNumber());
+                        }
+                    })
+                );
+                List<String> uniqueNumbers = numbers.stream().distinct().collect(Collectors.toList());
+                uniqueNumbers.forEach(number -> {
+                    double probValue = getProbabilityValue(number);
+                    probability.set(probability.get() + probValue);
+                });
+                probability.set(probability.get() * 100);
+                String probabilityString = String.format("%.2f", probability.get());
+                Statistics statistic = Statistics.builder().build();
+                String scenarioUrl = scenarioProperties.getScenarioUrl();
+                if (("ck".equals(scenarioUrl) || "ck5_6ext".equals(scenarioUrl)) && frequency.getResource().getCommodity() != null) {
+                    Commodities commodity = frequency.getResource().getCommodity();
+                    statistic.setCommodity(commodity.getCommodity());
+                    statistic.setCommodityIcon(commodity.getIcon());
+                }
+                statistic.setResource(resource);
+                statistic.setProbability(probabilityString);
+                statistic.setResourceIcon(frequency.getResource().getIcon());
+                statistics.add(statistic);
+            }
+        }
+        Comparator<Statistics> compareProb = Comparator.comparing(Statistics::getProbability);
+        statistics.sort(compareProb.reversed());
+        return statistics;
+    }
+
     public int getSizeOfFirstRow(List<Double> rowConfig) {
         return rowConfig.get(0).intValue();
     }
@@ -145,31 +239,25 @@ public class GeneratorService {
 
     public Probability getNumberProbability(String number) {
         String probabilityText = getProbabilityText(number);
-        String probabilityValue = getProbabilityValue(number);
+        String probabilityValue = String.format("%.2f", getProbabilityValue(number) * 100);
         return Probability.builder().text(probabilityText).value(probabilityValue).build();
     }
 
-    public String getProbabilityValue(String number) {
+    public double getProbabilityValue(String number) {
         if ("2".equals(number) || "12".equals(number)) {
-            double prob = 1 / (double) 36;
-            return String.format("%.2f", prob * 100);
+            return 1 / (double) 36;
         } else if ("3".equals(number) || "11".equals(number)) {
-            double prob = 2 / (double) 36;
-            return String.format("%.2f", prob * 100);
+            return 2 / (double) 36;
         } else if ("4".equals(number) || "10".equals(number)) {
-            double prob = 3 / (double) 36;
-            return String.format("%.2f", prob * 100);
+            return 3 / (double) 36;
         } else if ("5".equals(number) || "9".equals(number)) {
-            double prob = 4 / (double) 36;
-            return String.format("%.2f", prob * 100);
+            return 4 / (double) 36;
         } else if ("6".equals(number) || "8".equals(number)) {
-            double prob = 5 / (double) 36;
-            return String.format("%.2f", prob * 100);
+            return 5 / (double) 36;
         } else if ("7".equals(number)) {
-            double prob = 6 / (double) 36;
-            return String.format("%.2f", prob * 100);
+            return 6 / (double) 36;
         } else {
-            return "";
+            return 0;
         }
     }
 
@@ -204,6 +292,12 @@ public class GeneratorService {
             return DESERT;
         } else {
             return "";
+        }
+    }
+
+    private static void assertNotNull(Object o) throws InvalidBoardConfigurationException {
+        if (o == null) {
+            throw new InvalidBoardConfigurationException("A null pointer exception occurred when trying to parse scenario properties. Please check your configuration.");
         }
     }
 }

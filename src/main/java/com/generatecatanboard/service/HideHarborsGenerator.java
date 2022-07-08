@@ -2,9 +2,11 @@ package com.generatecatanboard.service;
 
 import com.contentful.java.cda.CDAClient;
 import com.generatecatanboard.domain.BoardData;
-import com.generatecatanboard.domain.GameHarborConfig;
 import com.generatecatanboard.domain.Hex;
 import com.generatecatanboard.domain.Rows;
+import com.generatecatanboard.domain.ScenarioProperties;
+import com.generatecatanboard.domain.Statistics;
+import com.generatecatanboard.exceptions.InvalidBoardConfigurationException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Service;
 
@@ -20,9 +22,17 @@ public class HideHarborsGenerator extends GeneratorService implements Generator 
     }
 
     @Override
-    public BoardData generateRandomBoard(List<Double> rowConfig, List<String> resourcesList, List<String> numbersList, GameHarborConfig gameHarborConfig) {
+    public BoardData generateRandomBoard(ScenarioProperties scenarioProperties) throws InvalidBoardConfigurationException {
+        // Get configs
+        List<Double> rowConfig = scenarioProperties.getRowConfig();
+        List<String> resourcesList = getListOfResources(scenarioProperties.getGameResourcesConfig());
+        List<String> numbersList = getListOfNumberedItems(scenarioProperties.getNumbersFrequency());
+        validateConfiguration(resourcesList, rowConfig);
+        // Get hexes
         List<Rows> rowsOfHexes = createRowsOfHexes(rowConfig, resourcesList, numbersList);
-        return BoardData.builder().gameBoard(rowsOfHexes).build();
+        // Get stats
+        List<Statistics> statistics = calculateBoardStatistics(rowsOfHexes, scenarioProperties);
+        return BoardData.builder().gameBoard(rowsOfHexes).gameStatistics(statistics).build();
     }
 
     public List<Rows> createRowsOfHexes(List<Double> rowConfig, List<String> resourcesList, List<String> numbersList) {

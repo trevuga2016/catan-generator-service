@@ -23,7 +23,7 @@ public class GeneratorController {
     }
 
     @GetMapping(value = "/scenarioProps/{scenario}", produces = "application/json")
-    public ScenarioProperties getScenarioProps(@PathVariable("scenario") String scenario) throws PropertiesNotFoundException {
+    public ScenarioProperties getScenarioProps(@PathVariable("scenario") String scenario) throws PropertiesNotFoundException, InvalidBoardConfigurationException {
         return generatorService.getScenarioProperties(scenario);
     }
 

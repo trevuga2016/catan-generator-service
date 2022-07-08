@@ -15,15 +15,11 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 class HideHarborsGeneratorTest extends ServiceTestBaseClass {
 
 	@Autowired
-	public GeneratorService generatorService;
-	@Autowired
 	private HideHarborsGenerator hideHarborsGenerator;
 
 	@Test
-	void shouldCreateRandomBoardWithNoHarbors() {
-		List<String> listOfResources = generatorService.getListOfNumberedItems(mockResourcesFrequency());
-		List<String> listOfNumbers = generatorService.getListOfNumberedItems(mockNumbersFrequency());
-		BoardData boardData = hideHarborsGenerator.generateRandomBoard(List.of(3.0, 4.0, 5.0, 4.0, 3.0), listOfResources, listOfNumbers, null);
+	void shouldCreateRandomBoardWithNoHarbors() throws Exception {
+		BoardData boardData = hideHarborsGenerator.generateRandomBoard(getMockScenarioProps());
 		assertNotNull(boardData);
 		assertNotNull(boardData.getGameBoard());
 		assertEquals(5, boardData.getGameBoard().size());
@@ -31,9 +27,7 @@ class HideHarborsGeneratorTest extends ServiceTestBaseClass {
 
 	@Test
 	void shouldCreateRowsOfHexesWithoutHarbors() {
-		List<String> listOfResources = generatorService.getListOfNumberedItems(mockResourcesFrequency());
-		List<String> listOfNumbers = generatorService.getListOfNumberedItems(mockNumbersFrequency());
-		List<Rows> rowsOfHexes = hideHarborsGenerator.createRowsOfHexes(List.of(3.0, 4.0, 5.0, 4.0, 3.0), listOfResources, listOfNumbers);
+		List<Rows> rowsOfHexes = hideHarborsGenerator.createRowsOfHexes(getMockRowConfig(), getMockListOfResources(), getMockListOfNumbers());
 		assertNotNull(rowsOfHexes);
 		assertNotNull(rowsOfHexes.get(0));
 		assertNotNull(rowsOfHexes.get(0).getRow());

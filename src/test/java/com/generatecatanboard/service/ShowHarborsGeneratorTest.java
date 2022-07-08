@@ -1,6 +1,5 @@
 package com.generatecatanboard.service;
 
-import com.contentful.java.cda.CDAClient;
 import com.generatecatanboard.domain.BoardData;
 import com.generatecatanboard.domain.GameHarborConfig;
 import com.generatecatanboard.domain.HarborConfig;
@@ -8,11 +7,7 @@ import com.generatecatanboard.domain.Hex;
 import com.generatecatanboard.domain.Rows;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.context.TestConfiguration;
-import org.springframework.cloud.contract.wiremock.AutoConfigureWireMock;
-import org.springframework.context.annotation.Bean;
 
 import java.util.List;
 
@@ -22,38 +17,14 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
 @SpringBootTest
-@AutoConfigureWireMock(port = 0)
 class ShowHarborsGeneratorTest extends ServiceTestBaseClass {
 
-	@TestConfiguration
-	static class TestConfig {
-		@Value("${contentful.space}")
-		private String contentfulSpace;
-		@Value("${contentful.accessToken}")
-		private String contentfulAccessToken;
-		@Value("${wiremock.server.port}")
-		private String wiremockPort;
-		@Bean
-		public CDAClient cdaClient() {
-			return CDAClient.builder()
-					.setEndpoint("http://localhost:".concat(wiremockPort))
-					.setSpace(contentfulSpace)
-					.setToken(contentfulAccessToken)
-					.build();
-		}
-	}
-
-	@Autowired
-	public GeneratorService generatorService;
 	@Autowired
 	private ShowHarborsGenerator showHarborsGenerator;
 
 	@Test
 	void shouldCreateRandomBoardWithHarbors() throws Exception {
-		List<String> listOfResources = generatorService.getListOfNumberedItems(mockResourcesFrequency());
-		List<String> listOfNumbers = generatorService.getListOfNumberedItems(mockNumbersFrequency());
-		GameHarborConfig gameHarborConfig = getMockGameHarborConfig();
-		BoardData boardData = showHarborsGenerator.generateRandomBoard(List.of(3.0, 4.0, 5.0, 4.0, 3.0), listOfResources, listOfNumbers, gameHarborConfig);
+		BoardData boardData = showHarborsGenerator.generateRandomBoard(getMockScenarioProps());
 		assertNotNull(boardData);
 		assertNotNull(boardData.getGameBoard());
 		assertEquals(7, boardData.getGameBoard().size());
@@ -93,12 +64,10 @@ class ShowHarborsGeneratorTest extends ServiceTestBaseClass {
 
 	@Test
 	void shouldCreateRowsOfHexesWithHarbors() throws Exception {
-		List<String> listOfResources = generatorService.getListOfNumberedItems(mockResourcesFrequency());
-		List<String> listOfNumbers = generatorService.getListOfNumberedItems(mockNumbersFrequency());
 		GameHarborConfig gameHarborConfig = getMockGameHarborConfig();
 		List<HarborConfig> harborConfigs = gameHarborConfig.getHarborConfig();
 		harborConfigs.subList(0, 4).clear();
-		List<Rows> listOfHexesWithHarbors = showHarborsGenerator.createRowsOfHexesWithHarbors(List.of(3.0, 4.0, 5.0, 4.0, 3.0), listOfResources, listOfNumbers, harborConfigs);
+		List<Rows> listOfHexesWithHarbors = showHarborsGenerator.createRowsOfHexesWithHarbors(getMockRowConfig(), getMockListOfResources(), getMockListOfNumbers(), harborConfigs);
 		assertNotNull(listOfHexesWithHarbors);
 		assertEquals(5, listOfHexesWithHarbors.size());
 		assertNotNull(listOfHexesWithHarbors.get(0));
