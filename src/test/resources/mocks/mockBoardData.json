@@ -3,56 +3,35 @@
     {
       "row": [
         {
-          "resource": "Lumber",
-          "terrain": "Forests",
-          "token": {
-            "number": "4",
-            "probability": {
-              "text": "•••",
-              "value": "8.33"
-            }
-          }
+          "resource": "sea",
+          "terrain": "Sea"
         },
         {
-          "resource": "Wool",
-          "terrain": "Pastures",
-          "token": {
-            "number": "3",
-            "probability": {
-              "text": "••",
-              "value": "5.56"
-            }
-          }
+          "resource": "3for1",
+          "terrain": "Harbor",
+          "rotation": "br"
         },
         {
-          "resource": "Grain",
-          "terrain": "Fields",
-          "token": {
-            "number": "2",
-            "probability": {
-              "text": "•",
-              "value": "2.78"
-            }
-          }
+          "resource": "sea",
+          "terrain": "Sea"
+        },
+        {
+          "resource": "3for1",
+          "terrain": "Harbor",
+          "rotation": "bl"
         }
       ]
     },
     {
       "row": [
         {
-          "resource": "Ore",
-          "terrain": "Mountains",
-          "token": {
-            "number": "6",
-            "probability": {
-              "text": "•••••",
-              "value": "13.89"
-            }
-          }
+          "resource": "2for1_wool",
+          "terrain": "Harbor",
+          "rotation": "br"
         },
         {
-          "resource": "Lumber",
-          "terrain": "Forests",
+          "resource": "Wool",
+          "terrain": "Pastures",
           "token": {
             "number": "9",
             "probability": {
@@ -65,47 +44,10 @@
           "resource": "Ore",
           "terrain": "Mountains",
           "token": {
-            "number": "5",
+            "number": "6",
             "probability": {
-              "text": "••••",
-              "value": "11.11"
-            }
-          }
-        },
-        {
-          "resource": "Lumber",
-          "terrain": "Forests",
-          "token": {
-            "number": "10",
-            "probability": {
-              "text": "•••",
-              "value": "8.33"
-            }
-          }
-        }
-      ]
-    },
-    {
-      "row": [
-        {
-          "resource": "Lumber",
-          "terrain": "Forests",
-          "token": {
-            "number": "3",
-            "probability": {
-              "text": "••",
-              "value": "5.56"
-            }
-          }
-        },
-        {
-          "resource": "Brick",
-          "terrain": "Hills",
-          "token": {
-            "number": "5",
-            "probability": {
-              "text": "••••",
-              "value": "11.11"
+              "text": "•••••",
+              "value": "13.89"
             }
           }
         },
@@ -121,13 +63,25 @@
           }
         },
         {
-          "resource": "Ore",
-          "terrain": "Mountains",
+          "resource": "sea",
+          "terrain": "Sea"
+        }
+      ]
+    },
+    {
+      "row": [
+        {
+          "resource": "sea",
+          "terrain": "Sea"
+        },
+        {
+          "resource": "Wool",
+          "terrain": "Pastures",
           "token": {
-            "number": "10",
+            "number": "8",
             "probability": {
-              "text": "•••",
-              "value": "8.33"
+              "text": "•••••",
+              "value": "13.89"
             }
           }
         },
@@ -141,14 +95,46 @@
               "value": "13.89"
             }
           }
+        },
+        {
+          "resource": "Lumber",
+          "terrain": "Forests",
+          "token": {
+            "number": "5",
+            "probability": {
+              "text": "••••",
+              "value": "11.11"
+            }
+          }
+        },
+        {
+          "resource": "Wool",
+          "terrain": "Pastures",
+          "token": {
+            "number": "12",
+            "probability": {
+              "text": "•",
+              "value": "2.78"
+            }
+          }
+        },
+        {
+          "resource": "2for1_brick",
+          "terrain": "Harbor",
+          "rotation": "l"
         }
       ]
     },
     {
       "row": [
         {
-          "resource": "Grain",
-          "terrain": "Fields",
+          "resource": "3for1",
+          "terrain": "Harbor",
+          "rotation": "r"
+        },
+        {
+          "resource": "Ore",
+          "terrain": "Mountains",
           "token": {
             "number": "6",
             "probability": {
@@ -158,8 +144,30 @@
           }
         },
         {
-          "resource": "Wool",
-          "terrain": "Pastures",
+          "resource": "Grain",
+          "terrain": "Fields",
+          "token": {
+            "number": "10",
+            "probability": {
+              "text": "•••",
+              "value": "8.33"
+            }
+          }
+        },
+        {
+          "resource": "Brick",
+          "terrain": "Hills",
+          "token": {
+            "number": "5",
+            "probability": {
+              "text": "••••",
+              "value": "11.11"
+            }
+          }
+        },
+        {
+          "resource": "Grain",
+          "terrain": "Fields",
           "token": {
             "number": "9",
             "probability": {
@@ -169,8 +177,8 @@
           }
         },
         {
-          "resource": "Brick",
-          "terrain": "Hills",
+          "resource": "Grain",
+          "terrain": "Fields",
           "token": {
             "number": "11",
             "probability": {
@@ -180,30 +188,74 @@
           }
         },
         {
-          "resource": "Wool",
-          "terrain": "Pastures",
-          "token": {
-            "number": "8",
-            "probability": {
-              "text": "•••••",
-              "value": "13.89"
-            }
-          }
+          "resource": "sea",
+          "terrain": "Sea"
         }
       ]
     },
     {
       "row": [
         {
-          "resource": "Grain",
-          "terrain": "Fields",
+          "resource": "sea",
+          "terrain": "Sea"
+        },
+        {
+          "resource": "Wool",
+          "terrain": "Pastures",
           "token": {
-            "number": "12",
+            "number": "3",
+            "probability": {
+              "text": "••",
+              "value": "5.56"
+            }
+          }
+        },
+        {
+          "resource": "Brick",
+          "terrain": "Hills",
+          "token": {
+            "number": "10",
+            "probability": {
+              "text": "•••",
+              "value": "8.33"
+            }
+          }
+        },
+        {
+          "resource": "Lumber",
+          "terrain": "Forests",
+          "token": {
+            "number": "2",
             "probability": {
               "text": "•",
               "value": "2.78"
             }
           }
+        },
+        {
+          "resource": "Lumber",
+          "terrain": "Forests",
+          "token": {
+            "number": "11",
+            "probability": {
+              "text": "••",
+              "value": "5.56"
+            }
+          }
+        },
+        {
+          "resource": "2for1_lumber",
+          "terrain": "Harbor",
+          "rotation": "l"
+        }
+      ]
+    },
+    {
+      "row": [
+        {
+          "resource": "2for1_ore",
+          "terrain": "Harbor",
+          "rotation": "tr"
         },
         {
           "resource": "Desert",
@@ -216,17 +268,87 @@
           }
         },
         {
-          "resource": "Wool",
-          "terrain": "Pastures",
+          "resource": "Lumber",
+          "terrain": "Forests",
           "token": {
-            "number": "11",
+            "number": "4",
+            "probability": {
+              "text": "•••",
+              "value": "8.33"
+            }
+          }
+        },
+        {
+          "resource": "Ore",
+          "terrain": "Mountains",
+          "token": {
+            "number": "3",
             "probability": {
               "text": "••",
               "value": "5.56"
             }
           }
+        },
+        {
+          "resource": "sea",
+          "terrain": "Sea"
         }
       ]
+    },
+    {
+      "row": [
+        {
+          "resource": "sea",
+          "terrain": "Sea"
+        },
+        {
+          "resource": "2for1_grain",
+          "terrain": "Harbor",
+          "rotation": "tr"
+        },
+        {
+          "resource": "sea",
+          "terrain": "Sea"
+        },
+        {
+          "resource": "3for1",
+          "terrain": "Harbor",
+          "rotation": "tl"
+        }
+      ]
+    }
+  ],
+  "gameStatistics": [
+    {
+      "resource": "Grain",
+      "probability": "38.89",
+      "resourceIcon": "https://images.ctfassets.net/lemvlfz5icux/4Ym6aFr9OvgAQqhUV0BIjF/c51bfbe9593e4d153cdd543a7eda70a0/icon.jpg?fm=webp"
+    },
+    {
+      "resource": "Wool",
+      "probability": "33.33",
+      "resourceIcon": "https://images.ctfassets.net/lemvlfz5icux/1uBkbbdwt1NdIYwUyzl6qn/d1dad83c4a22e2cf6fe33c6cff119aab/icon.jpg?fm=webp",
+      "commodity": "Cloth",
+      "commodityIcon": "https://images.ctfassets.net/lemvlfz5icux/1jl7zwCIqiN7UCOq8JL40M/394863470702c471a541c41880983997/cloth_icon.png?fm=webp"
+    },
+    {
+      "resource": "Lumber",
+      "probability": "27.78",
+      "resourceIcon": "https://images.ctfassets.net/lemvlfz5icux/6OGltTvq7ZcJPPhDWBG9tI/65f60bf872a14f7a2568f865e0dffffe/icon.jpg?fm=webp",
+      "commodity": "Paper",
+      "commodityIcon": "https://images.ctfassets.net/lemvlfz5icux/16MLgG3fSrA6BDslp9wATV/e87f012dfcde569201819c0073e7a41c/paper_icon.png?fm=webp"
+    },
+    {
+      "resource": "Brick",
+      "probability": "27.78",
+      "resourceIcon": "https://images.ctfassets.net/lemvlfz5icux/2p68nM2R7dIHnkzDGdo6pX/ee32f62dcaf734b41b86659b7a2d8717/icon.jpg?fm=webp"
+    },
+    {
+      "resource": "Ore",
+      "probability": "19.44",
+      "resourceIcon": "https://images.ctfassets.net/lemvlfz5icux/3uC1Q5NwNzk6brSaITotO3/49795e086079ba42e0f9ae24d0ede8b4/icon.jpg?fm=webp",
+      "commodity": "Coin",
+      "commodityIcon": "https://images.ctfassets.net/lemvlfz5icux/49PMTRULHMVTrzMNIfgsqK/7d1b20f600f7447286e56ca3137c7df8/coin_icon.png?fm=webp"
     }
   ]
 }

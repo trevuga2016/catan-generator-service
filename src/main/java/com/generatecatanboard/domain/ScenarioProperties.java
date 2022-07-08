@@ -3,6 +3,7 @@ package com.generatecatanboard.domain;
 import com.contentful.java.cda.TransformQuery;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -35,4 +36,7 @@ public class ScenarioProperties {
     private GameHarborConfig gameHarborConfig;
     @TransformQuery.ContentfulField
     private GameResourcesConfig gameResourcesConfig;
+    @TransformQuery.ContentfulField
+    @JsonProperty(value = "isCitiesAndKnights")
+    private boolean isCitiesAndKnights;
 }

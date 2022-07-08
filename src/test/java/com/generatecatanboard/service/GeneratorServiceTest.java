@@ -193,6 +193,16 @@ class GeneratorServiceTest extends ServiceTestBaseClass {
         });
     }
 
+    @Test
+    void shouldThrowExceptionForNullProperties() throws Exception {
+        BoardData mockBoardData = getMockBoardData();
+        ScenarioProperties scenarioProperties = ScenarioProperties.builder().gameResourcesConfig(null).build();
+        Exception exception = assertThrows(InvalidBoardConfigurationException.class, () -> {
+            generatorService.calculateBoardStatistics(mockBoardData.getGameBoard(), scenarioProperties);
+        });
+        assertEquals("A null pointer exception occurred when trying to parse scenario properties. Please check your configuration.", exception.getMessage());
+    }
+
     @ParameterizedTest
     @ValueSource(strings = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"})
     void shouldGetProbabilityValue(String number) {

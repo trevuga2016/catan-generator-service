@@ -177,13 +177,14 @@ public class GeneratorService {
                 String resource = frequency.getResource().getResource();
                 List<String> numbers = new ArrayList<>();
                 AtomicDouble probability = new AtomicDouble(0);
-                rows.forEach(row ->
-                    row.getRow().forEach(hex -> {
-                        if (hex.getResource().equals(resource) && hex.getToken() != null) {
+                for (Rows row : rows) {
+                    for (Hex hex: row.getRow()) {
+                        if (hex.getResource().equals(resource)) {
+                            assertNotNull(hex.getToken());
                             numbers.add(hex.getToken().getNumber());
                         }
-                    })
-                );
+                    }
+                }
                 List<String> uniqueNumbers = numbers.stream().distinct().collect(Collectors.toList());
                 uniqueNumbers.forEach(number -> {
                     double probValue = getProbabilityValue(number);
@@ -192,8 +193,8 @@ public class GeneratorService {
                 probability.set(probability.get() * 100);
                 String probabilityString = String.format("%.2f", probability.get());
                 Statistics statistic = Statistics.builder().build();
-                String scenarioUrl = scenarioProperties.getScenarioUrl();
-                if (("ck".equals(scenarioUrl) || "ck5_6ext".equals(scenarioUrl)) && frequency.getResource().getCommodity() != null) {
+                assertNotNull(scenarioProperties.isCitiesAndKnights());
+                if (scenarioProperties.isCitiesAndKnights() && frequency.getResource().getCommodity() != null) {
                     Commodities commodity = frequency.getResource().getCommodity();
                     statistic.setCommodity(commodity.getCommodity());
                     statistic.setCommodityIcon(commodity.getIcon());
