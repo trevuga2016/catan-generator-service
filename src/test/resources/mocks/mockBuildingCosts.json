@@ -1,0 +1,38 @@
+[
+  {
+    "buildType": "Road",
+    "resources": [
+      {
+        "resource": "Lumber",
+        "icon": "https://images.net/lumber"
+      },
+      {
+        "resource": "Brick",
+        "icon": "https://images.net/brick"
+      }
+    ],
+    "victoryPoints": "0 Points"
+  },
+  {
+    "buildType": "Settlement",
+    "resources": [
+      {
+        "resource": "Lumber",
+        "icon": "https://images.net/lumber"
+      },
+      {
+        "resource": "Brick",
+        "icon": "https://images.net/brick"
+      },
+      {
+        "resource": "Grain",
+        "icon": "https://images.net/grain"
+      },
+      {
+        "resource": "Wool",
+        "icon": "https://images.net/wool"
+      }
+    ],
+    "victoryPoints": "1 Point"
+  }
+]

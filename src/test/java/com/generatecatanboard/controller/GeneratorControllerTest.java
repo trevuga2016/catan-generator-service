@@ -1,7 +1,9 @@
 package com.generatecatanboard.controller;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.generatecatanboard.domain.BoardData;
+import com.generatecatanboard.domain.BuildingCosts;
 import com.generatecatanboard.domain.ScenarioProperties;
 import com.generatecatanboard.exceptions.InvalidBoardConfigurationException;
 import com.generatecatanboard.exceptions.PropertiesNotFoundException;
@@ -13,6 +15,10 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
+
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
+import java.util.List;
 
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.when;
@@ -73,6 +79,16 @@ class GeneratorControllerTest {
                 .andExpect(content().json("{\"message\":\"No configuration available for harbors: 'invalid'\"}"));
     }
 
+    @Test
+    void shouldReturnBuildingCosts() throws Exception {
+        ObjectMapper objectMapper = new ObjectMapper();
+        List<BuildingCosts> buildingCosts = objectMapper.readValue(getMockBuildingCostsAsString(), new TypeReference<>(){});
+        when(generatorService.getBuildingCosts(anyString())).thenReturn(buildingCosts);
+        this.mockMvc.perform(get("/buildingCosts/scenario"))
+                .andExpect(status().isOk())
+                .andExpect(content().json(getMockBuildingCostsAsString()));
+    }
+
     private ScenarioProperties getMockScenarioProperties() throws Exception {
         ObjectMapper om = new ObjectMapper();
         return om.readValue(this.getClass().getClassLoader().getResourceAsStream("mocks/mockScenarioProps.json"), ScenarioProperties.class);
@@ -81,5 +97,13 @@ class GeneratorControllerTest {
     private BoardData getMockBoardData() throws Exception {
         ObjectMapper om = new ObjectMapper();
         return om.readValue(this.getClass().getClassLoader().getResourceAsStream("mocks/mockBoardData.json"), BoardData.class);
+    }
+
+    private String getMockBuildingCostsAsString() throws Exception {
+        InputStream inputStream = this.getClass().getClassLoader().getResourceAsStream("mocks/mockBuildingCosts.json");
+        if (inputStream != null) {
+            return new String(inputStream.readAllBytes(), StandardCharsets.UTF_8);
+        }
+        return "";
     }
 }

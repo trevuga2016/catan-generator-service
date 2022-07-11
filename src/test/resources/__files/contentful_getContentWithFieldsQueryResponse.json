@@ -45,6 +45,36 @@
             "id": "63z5NQCEVNDPKZeDK7gfh4"
           }
         },
+        "buildingCosts": [
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "28A4J8MRB1FdyvBMs8YmtN"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "76Wpt805BAgDPEiqQ4wFx3"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "2IYhXj8KbnXDqtu376fClX"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "2Y0LMZkMRYd8hKkpHmjAFa"
+            }
+          }
+        ],
         "isCitiesAndKnights": false
       },
       "sys": {
@@ -114,6 +144,36 @@
             "id": "62RVd2eC8iyQ6j8EAJhMsU"
           }
         },
+        "buildingCosts": [
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "28A4J8MRB1FdyvBMs8YmtN"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "76Wpt805BAgDPEiqQ4wFx3"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "2IYhXj8KbnXDqtu376fClX"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "2Y0LMZkMRYd8hKkpHmjAFa"
+            }
+          }
+        ],
         "isCitiesAndKnights": false
       },
       "sys": {
@@ -185,6 +245,64 @@
             "id": "63z5NQCEVNDPKZeDK7gfh4"
           }
         },
+        "buildingCosts": [
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "28A4J8MRB1FdyvBMs8YmtN"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "3P9Dfep0A8Jo5hnRhwTT6V"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "76Wpt805BAgDPEiqQ4wFx3"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "2IYhXj8KbnXDqtu376fClX"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "4vvYlYZhQWlYypa50ZsVds"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "6064oTyVmIzglfpk6HS0yF"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "6XguuUyu4LnscjSJjZL1Lh"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "68vJJ0QrvteUHl9BV9DB9c"
+            }
+          }
+        ],
         "isCitiesAndKnights": true
       },
       "sys": {
@@ -254,6 +372,64 @@
             "id": "62RVd2eC8iyQ6j8EAJhMsU"
           }
         },
+        "buildingCosts": [
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "28A4J8MRB1FdyvBMs8YmtN"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "3P9Dfep0A8Jo5hnRhwTT6V"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "76Wpt805BAgDPEiqQ4wFx3"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "2IYhXj8KbnXDqtu376fClX"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "4vvYlYZhQWlYypa50ZsVds"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "6064oTyVmIzglfpk6HS0yF"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "6XguuUyu4LnscjSJjZL1Lh"
+            }
+          },
+          {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "68vJJ0QrvteUHl9BV9DB9c"
+            }
+          }
+        ],
         "isCitiesAndKnights": true
       },
       "sys": {
@@ -990,6 +1166,135 @@
               "id": "lemvlfz5icux"
             }
           },
+          "id": "28A4J8MRB1FdyvBMs8YmtN",
+          "type": "Entry",
+          "createdAt": "2022-06-12T04:17:27.216Z",
+          "updatedAt": "2022-06-23T20:44:36.883Z",
+          "environment": {
+            "sys": {
+              "id": "staging",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 3,
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "buildingCosts"
+            }
+          },
+          "locale": "en-US"
+        },
+        "fields": {
+          "buildType": "Road",
+          "resources": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "4zoD9xA3M8eGZE0kbpIW5W"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "5GvnCQXNxB1Wflb9Z4dYyS"
+              }
+            }
+          ],
+          "victoryPoints": "0"
+        }
+      },
+      {
+        "metadata": {
+          "tags": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "lemvlfz5icux"
+            }
+          },
+          "id": "2IYhXj8KbnXDqtu376fClX",
+          "type": "Entry",
+          "createdAt": "2022-06-12T04:18:56.126Z",
+          "updatedAt": "2022-06-23T20:44:36.408Z",
+          "environment": {
+            "sys": {
+              "id": "staging",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 3,
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "buildingCosts"
+            }
+          },
+          "locale": "en-US"
+        },
+        "fields": {
+          "buildType": "City",
+          "resources": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "UlGC0FxKxmQGwKg4sUGn5"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "UlGC0FxKxmQGwKg4sUGn5"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "01FL6ssKhJEEjWZ5cVBzMx"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "01FL6ssKhJEEjWZ5cVBzMx"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "01FL6ssKhJEEjWZ5cVBzMx"
+              }
+            }
+          ],
+          "victoryPoints": "2"
+        }
+      },
+      {
+        "metadata": {
+          "tags": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "lemvlfz5icux"
+            }
+          },
           "id": "2OKfaM7vo64vcQsMc3ijrG",
           "type": "Entry",
           "createdAt": "2022-07-07T20:29:12.865Z",
@@ -1021,6 +1326,67 @@
             }
           },
           "rotation": "tl"
+        }
+      },
+      {
+        "metadata": {
+          "tags": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "lemvlfz5icux"
+            }
+          },
+          "id": "2Y0LMZkMRYd8hKkpHmjAFa",
+          "type": "Entry",
+          "createdAt": "2022-06-12T04:19:38.758Z",
+          "updatedAt": "2022-06-23T20:44:36.195Z",
+          "environment": {
+            "sys": {
+              "id": "staging",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 3,
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "buildingCosts"
+            }
+          },
+          "locale": "en-US"
+        },
+        "fields": {
+          "buildType": "Development Card",
+          "resources": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "3zuqFkfkvcJ327j2UG3h2O"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "UlGC0FxKxmQGwKg4sUGn5"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "01FL6ssKhJEEjWZ5cVBzMx"
+              }
+            }
+          ],
+          "victoryPoints": "?"
         }
       },
       {
@@ -1247,6 +1613,60 @@
           },
           "terrain": "Harbor",
           "description": "Trade 2 lumber for 1 of any other resource"
+        }
+      },
+      {
+        "metadata": {
+          "tags": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "lemvlfz5icux"
+            }
+          },
+          "id": "3P9Dfep0A8Jo5hnRhwTT6V",
+          "type": "Entry",
+          "createdAt": "2022-06-13T21:50:06.588Z",
+          "updatedAt": "2022-06-23T20:44:21.826Z",
+          "environment": {
+            "sys": {
+              "id": "staging",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 2,
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "buildingCosts"
+            }
+          },
+          "locale": "en-US"
+        },
+        "fields": {
+          "buildType": "Ship",
+          "resources": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "4zoD9xA3M8eGZE0kbpIW5W"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "3zuqFkfkvcJ327j2UG3h2O"
+              }
+            }
+          ],
+          "victoryPoints": "0"
         }
       },
       {
@@ -1841,6 +2261,60 @@
               "id": "lemvlfz5icux"
             }
           },
+          "id": "4vvYlYZhQWlYypa50ZsVds",
+          "type": "Entry",
+          "createdAt": "2022-06-13T21:54:59.970Z",
+          "updatedAt": "2022-06-23T20:44:22.210Z",
+          "environment": {
+            "sys": {
+              "id": "staging",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 2,
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "buildingCosts"
+            }
+          },
+          "locale": "en-US"
+        },
+        "fields": {
+          "buildType": "City Wall",
+          "resources": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "5GvnCQXNxB1Wflb9Z4dYyS"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "5GvnCQXNxB1Wflb9Z4dYyS"
+              }
+            }
+          ],
+          "victoryPoints": "0"
+        }
+      },
+      {
+        "metadata": {
+          "tags": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "lemvlfz5icux"
+            }
+          },
           "id": "4zoD9xA3M8eGZE0kbpIW5W",
           "type": "Entry",
           "createdAt": "2022-06-13T19:44:54.922Z",
@@ -2342,6 +2816,60 @@
               "id": "lemvlfz5icux"
             }
           },
+          "id": "6064oTyVmIzglfpk6HS0yF",
+          "type": "Entry",
+          "createdAt": "2022-06-13T22:05:48.611Z",
+          "updatedAt": "2022-06-23T20:44:22.521Z",
+          "environment": {
+            "sys": {
+              "id": "staging",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 3,
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "buildingCosts"
+            }
+          },
+          "locale": "en-US"
+        },
+        "fields": {
+          "buildType": "Knight",
+          "resources": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "3zuqFkfkvcJ327j2UG3h2O"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "01FL6ssKhJEEjWZ5cVBzMx"
+              }
+            }
+          ],
+          "victoryPoints": "0"
+        }
+      },
+      {
+        "metadata": {
+          "tags": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "lemvlfz5icux"
+            }
+          },
           "id": "62RVd2eC8iyQ6j8EAJhMsU",
           "type": "Entry",
           "createdAt": "2022-07-08T00:15:19.081Z",
@@ -2504,6 +3032,53 @@
               "id": "lemvlfz5icux"
             }
           },
+          "id": "68vJJ0QrvteUHl9BV9DB9c",
+          "type": "Entry",
+          "createdAt": "2022-06-13T22:06:21.414Z",
+          "updatedAt": "2022-06-23T20:44:22.902Z",
+          "environment": {
+            "sys": {
+              "id": "staging",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 2,
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "buildingCosts"
+            }
+          },
+          "locale": "en-US"
+        },
+        "fields": {
+          "buildType": "Knight Activation",
+          "resources": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "UlGC0FxKxmQGwKg4sUGn5"
+              }
+            }
+          ],
+          "victoryPoints": "0"
+        }
+      },
+      {
+        "metadata": {
+          "tags": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "lemvlfz5icux"
+            }
+          },
           "id": "6HInD2Nm2NgRiqc4ZaLMbL",
           "type": "Entry",
           "createdAt": "2022-06-23T21:04:23.620Z",
@@ -2581,6 +3156,60 @@
           },
           "terrain": "Harbor",
           "description": "Trade 2 wool for 1 of any other resource"
+        }
+      },
+      {
+        "metadata": {
+          "tags": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "lemvlfz5icux"
+            }
+          },
+          "id": "6XguuUyu4LnscjSJjZL1Lh",
+          "type": "Entry",
+          "createdAt": "2022-06-15T02:48:19.064Z",
+          "updatedAt": "2022-06-23T20:44:23.250Z",
+          "environment": {
+            "sys": {
+              "id": "staging",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 2,
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "buildingCosts"
+            }
+          },
+          "locale": "en-US"
+        },
+        "fields": {
+          "buildType": "Knight Promotion",
+          "resources": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "3zuqFkfkvcJ327j2UG3h2O"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "01FL6ssKhJEEjWZ5cVBzMx"
+              }
+            }
+          ],
+          "victoryPoints": "0"
         }
       },
       {
@@ -2858,6 +3487,74 @@
             }
           },
           "rotation": "tl"
+        }
+      },
+      {
+        "metadata": {
+          "tags": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "lemvlfz5icux"
+            }
+          },
+          "id": "76Wpt805BAgDPEiqQ4wFx3",
+          "type": "Entry",
+          "createdAt": "2022-06-12T04:18:08.443Z",
+          "updatedAt": "2022-06-23T20:44:36.660Z",
+          "environment": {
+            "sys": {
+              "id": "staging",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 3,
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "buildingCosts"
+            }
+          },
+          "locale": "en-US"
+        },
+        "fields": {
+          "buildType": "Settlement",
+          "resources": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "4zoD9xA3M8eGZE0kbpIW5W"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "5GvnCQXNxB1Wflb9Z4dYyS"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "UlGC0FxKxmQGwKg4sUGn5"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "3zuqFkfkvcJ327j2UG3h2O"
+              }
+            }
+          ],
+          "victoryPoints": "1"
         }
       },
       {

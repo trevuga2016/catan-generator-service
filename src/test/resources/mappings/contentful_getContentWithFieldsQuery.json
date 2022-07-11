@@ -15,7 +15,7 @@
         "equalTo": "scenario"
       },
       "select": {
-        "equalTo": "sys,fields.title,fields.scenarioUrl,fields.numbersFrequency,fields.rowConfig,fields.gameHarborConfig,fields.gameResourcesConfig,fields.isCitiesAndKnights"
+        "equalTo": "sys,fields.title,fields.scenarioUrl,fields.numbersFrequency,fields.rowConfig,fields.gameHarborConfig,fields.gameResourcesConfig,fields.buildingCosts,fields.isCitiesAndKnights"
       }
     }
   },

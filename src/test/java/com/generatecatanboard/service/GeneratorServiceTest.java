@@ -2,6 +2,7 @@ package com.generatecatanboard.service;
 
 import com.contentful.java.cda.CDAClient;
 import com.generatecatanboard.domain.BoardData;
+import com.generatecatanboard.domain.BuildingCosts;
 import com.generatecatanboard.domain.GameHarborConfig;
 import com.generatecatanboard.domain.Probability;
 import com.generatecatanboard.domain.ScenarioProperties;
@@ -289,5 +290,57 @@ class GeneratorServiceTest extends ServiceTestBaseClass {
         } else {
             assertEquals("", terrain);
         }
+    }
+
+    @Test
+    void shouldCleanBuildingCosts1() throws Exception {
+        BuildingCosts cleanCost1 = generatorService.cleanBuildingCosts(getMockBuildingCost1());
+        assertNotNull(cleanCost1);
+        assertEquals("Road", cleanCost1.getBuildType());
+        assertNotNull(cleanCost1.getResources());
+        assertNotNull(cleanCost1.getResources().get(0));
+        assertEquals("Lumber", cleanCost1.getResources().get(0).getResource());
+        assertEquals("https://images.net/lumber", cleanCost1.getResources().get(0).getIcon());
+        assertNull(cleanCost1.getResources().get(0).getCommodity());
+        assertNotNull(cleanCost1.getResources().get(1));
+        assertEquals("Brick", cleanCost1.getResources().get(1).getResource());
+        assertEquals("https://images.net/brick", cleanCost1.getResources().get(1).getIcon());
+        assertNull(cleanCost1.getResources().get(1).getCommodity());
+        assertEquals("0 Points", cleanCost1.getVictoryPoints());
+    }
+
+    @Test
+    void shouldCleanBuildingCosts2() throws Exception {
+        BuildingCosts cleanCost2 = generatorService.cleanBuildingCosts(getMockBuildingCost2());
+        assertNotNull(cleanCost2);
+        assertEquals("Settlement", cleanCost2.getBuildType());
+        assertNotNull(cleanCost2.getResources());
+        assertNotNull(cleanCost2.getResources().get(0));
+        assertEquals("Lumber", cleanCost2.getResources().get(0).getResource());
+        assertEquals("https://images.net/lumber", cleanCost2.getResources().get(0).getIcon());
+        assertNull(cleanCost2.getResources().get(0).getCommodity());
+        assertNotNull(cleanCost2.getResources().get(1));
+        assertEquals("Brick", cleanCost2.getResources().get(1).getResource());
+        assertEquals("https://images.net/brick", cleanCost2.getResources().get(1).getIcon());
+        assertNull(cleanCost2.getResources().get(1).getCommodity());
+        assertNotNull(cleanCost2.getResources().get(2));
+        assertEquals("Grain", cleanCost2.getResources().get(2).getResource());
+        assertEquals("https://images.net/grain", cleanCost2.getResources().get(2).getIcon());
+        assertNull(cleanCost2.getResources().get(2).getCommodity());
+        assertNotNull(cleanCost2.getResources().get(3));
+        assertEquals("Wool", cleanCost2.getResources().get(3).getResource());
+        assertEquals("https://images.net/wool", cleanCost2.getResources().get(3).getIcon());
+        assertNull(cleanCost2.getResources().get(3).getCommodity());
+        assertEquals("1 Point", cleanCost2.getVictoryPoints());
+    }
+
+    @Test
+    void shouldReturnBuildingCosts() throws Exception {
+        List<BuildingCosts> buildingCosts = generatorService.getBuildingCosts("test");
+        assertNotNull(buildingCosts);
+        assertEquals(4, buildingCosts.size());
+        assertNotNull(buildingCosts.get(0).getResources());
+        assertNotNull(buildingCosts.get(0).getResources().get(0));
+        assertNull(buildingCosts.get(0).getResources().get(0).getCommodity());
     }
 }

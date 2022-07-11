@@ -1,0 +1,18 @@
+{
+  "buildType": "Road",
+  "resources": [
+    {
+      "resource": "Lumber",
+      "icon": "https://images.net/lumber",
+      "commodity": {
+        "commodity": "Paper",
+        "icon": "https://images.net/paper"
+      }
+    },
+    {
+      "resource": "Brick",
+      "icon": "https://images.net/brick"
+    }
+  ],
+  "victoryPoints": "0"
+}

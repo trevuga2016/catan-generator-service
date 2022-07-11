@@ -1,0 +1,30 @@
+{
+  "buildType": "Settlement",
+  "resources": [
+    {
+      "resource": "Lumber",
+      "icon": "https://images.net/lumber",
+      "commodity": {
+        "commodity": "Paper",
+        "icon": "https://images.net/paper"
+      }
+    },
+    {
+      "resource": "Brick",
+      "icon": "https://images.net/brick"
+    },
+    {
+      "resource": "Grain",
+      "icon": "https://images.net/grain"
+    },
+    {
+      "resource": "Wool",
+      "icon": "https://images.net/wool",
+      "commodity": {
+        "commodity": "Cloth",
+        "icon": "https://images.net/cloth"
+      }
+    }
+  ],
+  "victoryPoints": "1"
+}

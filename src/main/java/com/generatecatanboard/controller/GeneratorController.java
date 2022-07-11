@@ -1,7 +1,7 @@
 package com.generatecatanboard.controller;
 
-import com.contentful.java.cda.CDAEntry;
 import com.generatecatanboard.domain.BoardData;
+import com.generatecatanboard.domain.BuildingCosts;
 import com.generatecatanboard.domain.ScenarioProperties;
 import com.generatecatanboard.exceptions.InvalidBoardConfigurationException;
 import com.generatecatanboard.exceptions.PropertiesNotFoundException;
@@ -33,7 +33,7 @@ public class GeneratorController {
     }
 
     @GetMapping(value = "/buildingCosts/{scenario}", produces = "application/json")
-    public List<CDAEntry> getBuildingCosts(@PathVariable("scenario") String scenario) throws PropertiesNotFoundException {
+    public List<BuildingCosts> getBuildingCosts(@PathVariable("scenario") String scenario) throws PropertiesNotFoundException, InvalidBoardConfigurationException {
         return generatorService.getBuildingCosts(scenario);
     }
 }

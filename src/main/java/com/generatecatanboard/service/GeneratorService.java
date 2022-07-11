@@ -4,6 +4,7 @@ import com.contentful.java.cda.CDAAsset;
 import com.contentful.java.cda.CDAClient;
 import com.contentful.java.cda.CDAEntry;
 import com.generatecatanboard.domain.BoardData;
+import com.generatecatanboard.domain.BuildingCosts;
 import com.generatecatanboard.domain.Commodities;
 import com.generatecatanboard.domain.GameHarborConfig;
 import com.generatecatanboard.domain.GameResourcesConfig;
@@ -109,8 +110,25 @@ public class GeneratorService {
         return generator.generateRandomBoard(scenarioProperties);
     }
 
-    public List<CDAEntry> getBuildingCosts(String scenario) throws PropertiesNotFoundException {
-        return null;
+    public List<BuildingCosts> getBuildingCosts(String scenario) throws PropertiesNotFoundException, InvalidBoardConfigurationException {
+        ScenarioProperties scenarioProperties = getScenarioProperties(scenario);
+        List<BuildingCosts> cleanedCosts = new ArrayList<>();
+        List<BuildingCosts> buildingCosts = scenarioProperties.getBuildingCosts();
+        assertNotNull(buildingCosts);
+        for (BuildingCosts buildingCost : buildingCosts) {
+            cleanedCosts.add(cleanBuildingCosts(buildingCost));
+        }
+        return cleanedCosts;
+    }
+
+    public BuildingCosts cleanBuildingCosts(BuildingCosts buildingCost) {
+        List<Resources> cleanedResources = new ArrayList<>();
+        for (Resources resources : buildingCost.getResources()) {
+            cleanedResources.add(Resources.builder().resource(resources.getResource()).icon(resources.getIcon()).build());
+        }
+        String victoryPoints = buildingCost.getVictoryPoints();
+        String vpText = "1".equals(victoryPoints) ? victoryPoints.concat(" Point") : victoryPoints.concat(" Points");
+        return BuildingCosts.builder().buildType(buildingCost.getBuildType()).resources(cleanedResources).victoryPoints(vpText).build();
     }
 
     public List<String> getListOfNumberedItems(Map<String, Double> numbersFrequency) {

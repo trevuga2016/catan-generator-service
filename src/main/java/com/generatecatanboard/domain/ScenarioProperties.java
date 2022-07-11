@@ -37,6 +37,8 @@ public class ScenarioProperties {
     @TransformQuery.ContentfulField
     private GameResourcesConfig gameResourcesConfig;
     @TransformQuery.ContentfulField
+    private List<BuildingCosts> buildingCosts;
+    @TransformQuery.ContentfulField
     @JsonProperty(value = "isCitiesAndKnights")
     private boolean isCitiesAndKnights;
 }

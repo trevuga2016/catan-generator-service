@@ -2,6 +2,7 @@ package com.generatecatanboard.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.generatecatanboard.domain.BoardData;
+import com.generatecatanboard.domain.BuildingCosts;
 import com.generatecatanboard.domain.GameHarborConfig;
 import com.generatecatanboard.domain.GameResourcesConfig;
 import com.generatecatanboard.domain.ScenarioProperties;
@@ -37,6 +38,16 @@ public class ServiceTestBaseClass {
     public BoardData getMockBoardData() throws Exception {
         ObjectMapper om = new ObjectMapper();
         return om.readValue(this.getClass().getClassLoader().getResourceAsStream("mocks/mockBoardData.json"), BoardData.class);
+    }
+
+    public BuildingCosts getMockBuildingCost1() throws Exception {
+        ObjectMapper om = new ObjectMapper();
+        return om.readValue(this.getClass().getClassLoader().getResourceAsStream("mocks/mockBuildingCost1.json"), BuildingCosts.class);
+    }
+
+    public BuildingCosts getMockBuildingCost2() throws Exception {
+        ObjectMapper om = new ObjectMapper();
+        return om.readValue(this.getClass().getClassLoader().getResourceAsStream("mocks/mockBuildingCost2.json"), BuildingCosts.class);
     }
 
     public List<String> getMockListOfResources() {
