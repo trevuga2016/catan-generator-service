@@ -193,39 +193,51 @@ public class GeneratorService {
             assertNotNull(frequency.getResource());
             if (!DESERT.equals(frequency.getResource().getResource())) {
                 String resource = frequency.getResource().getResource();
-                List<String> numbers = new ArrayList<>();
-                AtomicDouble probability = new AtomicDouble(0);
-                for (Rows row : rows) {
-                    for (Hex hex: row.getRow()) {
-                        if (hex.getResource().equals(resource)) {
-                            assertNotNull(hex.getToken());
-                            numbers.add(hex.getToken().getNumber());
-                        }
-                    }
-                }
-                List<String> uniqueNumbers = numbers.stream().distinct().collect(Collectors.toList());
-                uniqueNumbers.forEach(number -> {
-                    double probValue = getProbabilityValue(number);
-                    probability.set(probability.get() + probValue);
-                });
-                probability.set(probability.get() * 100);
-                String probabilityString = String.format("%.2f", probability.get());
-                Statistics statistic = Statistics.builder().build();
-                assertNotNull(scenarioProperties.isCitiesAndKnights());
-                if (scenarioProperties.isCitiesAndKnights() && frequency.getResource().getCommodity() != null) {
-                    Commodities commodity = frequency.getResource().getCommodity();
-                    statistic.setCommodity(commodity.getCommodity());
-                    statistic.setCommodityIcon(commodity.getIcon());
-                }
-                statistic.setResource(resource);
-                statistic.setProbability(probabilityString);
-                statistic.setResourceIcon(frequency.getResource().getIcon());
-                statistics.add(statistic);
+                List<String> numbers = collectNumbersOfResources(rows, resource);
+                statistics.add(buildStatisticsObject(scenarioProperties, frequency, numbers, resource));
             }
         }
         Comparator<Statistics> compareProb = Comparator.comparing(Statistics::getProbability);
         statistics.sort(compareProb.reversed());
         return statistics;
+    }
+
+    public List<String> collectNumbersOfResources(List<Rows> rows, String resource) throws InvalidBoardConfigurationException {
+        List<String> numbers = new ArrayList<>();
+        for (Rows row : rows) {
+            for (Hex hex: row.getRow()) {
+                if (hex.getResource().equals(resource)) {
+                    assertNotNull(hex.getToken());
+                    numbers.add(hex.getToken().getNumber());
+                }
+            }
+        }
+        return numbers;
+    }
+
+    public Statistics buildStatisticsObject(ScenarioProperties scenarioProperties, ResourcesFrequency frequency, List<String> numbers, String resource) throws InvalidBoardConfigurationException {
+        Statistics statistic = Statistics.builder().build();
+        assertNotNull(scenarioProperties.isCitiesAndKnights());
+        if (scenarioProperties.isCitiesAndKnights() && frequency.getResource().getCommodity() != null) {
+            Commodities commodity = frequency.getResource().getCommodity();
+            statistic.setCommodity(commodity.getCommodity());
+            statistic.setCommodityIcon(commodity.getIcon());
+        }
+        statistic.setResource(resource);
+        statistic.setProbability(getProbabilityString(numbers));
+        statistic.setResourceIcon(frequency.getResource().getIcon());
+        return statistic;
+    }
+
+    public String getProbabilityString(List<String> numbers) {
+        AtomicDouble probability = new AtomicDouble(0);
+        List<String> uniqueNumbers = numbers.stream().distinct().collect(Collectors.toList());
+        uniqueNumbers.forEach(number -> {
+            double probValue = getProbabilityValue(number);
+            probability.set(probability.get() + probValue);
+        });
+        probability.set(probability.get() * 100);
+        return String.format("%.2f", probability.get());
     }
 
     public int getSizeOfFirstRow(List<Double> rowConfig) {
