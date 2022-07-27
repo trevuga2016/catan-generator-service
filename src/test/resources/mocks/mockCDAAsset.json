@@ -1,0 +1,76 @@
+{
+  "attrs": {
+    "space": {
+      "sys": {
+        "type": "Link",
+        "linkType": "Space",
+        "id": "abcdefg"
+      }
+    },
+    "id": "123456",
+    "type": "Asset",
+    "createdAt": "2022-06-24T02:08:27.032Z",
+    "updatedAt": "2022-06-24T02:08:27.032Z",
+    "environment": {
+      "sys": {
+        "id": "staging",
+        "type": "Link",
+        "linkType": "Environment"
+      }
+    },
+    "revision": 1.0,
+    "locale": "en-US"
+  },
+  "defaultLocale": "en-US",
+  "fallbackLocaleMap": {
+  },
+  "fields": {
+    "file": {
+      "en-US": {
+        "url": "//mockasset.net/mock_image.png",
+        "details": {
+          "size": 150867.0,
+          "image": {
+            "width": 500.0,
+            "height": 575.0
+          }
+        },
+        "fileName": "mock_image.png",
+        "contentType": "image/png"
+      }
+    },
+    "description": {
+      "en-US": ""
+    },
+    "title": {
+      "en-US": "sea_hex"
+    }
+  },
+  "rawFields": {
+    "file": {
+      "en-US": {
+        "url": "//mockasset.net/mock_image.png",
+        "details": {
+          "size": 150867.0,
+          "image": {
+            "width": 500.0,
+            "height": 575.0
+          }
+        },
+        "fileName": "mock_image.png",
+        "contentType": "image/png"
+      }
+    },
+    "description": {
+      "en-US": ""
+    },
+    "title": {
+      "en-US": "mock_image"
+    }
+  },
+  "metadata": {
+    "tags": [
+
+    ]
+  }
+}

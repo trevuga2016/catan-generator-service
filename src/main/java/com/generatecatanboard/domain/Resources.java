@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
 @TransformQuery.ContentfulEntryModel("resources")
 public class Resources {
     @TransformQuery.ContentfulField
@@ -22,6 +22,11 @@ public class Resources {
     @TransformQuery.ContentfulField(value = "icon")
     private CDAAsset iconAsset;
     private String icon;
+    @JsonIgnore
+    @TransformQuery.ContentfulField(value = "hexImage")
+    private CDAAsset hexImageAsset;
+    @TransformQuery.ContentfulField(value = "cardImage")
+    private CDAAsset cardImageAsset;
     @TransformQuery.ContentfulField
     private Commodities commodity;
 }

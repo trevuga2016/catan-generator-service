@@ -18,4 +18,5 @@ public class HarborConfig {
     private Harbors harborType;
     @TransformQuery.ContentfulField
     private String rotation;
+    private String hexImage;
 }

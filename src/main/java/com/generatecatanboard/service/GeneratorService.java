@@ -9,6 +9,7 @@ import com.generatecatanboard.domain.Commodities;
 import com.generatecatanboard.domain.GameHarborConfig;
 import com.generatecatanboard.domain.GameResourcesConfig;
 import com.generatecatanboard.domain.Hex;
+import com.generatecatanboard.domain.HexCard;
 import com.generatecatanboard.domain.Probability;
 import com.generatecatanboard.domain.Resources;
 import com.generatecatanboard.domain.ResourcesFrequency;
@@ -19,6 +20,7 @@ import com.generatecatanboard.domain.Token;
 import com.generatecatanboard.exceptions.InvalidBoardConfigurationException;
 import com.generatecatanboard.exceptions.PropertiesNotFoundException;
 import com.google.common.util.concurrent.AtomicDouble;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Service;
 
@@ -27,6 +29,7 @@ import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
@@ -40,8 +43,8 @@ public class GeneratorService {
     private final ApplicationContext applicationContext;
     public final Random random;
     private static final String DESERT = "Desert";
-    private static final String CDA_PREFIX = "https:";
-    private static final String CDA_WEBP_SUFFIX = "?fm=webp";
+    public static final String CDA_PREFIX = "https:";
+    public static final String CDA_WEBP_SUFFIX = "?fm=webp";
 
     public GeneratorService(CDAClient cdaClient, ApplicationContext applicationContext) throws NoSuchAlgorithmException {
         this.cdaClient = cdaClient;
@@ -60,6 +63,10 @@ public class GeneratorService {
         }
         setResourceIconUrls(scenarioProperties);
         setCommodityIconUrls(scenarioProperties);
+        scenarioProperties.setResourceImages(getMapOfHexImages(scenarioProperties.getGameResourcesConfig()));
+        scenarioProperties.setHexCardImages(getMapOfHexCardImages(scenarioProperties.getGameResourcesConfig()));
+        scenarioProperties.setResourcesList(getListOfResources(scenarioProperties.getGameResourcesConfig()));
+        scenarioProperties.setNumbersList(getListOfNumberedItems(scenarioProperties.getNumbersFrequency()));
         return addBackgroundProps(scenarioProperties);
     }
 
@@ -81,7 +88,7 @@ public class GeneratorService {
             assertNotNull(frequency);
             Resources resources = frequency.getResource();
             assertNotNull(resources);
-            if (!DESERT.equals(resources.getResource())) {
+            if (resources.getIconAsset() != null) {
                 CDAAsset iconAsset = resources.getIconAsset();
                 resources.setIcon(CDA_PREFIX.concat(iconAsset.fileField("url")).concat(CDA_WEBP_SUFFIX));
             }
@@ -94,13 +101,27 @@ public class GeneratorService {
         List<ResourcesFrequency> resourcesFrequencies = scenarioProperties.getGameResourcesConfig().getResourcesFrequency();
         for (ResourcesFrequency frequency: resourcesFrequencies) {
             assertNotNull(frequency);
+            assertNotNull(frequency.getResource());
             Resources resources = frequency.getResource();
-            assertNotNull(resources);
             if (resources.getCommodity() != null) {
                 Commodities commodity = resources.getCommodity();
                 CDAAsset iconAsset = commodity.getIconAsset();
                 commodity.setIcon(CDA_PREFIX.concat(iconAsset.fileField("url")).concat(CDA_WEBP_SUFFIX));
             }
+        }
+    }
+
+    public String getHarborHexImage(List<CDAAsset> hexImageAssets, String rotation) {
+        if (rotation != null) {
+            for (CDAAsset hexImageAsset : hexImageAssets) {
+                if (StringUtils.endsWith(hexImageAsset.title(), "_".concat(rotation))) {
+                    return CDA_PREFIX.concat(hexImageAsset.fileField("url")).concat(CDA_WEBP_SUFFIX);
+                }
+            }
+            return StringUtils.EMPTY;
+        } else {
+            CDAAsset hexImageAsset = hexImageAssets.get(0);
+            return CDA_PREFIX.concat(hexImageAsset.fileField("url")).concat(CDA_WEBP_SUFFIX);
         }
     }
 
@@ -152,6 +173,32 @@ public class GeneratorService {
         return listOfResources;
     }
 
+    public Map<String, String> getMapOfHexImages(GameResourcesConfig gameResourcesConfig) {
+        Map<String, String> listOfResources = new HashMap<>();
+        List<ResourcesFrequency> resourcesFrequency = gameResourcesConfig.getResourcesFrequency();
+        resourcesFrequency.forEach(frequency -> {
+            for (int i = 0; i < frequency.getFrequency(); i++) {
+                CDAAsset hexImageAsset = frequency.getResource().getHexImageAsset();
+                String hexImage = CDA_PREFIX.concat(hexImageAsset.fileField("url")).concat(CDA_WEBP_SUFFIX);
+                listOfResources.put(frequency.getResource().getResource(), hexImage);
+            }
+        });
+        return listOfResources;
+    }
+
+    public Map<String, String> getMapOfHexCardImages(GameResourcesConfig gameResourcesConfig) {
+        Map<String, String> listOfResources = new HashMap<>();
+        List<ResourcesFrequency> resourcesFrequency = gameResourcesConfig.getResourcesFrequency();
+        resourcesFrequency.forEach(frequency -> {
+            for (int i = 0; i < frequency.getFrequency(); i++) {
+                CDAAsset cardImageAsset = frequency.getResource().getCardImageAsset();
+                String hexImage = CDA_PREFIX.concat(cardImageAsset.fileField("url")).concat(CDA_WEBP_SUFFIX);
+                listOfResources.put(frequency.getResource().getResource(), hexImage);
+            }
+        });
+        return listOfResources;
+    }
+
     public void validateConfiguration(List<String> resourcesList, List<Double> rowConfig) throws InvalidBoardConfigurationException {
         Integer totalNumberOfHexes = getTotalNumberOfHexes(rowConfig);
         if (resourcesList.size() != totalNumberOfHexes) {
@@ -163,22 +210,38 @@ public class GeneratorService {
         return rowConfig.stream().mapToInt(Double::intValue).sum();
     }
 
-    public List<Hex> getRowsOfResourceHexes(Double r, List<String> resourcesList, List<String> numbersList) {
+    public String getRandomResource(List<String> listOfResources) {
+        int randomIndex = this.random.nextInt(listOfResources.size());
+        String resource = listOfResources.get(randomIndex);
+        listOfResources.remove(randomIndex);
+        return resource;
+    }
+
+    public String getRandomTokenValue(List<String> numbersList) {
+        int randomIndex = this.random.nextInt(numbersList.size());
+        String numberValue = numbersList.get(randomIndex);
+        numbersList.remove(randomIndex);
+        return numberValue;
+    }
+
+    public List<Hex> getRowsOfResourceHexes(Double r, ScenarioProperties scenarioProperties) {
+        Map<String, String> resourceImages = scenarioProperties.getResourceImages();
+        Map<String, String> hexCardImages = scenarioProperties.getHexCardImages();
         List<Hex> hexes = new ArrayList<>();
         for (int i = 1; i <= r; i++) {
-            int randomResourceIndex = this.random.nextInt(resourcesList.size());
-            String resource = resourcesList.get(randomResourceIndex);
+            String resource = getRandomResource(scenarioProperties.getResourcesList());
+            String hexImage = resourceImages.get(resource);
+            String hexCardImage = hexCardImages.get(resource);
             if (DESERT.equals(resource)) {
                 Token token = Token.builder().probability(getNumberProbability("7")).build();
-                hexes.add(Hex.builder().resource(resource).terrain(getResourceTerrain(resource)).token(token).build());
+                HexCard hexCard = HexCard.builder().image(hexCardImage).subtext("Produces Nothing").build();
+                hexes.add(Hex.builder().resource(resource).terrain(getResourceTerrain(resource)).token(token).hexImage(hexImage).hexCard(hexCard).build());
             } else {
-                int randomNumberIndex = this.random.nextInt(numbersList.size());
-                String number = numbersList.get(randomNumberIndex);
+                String number = getRandomTokenValue(scenarioProperties.getNumbersList());
                 Token token = Token.builder().number(number).probability(getNumberProbability(number)).build();
-                hexes.add(Hex.builder().resource(resource).terrain(getResourceTerrain(resource)).token(token).build());
-                numbersList.remove(randomNumberIndex);
+                HexCard hexCard = HexCard.builder().image(hexCardImage).subtext("Produce ".concat(resource)).build();
+                hexes.add(Hex.builder().resource(resource).terrain(getResourceTerrain(resource)).token(token).hexImage(hexImage).hexCard(hexCard).build());
             }
-            resourcesList.remove(randomResourceIndex);
         }
         return hexes;
     }
@@ -237,7 +300,7 @@ public class GeneratorService {
             probability.set(probability.get() + probValue);
         });
         probability.set(probability.get() * 100);
-        return String.format("%.2f", probability.get());
+        return String.format("%05.2f", probability.get());
     }
 
     public int getSizeOfFirstRow(List<Double> rowConfig) {

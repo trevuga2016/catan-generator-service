@@ -1,5 +1,8 @@
-package com.generatecatanboard.service;
+package com.generatecatanboard.utility;
 
+import com.contentful.java.cda.CDAAsset;
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.generatecatanboard.domain.BoardData;
 import com.generatecatanboard.domain.BuildingCosts;
@@ -7,9 +10,9 @@ import com.generatecatanboard.domain.GameHarborConfig;
 import com.generatecatanboard.domain.GameResourcesConfig;
 import com.generatecatanboard.domain.ScenarioProperties;
 
-import java.util.Arrays;
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -27,7 +30,20 @@ public class ServiceTestBaseClass {
 
     public ScenarioProperties getMockScenarioProps() throws Exception {
         ObjectMapper objectMapper = new ObjectMapper();
-        return objectMapper.readValue(getClass().getResourceAsStream("/mocks/mockScenarioProps.json"), ScenarioProperties.class);
+        objectMapper.setVisibility(PropertyAccessor.FIELD, JsonAutoDetect.Visibility.ANY);
+        ScenarioProperties properties = objectMapper.readValue(getClass().getResourceAsStream("/mocks/mockScenarioProps.json"), ScenarioProperties.class);
+        CDAAsset mockCDAAsset = objectMapper.readValue(getClass().getResourceAsStream("/mocks/mockCDAAsset.json"), CDAAsset.class);
+        List<CDAAsset> mockCDAAssets = List.of(mockCDAAsset);
+        properties.getGameResourcesConfig().getResourcesFrequency().forEach(frequency ->
+                frequency.getResource().setCardImageAsset(mockCDAAsset)
+        );
+        properties.getGameHarborConfig().getHarborConfig().forEach(config ->
+                config.getHarborType().setHexImageAsset(mockCDAAssets)
+        );
+        properties.getGameHarborConfig().getHarborConfig().forEach(config ->
+                config.getHarborType().setCardImageAsset(mockCDAAsset)
+        );
+        return properties;
     }
 
     public ScenarioProperties getMockCitiesAndKnightsProps() throws Exception {
@@ -50,19 +66,6 @@ public class ServiceTestBaseClass {
         return om.readValue(this.getClass().getClassLoader().getResourceAsStream("mocks/mockBuildingCost2.json"), BuildingCosts.class);
     }
 
-    public List<String> getMockListOfResources() {
-        return new LinkedList<>(Arrays.asList("Ore", "Ore", "Ore", "Wool", "Wool", "Wool", "Wool", "Brick", "Brick", "Brick", "Grain",
-                "Grain", "Grain", "Grain", "Lumber", "Lumber", "Lumber", "Lumber", "Desert"));
-    }
-
-    public List<Double> getMockRowConfig() {
-        return new LinkedList<>(Arrays.asList(3.0, 4.0, 5.0, 4.0, 3.0));
-    }
-
-    public List<String> getMockListOfNumbers() {
-        return new LinkedList<>(Arrays.asList("2", "3", "3", "4", "4", "5", "5", "6", "6", "8", "8", "9", "9", "10", "10", "11", "11", "12"));
-    }
-
     public Map<String, Double> mockNumbersFrequency() {
         Map<String, Double> numbersFrequency = new HashMap<>();
         numbersFrequency.put("2", 1.0);
@@ -77,4 +80,12 @@ public class ServiceTestBaseClass {
         numbersFrequency.put("12", 1.0);
         return numbersFrequency;
     }
+
+    public String getMockBuildingCostsAsString() throws Exception {
+    InputStream inputStream = this.getClass().getClassLoader().getResourceAsStream("mocks/mockBuildingCosts.json");
+    if (inputStream != null) {
+        return new String(inputStream.readAllBytes(), StandardCharsets.UTF_8);
+    }
+    return "";
+}
 }

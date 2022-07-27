@@ -1,6 +1,47 @@
 {
   "title": "The Settlers of Catan",
   "scenarioUrl": "catan",
+  "resourcesList": [
+    "Desert",
+    "Lumber",
+    "Lumber",
+    "Lumber",
+    "Lumber",
+    "Grain",
+    "Grain",
+    "Grain",
+    "Grain",
+    "Brick",
+    "Brick",
+    "Brick",
+    "Wool",
+    "Wool",
+    "Wool",
+    "Wool",
+    "Ore",
+    "Ore",
+    "Ore"
+  ],
+  "numbersList": [
+    "2",
+    "3",
+    "3",
+    "4",
+    "4",
+    "5",
+    "5",
+    "6",
+    "6",
+    "8",
+    "8",
+    "9",
+    "9",
+    "10",
+    "10",
+    "11",
+    "11",
+    "12"
+  ],
   "numbersFrequency": {
     "2": 1.0,
     "3": 2.0,
@@ -26,118 +67,145 @@
     "harborConfig": [
       {
         "harborType": {
+          "type": "Sea",
           "id": "sea",
           "terrain": "Sea"
         }
       },
       {
         "harborType": {
+          "type": "3 for 1",
           "id": "3for1",
-          "terrain": "Harbor"
+          "terrain": "Harbor",
+          "description": "Trade 3 of any identical resource for 1 of any other resource"
         },
         "rotation": "br"
       },
       {
         "harborType": {
+          "type": "Sea",
           "id": "sea",
           "terrain": "Sea"
         }
       },
       {
         "harborType": {
+          "type": "3 for 1",
           "id": "3for1",
-          "terrain": "Harbor"
+          "terrain": "Harbor",
+          "description": "Trade 3 of any identical resource for 1 of any other resource"
         },
         "rotation": "bl"
       },
       {
         "harborType": {
+          "type": "2 for 1 Wool",
           "id": "2for1_wool",
-          "terrain": "Harbor"
+          "terrain": "Harbor",
+          "description": "Trade 2 wool for 1 of any other resource"
         },
         "rotation": "br"
       },
       {
         "harborType": {
+          "type": "Sea",
           "id": "sea",
           "terrain": "Sea"
         }
       },
       {
         "harborType": {
+          "type": "Sea",
           "id": "sea",
           "terrain": "Sea"
         }
       },
       {
         "harborType": {
+          "type": "2 for 1 Brick",
           "id": "2for1_brick",
-          "terrain": "Harbor"
+          "terrain": "Harbor",
+          "description": "Trade 2 brick for 1 of any other resource"
         },
         "rotation": "l"
       },
       {
         "harborType": {
+          "type": "3 for 1",
           "id": "3for1",
-          "terrain": "Harbor"
+          "terrain": "Harbor",
+          "description": "Trade 3 of any identical resource for 1 of any other resource"
         },
         "rotation": "r"
       },
       {
         "harborType": {
+          "type": "Sea",
           "id": "sea",
           "terrain": "Sea"
         }
       },
       {
         "harborType": {
+          "type": "Sea",
           "id": "sea",
           "terrain": "Sea"
         }
       },
       {
         "harborType": {
+          "type": "2 for 1 Lumber",
           "id": "2for1_lumber",
-          "terrain": "Harbor"
+          "terrain": "Harbor",
+          "description": "Trade 2 lumber for 1 of any other resource"
         },
         "rotation": "l"
       },
       {
         "harborType": {
+          "type": "2 for 1 Ore",
           "id": "2for1_ore",
-          "terrain": "Harbor"
+          "terrain": "Harbor",
+          "description": "Trade 2 ore for 1 of any other resource"
         },
         "rotation": "tr"
       },
       {
         "harborType": {
+          "type": "Sea",
           "id": "sea",
           "terrain": "Sea"
         }
       },
       {
         "harborType": {
+          "type": "Sea",
           "id": "sea",
           "terrain": "Sea"
         }
       },
       {
         "harborType": {
+          "type": "2 for 1 Grain",
           "id": "2for1_grain",
-          "terrain": "Harbor"
+          "terrain": "Harbor",
+          "description": "Trade 2 grain for 1 of any other resource"
         },
         "rotation": "tr"
       },
       {
         "harborType": {
+          "type": "Sea",
           "id": "sea",
           "terrain": "Sea"
         }
       },
       {
         "harborType": {
+          "type": "3 for 1",
           "id": "3for1",
-          "terrain": "Harbor"
+          "terrain": "Harbor",
+          "description": "Trade 3 of any identical resource for 1 of any other resource"
         },
         "rotation": "tl"
       }
@@ -199,6 +267,136 @@
         "frequency": 3.0
       }
     ]
+  },
+  "buildingCosts": [
+    {
+      "buildType": "Road",
+      "resources": [
+        {
+          "resource": "Lumber",
+          "icon": "https://images.ctfassets.net/lemvlfz5icux/6OGltTvq7ZcJPPhDWBG9tI/65f60bf872a14f7a2568f865e0dffffe/icon.jpg?fm=webp",
+          "commodity": {
+            "commodity": "Paper",
+            "icon": "https://images.ctfassets.net/lemvlfz5icux/16MLgG3fSrA6BDslp9wATV/e87f012dfcde569201819c0073e7a41c/paper_icon.png?fm=webp"
+          }
+        },
+        {
+          "resource": "Brick",
+          "icon": "https://images.ctfassets.net/lemvlfz5icux/2p68nM2R7dIHnkzDGdo6pX/ee32f62dcaf734b41b86659b7a2d8717/icon.jpg?fm=webp"
+        }
+      ],
+      "victoryPoints": "0"
+    },
+    {
+      "buildType": "Settlement",
+      "resources": [
+        {
+          "resource": "Lumber",
+          "icon": "https://images.ctfassets.net/lemvlfz5icux/6OGltTvq7ZcJPPhDWBG9tI/65f60bf872a14f7a2568f865e0dffffe/icon.jpg?fm=webp",
+          "commodity": {
+            "commodity": "Paper",
+            "icon": "https://images.ctfassets.net/lemvlfz5icux/16MLgG3fSrA6BDslp9wATV/e87f012dfcde569201819c0073e7a41c/paper_icon.png?fm=webp"
+          }
+        },
+        {
+          "resource": "Brick",
+          "icon": "https://images.ctfassets.net/lemvlfz5icux/2p68nM2R7dIHnkzDGdo6pX/ee32f62dcaf734b41b86659b7a2d8717/icon.jpg?fm=webp"
+        },
+        {
+          "resource": "Grain",
+          "icon": "https://images.ctfassets.net/lemvlfz5icux/4Ym6aFr9OvgAQqhUV0BIjF/c51bfbe9593e4d153cdd543a7eda70a0/icon.jpg?fm=webp"
+        },
+        {
+          "resource": "Wool",
+          "icon": "https://images.ctfassets.net/lemvlfz5icux/1uBkbbdwt1NdIYwUyzl6qn/d1dad83c4a22e2cf6fe33c6cff119aab/icon.jpg?fm=webp",
+          "commodity": {
+            "commodity": "Cloth",
+            "icon": "https://images.ctfassets.net/lemvlfz5icux/1jl7zwCIqiN7UCOq8JL40M/394863470702c471a541c41880983997/cloth_icon.png?fm=webp"
+          }
+        }
+      ],
+      "victoryPoints": "1"
+    },
+    {
+      "buildType": "City",
+      "resources": [
+        {
+          "resource": "Grain",
+          "icon": "https://images.ctfassets.net/lemvlfz5icux/4Ym6aFr9OvgAQqhUV0BIjF/c51bfbe9593e4d153cdd543a7eda70a0/icon.jpg?fm=webp"
+        },
+        {
+          "resource": "Grain",
+          "icon": "https://images.ctfassets.net/lemvlfz5icux/4Ym6aFr9OvgAQqhUV0BIjF/c51bfbe9593e4d153cdd543a7eda70a0/icon.jpg?fm=webp"
+        },
+        {
+          "resource": "Ore",
+          "icon": "https://images.ctfassets.net/lemvlfz5icux/3uC1Q5NwNzk6brSaITotO3/49795e086079ba42e0f9ae24d0ede8b4/icon.jpg?fm=webp",
+          "commodity": {
+            "commodity": "Coin",
+            "icon": "https://images.ctfassets.net/lemvlfz5icux/49PMTRULHMVTrzMNIfgsqK/7d1b20f600f7447286e56ca3137c7df8/coin_icon.png?fm=webp"
+          }
+        },
+        {
+          "resource": "Ore",
+          "icon": "https://images.ctfassets.net/lemvlfz5icux/3uC1Q5NwNzk6brSaITotO3/49795e086079ba42e0f9ae24d0ede8b4/icon.jpg?fm=webp",
+          "commodity": {
+            "commodity": "Coin",
+            "icon": "https://images.ctfassets.net/lemvlfz5icux/49PMTRULHMVTrzMNIfgsqK/7d1b20f600f7447286e56ca3137c7df8/coin_icon.png?fm=webp"
+          }
+        },
+        {
+          "resource": "Ore",
+          "icon": "https://images.ctfassets.net/lemvlfz5icux/3uC1Q5NwNzk6brSaITotO3/49795e086079ba42e0f9ae24d0ede8b4/icon.jpg?fm=webp",
+          "commodity": {
+            "commodity": "Coin",
+            "icon": "https://images.ctfassets.net/lemvlfz5icux/49PMTRULHMVTrzMNIfgsqK/7d1b20f600f7447286e56ca3137c7df8/coin_icon.png?fm=webp"
+          }
+        }
+      ],
+      "victoryPoints": "2"
+    },
+    {
+      "buildType": "Development Card",
+      "resources": [
+        {
+          "resource": "Wool",
+          "icon": "https://images.ctfassets.net/lemvlfz5icux/1uBkbbdwt1NdIYwUyzl6qn/d1dad83c4a22e2cf6fe33c6cff119aab/icon.jpg?fm=webp",
+          "commodity": {
+            "commodity": "Cloth",
+            "icon": "https://images.ctfassets.net/lemvlfz5icux/1jl7zwCIqiN7UCOq8JL40M/394863470702c471a541c41880983997/cloth_icon.png?fm=webp"
+          }
+        },
+        {
+          "resource": "Grain",
+          "icon": "https://images.ctfassets.net/lemvlfz5icux/4Ym6aFr9OvgAQqhUV0BIjF/c51bfbe9593e4d153cdd543a7eda70a0/icon.jpg?fm=webp"
+        },
+        {
+          "resource": "Ore",
+          "icon": "https://images.ctfassets.net/lemvlfz5icux/3uC1Q5NwNzk6brSaITotO3/49795e086079ba42e0f9ae24d0ede8b4/icon.jpg?fm=webp",
+          "commodity": {
+            "commodity": "Coin",
+            "icon": "https://images.ctfassets.net/lemvlfz5icux/49PMTRULHMVTrzMNIfgsqK/7d1b20f600f7447286e56ca3137c7df8/coin_icon.png?fm=webp"
+          }
+        }
+      ],
+      "victoryPoints": "?"
+    }
+  ],
+  "resourceImages": {
+    "Ore": "https://images.ctfassets.net/lemvlfz5icux/1xgyTRcfY3RFd9wJbLpizY/1269d91ad4b24f3f243b0bf42e3e66ce/hex.png?fm=webp",
+    "Grain": "https://images.ctfassets.net/lemvlfz5icux/2IPjHvm6vZ2LsaHwSD9ZHH/67005f825167b46fa8fb035bd3c87983/hex.png?fm=webp",
+    "Brick": "https://images.ctfassets.net/lemvlfz5icux/2ekieNLjvjTxVYghXHLKwX/0bf259e3a17b28646cee14eda6d341c8/hex.png?fm=webp",
+    "Desert": "https://images.ctfassets.net/lemvlfz5icux/2cwLLCBJGGk6WDkVbv2UGg/66fd42019a92bfeea19d401452e83e66/hex.png?fm=webp",
+    "Wool": "https://images.ctfassets.net/lemvlfz5icux/6q1h9lKk8Vc9MohPWofl3Y/522e03caefe3a5e107b4e8d1feb12e7e/hex.png?fm=webp",
+    "Lumber": "https://images.ctfassets.net/lemvlfz5icux/3Qui1G7hEmlAUydG83zmT2/af27f5ff9b308a099f2ab8a49dd4c1e5/hex.png?fm=webp"
+  },
+  "hexCardImages": {
+    "Ore": "https://images.ctfassets.net/lemvlfz5icux/1LVhRIf3N09OITS8uU2NUv/78ade030c8cab771c5f0ffe6d88f4e14/card.jpg?fm=webp",
+    "Grain": "https://images.ctfassets.net/lemvlfz5icux/ugSI3GT4sWE96Pgq7omjW/848a026500b70715ee9a4cf8c8b2ac14/card.jpg?fm=webp",
+    "Brick": "https://images.ctfassets.net/lemvlfz5icux/2x2mFr745hq0NZRbABQwwJ/541ca49b83ed47c9374184eac78ddd85/card.jpg?fm=webp",
+    "Desert": "https://images.ctfassets.net/lemvlfz5icux/3Bgp5PYNAwgIjFEFKZQOgs/046d672f5993bf0a84d4ac7f1a37dff2/card.jpg?fm=webp",
+    "Wool": "https://images.ctfassets.net/lemvlfz5icux/CIEoClBA1qT1PHQKd1wDP/28f990c4dc7b3afe33a8c67879e3be1e/card.jpg?fm=webp",
+    "Lumber": "https://images.ctfassets.net/lemvlfz5icux/4gPrlYD9mtB8NkhOMFw6Uk/0b97d3a85584b515b6647bb3ca07cab7/card.jpg?fm=webp"
   },
   "isCitiesAndKnights": false
 }

@@ -1,10 +1,11 @@
 package com.generatecatanboard.service;
 
 import com.generatecatanboard.domain.BoardData;
-import com.generatecatanboard.domain.GameHarborConfig;
 import com.generatecatanboard.domain.HarborConfig;
 import com.generatecatanboard.domain.Hex;
 import com.generatecatanboard.domain.Rows;
+import com.generatecatanboard.domain.ScenarioProperties;
+import com.generatecatanboard.utility.ServiceTestBaseClass;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -38,8 +39,8 @@ class ShowHarborsGeneratorTest extends ServiceTestBaseClass {
 
 	@Test
 	void shouldCreateARowOfHarbors() throws Exception {
-		GameHarborConfig gameHarborConfig = getMockGameHarborConfig();
-		List<HarborConfig> harborConfigs = gameHarborConfig.getHarborConfig();
+		ScenarioProperties properties = getMockScenarioProps();
+		List<HarborConfig> harborConfigs = properties.getGameHarborConfig().getHarborConfig();
 		assertEquals(18, harborConfigs.size());
 		Rows rowOfHarbors = showHarborsGenerator.createRowOfHarbors(harborConfigs, 4);
 		assertNotNull(rowOfHarbors);
@@ -64,10 +65,10 @@ class ShowHarborsGeneratorTest extends ServiceTestBaseClass {
 
 	@Test
 	void shouldCreateRowsOfHexesWithHarbors() throws Exception {
-		GameHarborConfig gameHarborConfig = getMockGameHarborConfig();
-		List<HarborConfig> harborConfigs = gameHarborConfig.getHarborConfig();
+		ScenarioProperties properties = getMockScenarioProps();
+		List<HarborConfig> harborConfigs = properties.getGameHarborConfig().getHarborConfig();
 		harborConfigs.subList(0, 4).clear();
-		List<Rows> listOfHexesWithHarbors = showHarborsGenerator.createRowsOfHexesWithHarbors(getMockRowConfig(), getMockListOfResources(), getMockListOfNumbers(), harborConfigs);
+		List<Rows> listOfHexesWithHarbors = showHarborsGenerator.createRowsOfHexesWithHarbors(properties, harborConfigs);
 		assertNotNull(listOfHexesWithHarbors);
 		assertEquals(5, listOfHexesWithHarbors.size());
 		assertNotNull(listOfHexesWithHarbors.get(0));
@@ -85,8 +86,8 @@ class ShowHarborsGeneratorTest extends ServiceTestBaseClass {
 
 	@Test
 	void shouldGetHexFromEndRowPortConfigs() throws Exception {
-		GameHarborConfig gameHarborConfig = getMockGameHarborConfig();
-		List<HarborConfig> harborConfigs = gameHarborConfig.getHarborConfig();
+		ScenarioProperties properties = getMockScenarioProps();
+		List<HarborConfig> harborConfigs = properties.getGameHarborConfig().getHarborConfig();
 		assertEquals(18, harborConfigs.size());
 		Hex hex1 = showHarborsGenerator.getFirstHexFromHarborConfigs(harborConfigs);
 		assertEquals(17, harborConfigs.size());

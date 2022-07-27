@@ -2,6 +2,7 @@ package com.generatecatanboard.service;
 
 import com.contentful.java.cda.CDAClient;
 import com.generatecatanboard.domain.BoardData;
+import com.generatecatanboard.domain.GameProperties;
 import com.generatecatanboard.domain.Hex;
 import com.generatecatanboard.domain.Rows;
 import com.generatecatanboard.domain.ScenarioProperties;
@@ -23,25 +24,21 @@ public class HideHarborsGenerator extends GeneratorService implements Generator 
 
     @Override
     public BoardData generateRandomBoard(ScenarioProperties scenarioProperties) throws InvalidBoardConfigurationException {
-        // Get configs
-        List<Double> rowConfig = scenarioProperties.getRowConfig();
-        List<String> resourcesList = getListOfResources(scenarioProperties.getGameResourcesConfig());
-        List<String> numbersList = getListOfNumberedItems(scenarioProperties.getNumbersFrequency());
-        validateConfiguration(resourcesList, rowConfig);
-        // Get hexes
-        List<Rows> rowsOfHexes = createRowsOfHexes(rowConfig, resourcesList, numbersList);
-        // Get stats
+        GameProperties gameProperties = GameProperties.builder().title(scenarioProperties.getTitle())
+                .backgroundImage(scenarioProperties.getBackgroundImage()).backgroundColor(scenarioProperties.getBackgroundColor()).build();
+        List<Rows> rowsOfHexes = createRowsOfHexes(scenarioProperties);
         List<Statistics> statistics = calculateBoardStatistics(rowsOfHexes, scenarioProperties);
-        return BoardData.builder().gameBoard(rowsOfHexes).gameStatistics(statistics).build();
+        return BoardData.builder().gameProperties(gameProperties).gameBoard(rowsOfHexes).gameStatistics(statistics).build();
     }
 
-    public List<Rows> createRowsOfHexes(List<Double> rowConfig, List<String> resourcesList, List<String> numbersList) {
+    public List<Rows> createRowsOfHexes(ScenarioProperties scenarioProperties) {
         List<Rows> listOfRows = new ArrayList<>();
-        rowConfig.forEach(r -> {
-            List<Hex> hexes = getRowsOfResourceHexes(r, resourcesList, numbersList);
+        List<Double> rowConfig = scenarioProperties.getRowConfig();
+        for (Double r: rowConfig) {
+            List<Hex> hexes = getRowsOfResourceHexes(r, scenarioProperties);
             Rows row = Rows.builder().row(hexes).build();
             listOfRows.add(row);
-        });
+        }
         return listOfRows;
     }
 }

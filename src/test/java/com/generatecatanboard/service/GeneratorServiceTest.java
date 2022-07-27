@@ -9,8 +9,10 @@ import com.generatecatanboard.domain.ScenarioProperties;
 import com.generatecatanboard.domain.Statistics;
 import com.generatecatanboard.exceptions.InvalidBoardConfigurationException;
 import com.generatecatanboard.exceptions.PropertiesNotFoundException;
+import com.generatecatanboard.utility.ServiceTestBaseClass;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -21,6 +23,7 @@ import org.springframework.context.annotation.Bean;
 import wiremock.org.apache.commons.lang3.StringUtils;
 
 import java.util.List;
+import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -342,5 +345,20 @@ class GeneratorServiceTest extends ServiceTestBaseClass {
         assertNotNull(buildingCosts.get(0).getResources());
         assertNotNull(buildingCosts.get(0).getResources().get(0));
         assertNull(buildingCosts.get(0).getResources().get(0).getCommodity());
+    }
+
+    @ParameterizedTest
+    @MethodSource("getListOfTestNumbers")
+    void shouldGetProbabilityString(List<String> listOfStrings) {
+        String probability = generatorService.getProbabilityString(listOfStrings.subList(0, listOfStrings.size() - 1));
+        assertEquals(listOfStrings.get(listOfStrings.size() - 1), probability);
+    }
+
+    private static Stream<List<String>> getListOfTestNumbers() {
+        return Stream.of(
+                List.of("2", "3", "3", "08.33"),
+                List.of("2", "12", "3", "11.11"),
+                List.of("6", "8", "9", "5", "50.00")
+        );
     }
 }

@@ -3,7 +3,10 @@ package com.generatecatanboard.service;
 import com.generatecatanboard.domain.BoardData;
 import com.generatecatanboard.domain.GameHarborConfig;
 import com.generatecatanboard.domain.HarborConfig;
+import com.generatecatanboard.domain.Harbors;
 import com.generatecatanboard.domain.Rows;
+import com.generatecatanboard.domain.ScenarioProperties;
+import com.generatecatanboard.utility.ServiceTestBaseClass;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -32,16 +35,16 @@ class RandomizeHarborsGeneratorTest extends ServiceTestBaseClass {
 	void shouldCreateListOfRandomHarbors() throws Exception {
 		GameHarborConfig gameHarborConfig = getMockGameHarborConfig();
 		List<HarborConfig> harborConfigs = gameHarborConfig.getHarborConfig();
-		List<String> availableHarbors = randomizeHarborsGenerator.createListOfAvailableHarbors(harborConfigs);
+		List<Harbors> availableHarbors = randomizeHarborsGenerator.createListOfAvailableHarbors(harborConfigs);
 		assertNotNull(availableHarbors);
 		assertEquals(9, availableHarbors.size());
 	}
 
 	@Test
 	void shouldCreateRowOfRandomHarbors() throws Exception {
-		GameHarborConfig gameHarborConfig = getMockGameHarborConfig();
-		List<HarborConfig> harborConfigs = gameHarborConfig.getHarborConfig();
-		List<String> availableHarbors = randomizeHarborsGenerator.createListOfAvailableHarbors(harborConfigs);
+		ScenarioProperties properties = getMockScenarioProps();
+		List<HarborConfig> harborConfigs = properties.getGameHarborConfig().getHarborConfig();
+		List<Harbors> availableHarbors = randomizeHarborsGenerator.createListOfAvailableHarbors(harborConfigs);
 		Rows rowOfRandomHarbors = randomizeHarborsGenerator.createRowOfRandomHarbors(harborConfigs, availableHarbors, 4);
 		assertNotNull(rowOfRandomHarbors);
 		assertNotNull(rowOfRandomHarbors.getRow());
@@ -50,20 +53,18 @@ class RandomizeHarborsGeneratorTest extends ServiceTestBaseClass {
 		assertEquals("Sea", rowOfRandomHarbors.getRow().get(0).getTerrain());
 		assertNotNull(rowOfRandomHarbors.getRow().get(1));
 		assertEquals("Harbor", rowOfRandomHarbors.getRow().get(1).getTerrain());
-		assertEquals("br", rowOfRandomHarbors.getRow().get(1).getRotation());
 		assertNotNull(rowOfRandomHarbors.getRow().get(2));
 		assertEquals("Sea", rowOfRandomHarbors.getRow().get(2).getTerrain());
 		assertNotNull(rowOfRandomHarbors.getRow().get(3));
 		assertEquals("Harbor", rowOfRandomHarbors.getRow().get(3).getTerrain());
-		assertEquals("bl", rowOfRandomHarbors.getRow().get(3).getRotation());
 	}
 
 	@Test
 	void shouldCreateRowOfHexesWithRandomHarbors() throws Exception {
-		GameHarborConfig gameHarborConfig = getMockGameHarborConfig();
-		List<HarborConfig> harborConfigs = gameHarborConfig.getHarborConfig();
-		List<String> availableHarbors = randomizeHarborsGenerator.createListOfAvailableHarbors(harborConfigs);
-		List<Rows> listOfRows = randomizeHarborsGenerator.createRowsOfHexesWithRandomHarbors(getMockRowConfig(), getMockListOfResources(), getMockListOfNumbers(), harborConfigs, availableHarbors);
+		ScenarioProperties properties = getMockScenarioProps();
+		List<HarborConfig> harborConfigs = properties.getGameHarborConfig().getHarborConfig();
+		List<Harbors> availableHarbors = randomizeHarborsGenerator.createListOfAvailableHarbors(harborConfigs);
+		List<Rows> listOfRows = randomizeHarborsGenerator.createRowsOfHexesWithRandomHarbors(getMockScenarioProps(), harborConfigs, availableHarbors);
 		assertNotNull(listOfRows);
 		assertEquals(5, listOfRows.size());
 		assertNotNull(listOfRows.get(0));
@@ -85,13 +86,13 @@ class RandomizeHarborsGeneratorTest extends ServiceTestBaseClass {
 
 	@Test
 	void shouldGetRandomHarborFromList() throws Exception {
-		GameHarborConfig gameHarborConfig = getMockGameHarborConfig();
-		List<HarborConfig> harborConfigs = gameHarborConfig.getHarborConfig();
-		List<String> availableHarbors = randomizeHarborsGenerator.createListOfAvailableHarbors(harborConfigs);
+		ScenarioProperties properties = getMockScenarioProps();
+		List<HarborConfig> harborConfigs = properties.getGameHarborConfig().getHarborConfig();
+		List<Harbors> availableHarbors = randomizeHarborsGenerator.createListOfAvailableHarbors(harborConfigs);
 		AtomicInteger listSize = new AtomicInteger(9);
 		assertEquals(9, availableHarbors.size());
 		for (int i = 0; i < 9; i++) {
-			String randomHarbor = randomizeHarborsGenerator.getRandomHarbor(availableHarbors);
+			Harbors randomHarbor = randomizeHarborsGenerator.getRandomHarbor(availableHarbors);
 			assertNotNull(randomHarbor);
 			listSize.set(listSize.get() - 1);
 			assertEquals(listSize.get(), availableHarbors.size());

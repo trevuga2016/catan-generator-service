@@ -2,6 +2,7 @@ package com.generatecatanboard.service;
 
 import com.generatecatanboard.domain.BoardData;
 import com.generatecatanboard.domain.Rows;
+import com.generatecatanboard.utility.ServiceTestBaseClass;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -26,8 +27,8 @@ class HideHarborsGeneratorTest extends ServiceTestBaseClass {
 	}
 
 	@Test
-	void shouldCreateRowsOfHexesWithoutHarbors() {
-		List<Rows> rowsOfHexes = hideHarborsGenerator.createRowsOfHexes(getMockRowConfig(), getMockListOfResources(), getMockListOfNumbers());
+	void shouldCreateRowsOfHexesWithoutHarbors() throws Exception {
+		List<Rows> rowsOfHexes = hideHarborsGenerator.createRowsOfHexes(getMockScenarioProps());
 		assertNotNull(rowsOfHexes);
 		assertNotNull(rowsOfHexes.get(0));
 		assertNotNull(rowsOfHexes.get(0).getRow());
