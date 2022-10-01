@@ -1,6 +1,6 @@
 package com.generatecatanboard.dexnav;
 
-import com.generatecatanboard.service.DexNavService;
+import com.generatecatanboard.service.ShinyOddsService;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -12,29 +12,29 @@ import java.util.stream.Stream;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
-class DexNavServiceTest {
+class ShinyOddsServiceTest {
 
     @Autowired
-    private DexNavService dexNavService;
+    private ShinyOddsService shinyOddsService;
 
     @ParameterizedTest
     @MethodSource("searchLevelIntegers")
     void shouldReturnSearchLevelPoints(int searchLevel, int expectedPointValue) {
-        int searchLevelPoints = dexNavService.getSearchLevelPoints(searchLevel);
+        int searchLevelPoints = shinyOddsService.getSearchLevelPoints(searchLevel);
         assertEquals(expectedPointValue, searchLevelPoints);
     }
 
     @ParameterizedTest
     @MethodSource("numberOfRolls")
     void shouldReturnNumberOfRolls(boolean hasShinyCharm, int chain, int expectedNumberOfRolls) {
-        int numberOfRolls = dexNavService.getNumberOfRolls(hasShinyCharm, chain);
+        int numberOfRolls = shinyOddsService.getNumberOfRolls(hasShinyCharm, chain);
         assertEquals(expectedNumberOfRolls, numberOfRolls);
     }
 
     @ParameterizedTest
     @MethodSource("shinyOddsList")
     void shouldCalculateShinyOdds(int searchLevelPoints, int numberOfRolls, int expectedShinyOdds) {
-        int shinyOdds = (int) Math.round(1 / dexNavService.calculateShinyOdds(searchLevelPoints, numberOfRolls));
+        int shinyOdds = (int) Math.round(1 / shinyOddsService.calculateShinyOdds(searchLevelPoints, numberOfRolls));
         assertEquals(expectedShinyOdds, shinyOdds);
     }
 

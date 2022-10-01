@@ -1,11 +1,13 @@
 package com.generatecatanboard.domain;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Builder;
 import lombok.Data;
 
 @Data
 @Builder
-public class DexNavResponse {
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public class ShinyOddsResponse {
     private String rawShinyOdds;
     private String rawMaxShinyOdds;
     private Integer shinyOdds;
